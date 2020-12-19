@@ -1,0 +1,184 @@
+{
+  "classNum": 2,
+  "sets": [],
+  "soldBy": [
+    {
+      "npc": {
+        "id": 44384,
+        "name": "#gef_a7",
+        "mapname": "1@gef_in",
+        "job": 45,
+        "x": 28,
+        "y": 156,
+        "type": "MD_Warp"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30122,
+        "name": "One Hand Weapon Dealer",
+        "mapname": "ein_in01",
+        "job": 850,
+        "x": 106,
+        "y": 27,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30038,
+        "name": "Weapon Dealer",
+        "mapname": "prt_in",
+        "job": 54,
+        "x": 172,
+        "y": 130,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30044,
+        "name": "Weapon Dealer",
+        "mapname": "izlude_in",
+        "job": 72,
+        "x": 60,
+        "y": 127,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30066,
+        "name": "Weapon Dealer",
+        "mapname": "geffen_in",
+        "job": 47,
+        "x": 30,
+        "y": 178,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30072,
+        "name": "Weapon Dealer",
+        "mapname": "alberta_in",
+        "job": 49,
+        "x": 188,
+        "y": 21,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30077,
+        "name": "Weapon Dealer",
+        "mapname": "payon_in01",
+        "job": 77,
+        "x": 15,
+        "y": 119,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 30095,
+        "name": "Weapon Dealer",
+        "mapname": "yuno_in01",
+        "job": 49,
+        "x": 103,
+        "y": 35,
+        "type": "trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 44409,
+        "name": "Weapon Dealer#gefa",
+        "mapname": "1@gef_in",
+        "job": 47,
+        "x": 30,
+        "y": 178,
+        "type": "MD_Trader"
+      },
+      "price": 100
+    },
+    {
+      "npc": {
+        "id": 37440,
+        "name": "넬샤#pmp01",
+        "mapname": "paramk",
+        "job": 881,
+        "x": 70,
+        "y": 31,
+        "type": "npc"
+      },
+      "price": 100
+    }
+  ],
+  "id": 1101,
+  "aegisName": "Sword",
+  "name": "Sword [3]",
+  "unidName": "One-Handed Sword",
+  "resName": "소드",
+  "unidResName": "소드",
+  "description": "A basic one-handed sword.\nClass: ^808080One-Handed Sword^000000\nAttack: ^80808025^000000\nProperty: ^808080Neutral^000000\nWeight: ^80808050^000000\nWeapon Level: ^8080801^000000\nRequires Level: ^8080802^000000\nUsable By: ^808080Novice Jobs, Swordman Jobs, Merchant Jobs, Thief Jobs^000000",
+  "unidDescription": "An unknown item that requires appraisal. It can be identified by using a ^008080Magnifier^000000.",
+  "slots": 3,
+  "setname": null,
+  "itemTypeId": 1,
+  "itemSubTypeId": 257,
+  "itemSummonInfoContainedIn": [
+    {
+      "internalType": "",
+      "Type": 0,
+      "sourceId": 603,
+      "sourceName": "Old Blue Box",
+      "targetId": 1101,
+      "targetName": "Sword",
+      "count": 1,
+      "totalOfSource": 0,
+      "summonType": "itemSummonTarget",
+      "chance": 7
+    }
+  ],
+  "itemSummonInfoContains": [],
+  "attack": 25,
+  "defense": 0,
+  "weight": 50.0,
+  "requiredLevel": 2,
+  "limitLevel": 0,
+  "itemLevel": null,
+  "job": 800995,
+  "compositionPos": null,
+  "attribute": null,
+  "location": null,
+  "locationId": 2,
+  "accessory": null,
+  "price": 100,
+  "range": 1,
+  "matk": 0,
+  "gender": 2,
+  "refinable": true,
+  "indestructible": false,
+  "itemMoveInfo": {
+    "drop": true,
+    "trade": true,
+    "store": true,
+    "cart": true,
+    "sell": true,
+    "mail": true,
+    "auction": true,
+    "guildStore": true
+  },
+  "rewardForAchievement": [],
+  "cardPrefix": null,
+  "pets": []
+}
