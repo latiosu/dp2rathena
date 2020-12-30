@@ -28,9 +28,8 @@ def test_mapping_name():
 def test_mapping_itemTypeId():
     mapper = converter.Mapper()
     assert mapper.itemTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
-    with pytest.raises(KeyError):
+    with pytest.raises(AssertionError):
         mapper.itemTypeId({'itemTypeId': -1, 'itemSubTypeId': -1})
-    with pytest.raises(KeyError):
         mapper.itemTypeId({'itemTypeId': 1, 'itemSubTypeId': -1})
     assert mapper.itemTypeId({'itemTypeId': 1, 'itemSubTypeId': 0}) == 'Weapon'
     assert mapper.itemTypeId({'itemTypeId': 2, 'itemSubTypeId': 518, 'name': 'Isis Egg'}) == 'PetEgg'
@@ -44,9 +43,8 @@ def test_mapping_itemTypeId():
 def test_mapping_itemSubTypeId():
     mapper = converter.Mapper()
     assert mapper.itemSubTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
-    with pytest.raises(KeyError):
+    with pytest.raises(AssertionError):
         mapper.itemSubTypeId({'itemTypeId': -1, 'itemSubTypeId': -1})
-    with pytest.raises(KeyError):
         mapper.itemSubTypeId({'itemTypeId': 1, 'itemSubTypeId': -1})
     assert mapper.itemSubTypeId({'itemTypeId': 4, 'itemSubTypeId': 1025}) == 'Arrow/Dagger/Bullet/Shell/Grenade/Shuriken/Kunai/CannonBall/ThrowWeapon'
     assert mapper.itemSubTypeId({'itemTypeId': 4, 'itemSubTypeId': 0}) == 'Arrow/Dagger/Bullet/Shell/Grenade/Shuriken/Kunai/CannonBall/ThrowWeapon'
@@ -93,15 +91,26 @@ def test_mapping_gender():
     assert mapper.gender({'job': 0x10000}) == 'Female'
     assert mapper.gender({'job': 0x18000}) == 'Both'
 
-# TODO ...
-# def test_mapping_locationId():
-#     mapper = converter.Mapper()
-#     assert mapper.locationId({}) is None
+def test_mapping_locationId():
+    mapper = converter.Mapper()
+    assert mapper.locationId({'locationId': None, 'itemTypeId': 0}) is None
+    assert mapper.locationId({'locationId': 0, 'itemTypeId': 0}) is None
+    with pytest.raises(AssertionError):
+        mapper.locationId({'locationId': -1, 'itemTypeId': 0})
+        mapper.locationId({'locationId': 0x400000, 'itemTypeId': 0})
+    assert mapper.locationId({'locationId': 0x10, 'itemTypeId': 0}) == {'Armor': True}
+    assert mapper.locationId({'locationId': 0, 'itemTypeId': 4}) == {'Ammo': True}
+    assert mapper.locationId({'locationId': 0x10000, 'itemTypeId': 0}) == {'Shadow_Armor': True}
+    assert mapper.locationId({'locationId': 0x400, 'itemTypeId': 0}) == {'Costume_Head_Top': True}
+    assert mapper.locationId({'locationId': 0x22, 'itemTypeId': 0}) == {'Both_Hand': True}
+    assert mapper.locationId({'locationId': 0x88, 'itemTypeId': 0}) == {'Both_Accessory': True}
+    assert mapper.locationId({'locationId': 0x300, 'itemTypeId': 0}) == {'Head_Top': True, 'Head_Mid': True}
+    assert mapper.locationId({'locationId': 0x301, 'itemTypeId': 0}) == {'Head_Top': True, 'Head_Mid': True, 'Head_Low': True}
 
 def test_mapping_itemLevel():
     mapper = converter.Mapper()
     assert mapper.itemLevel({'itemTypeId': 0}) is None
-    with pytest.raises(KeyError):
+    with pytest.raises(AssertionError):
         mapper.itemLevel({'itemTypeId': -1})
     assert mapper.itemLevel({'itemTypeId': 1}) == '1/2/3/4'
     assert mapper.itemLevel({'itemTypeId': 2}) is None

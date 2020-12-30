@@ -353,15 +353,48 @@ class Mapper:
             15: RAClass.ALL_THIRD,
         }
 
+        self.location_map = {
+            0x000022: RALocation.BOTH_HAND,              # DP location: null
+            0x000088: RALocation.BOTH_ACCESSORY,         # DP location: null
+            0x000100: RALocation.HEAD_TOP,               # DP location: Upper
+            0x000200: RALocation.HEAD_MID,               # DP location: Middle
+            0x000001: RALocation.HEAD_LOW,               # DP location: Lower
+            0x000010: RALocation.ARMOR,                  # DP location: null
+            0x000002: RALocation.RIGHT_HAND,             # DP location: null
+            0x000020: RALocation.LEFT_HAND,              # DP location: null
+            0x000004: RALocation.GARMENT,                # DP location: null
+            0x000040: RALocation.SHOES,                  # DP location: null
+            0x000008: RALocation.RIGHT_ACCESSORY,        # DP location: null
+            0x000080: RALocation.LEFT_ACCESSORY,         # DP location: null
+            0x000400: RALocation.COSTUME_HEAD_TOP,       # DP location: Upper
+            0x000800: RALocation.COSTUME_HEAD_MID,       # DP location: Middle
+            0x001000: RALocation.COSTUME_HEAD_LOW,       # DP location: Lower
+            0x002000: RALocation.COSTUME_GARMENT,        # DP location: Garment
+            # 0x000000: RALocation.AMMO,                 # Not a DP location, use RAType.AMMO instead
+            0x010000: RALocation.SHADOW_ARMOR,           # DP location: Armor
+            0x020000: RALocation.SHADOW_WEAPON,          # DP location: null
+            0x040000: RALocation.SHADOW_SHIELD,          # DP location: Shield
+            0x080000: RALocation.SHADOW_SHOES,           # DP location: Shoes
+            0x100000: RALocation.SHADOW_RIGHT_ACCESSORY, # DP location: Accessory
+            0x200000: RALocation.SHADOW_LEFT_ACCESSORY,  # DP location: Accessory
+        }
+
+    def validate(self, data, *argv):
+        for arg in argv:
+            v = data[arg]
+            if arg == 'itemTypeId':
+                assert v in self.item_type_map, f'Unrecognised itemTypeId: {v}'
+            elif arg == 'itemSubTypeId':
+                assert v in self.item_subtype_map, f'Unrecognised itemSubTypeId: {v}'
+            elif arg == 'locationId' and v is not None:
+                assert v >= 0, f'Negative locationId: {v}'
+                assert v <= 0x3FFFFF, f'Unrecognised locationId: {v}'
+
     def name(self, data):
         return re.sub(r'\s\[[1-9]\]$', '', data['name'])
 
     def itemTypeId(self, data):
-        if data['itemTypeId'] not in self.item_type_map:
-            raise KeyError('Unrecognised itemTypeId: {}'.format(data['itemTypeId']))
-        elif data['itemSubTypeId'] not in self.item_subtype_map:
-            raise KeyError('Unrecognised itemSubTypeId: {}'.format(data['itemSubTypeId']))
-
+        self.validate(data, 'itemTypeId', 'itemSubTypeId')
         itemType = self.item_type_map[data['itemTypeId']]
         itemSubType = self.item_subtype_map[data['itemSubTypeId']]
 
@@ -384,11 +417,7 @@ class Mapper:
         return None if itemType is None else itemType.value
 
     def itemSubTypeId(self, data):
-        if data['itemTypeId'] not in self.item_type_map:
-            raise KeyError('Unrecognised itemTypeId: {}'.format(data['itemTypeId']))
-        elif data['itemSubTypeId'] not in self.item_subtype_map:
-            raise KeyError('Unrecognised itemSubTypeId: {}'.format(data['itemSubTypeId']))
-
+        self.validate(data, 'itemTypeId', 'itemSubTypeId')
         itemType = self.item_type_map[data['itemTypeId']]
         itemSubType = self.item_subtype_map[data['itemSubTypeId']]
 
@@ -460,11 +489,31 @@ class Mapper:
             return None
 
     def locationId(self, data):
-        return f'TODO: {data["locationId"]}'
+        self.validate(data, 'locationId', 'itemTypeId')
+        location_id = data['locationId']
+        locations = dict()
+        if location_id is None or location_id == 0:
+            # DP doesn't have Ammo location so we handle separately
+            if self.item_type_map[data['itemTypeId']] == RAType.AMMO:
+                locations[RALocation.AMMO.value] = True
+            else:
+                return None
+
+        for k, v in self.location_map.items():
+            if location_id & k == k:
+                locations[self.location_map[k].value] = True
+
+        # Clean up 'both' locations
+        if RALocation.LEFT_HAND.value in locations and RALocation.RIGHT_HAND.value in locations:
+            del locations[RALocation.LEFT_HAND.value]
+            del locations[RALocation.RIGHT_HAND.value]
+        if RALocation.LEFT_ACCESSORY.value in locations and RALocation.RIGHT_ACCESSORY.value in locations:
+            del locations[RALocation.LEFT_ACCESSORY.value]
+            del locations[RALocation.RIGHT_ACCESSORY.value]
+        return locations
 
     def itemLevel(self, data):
-        if data['itemTypeId'] not in self.item_type_map:
-            raise KeyError('Unrecognised itemTypeId: {}'.format(data['itemTypeId']))
+        self.validate(data, 'itemTypeId')
         itemType = self.item_type_map[data['itemTypeId']]
 
         # Warning: This value is currently bugged in DP API where itemLevel is always null
