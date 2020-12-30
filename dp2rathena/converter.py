@@ -387,10 +387,13 @@ class Mapper:
             elif arg == 'itemSubTypeId':
                 assert v in self.item_subtype_map, f'Unrecognised itemSubTypeId: {v}'
             elif arg == 'locationId' and v is not None:
-                assert v >= 0, f'Negative locationId: {v}'
-                assert v <= 0x3FFFFF, f'Unrecognised locationId: {v}'
+                assert v >= 0 and v <= 0x3FFFFF, f'Unrecognised locationId: {v}'
+            elif arg == 'job' and v is not None:
+                assert v >= 0 and v <= 0xFFFFF, f'Unrecognised job: {v}'
 
     def name(self, data):
+        if data['name'] is None:
+            return ''
         return re.sub(r'\s\[[1-9]\]$', '', data['name'])
 
     def itemTypeId(self, data):
@@ -440,8 +443,9 @@ class Mapper:
         return int(w * 10)
 
     def job(self, data):
+        self.validate(data, 'job')
         job_id = data['job']
-        if job_id is None:
+        if job_id is None or job_id == 0:
             return None
 
         jobs = dict()
@@ -471,8 +475,9 @@ class Mapper:
         return f'TODO: {data["classNum"]}'
 
     def gender(self, data):
+        self.validate(data, 'job')
         job_id = data['job']
-        if job_id is None:
+        if job_id is None or job_id == 0:
             return None
 
         bard_id = self.job_map[RAJob.BARD]

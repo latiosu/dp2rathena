@@ -17,7 +17,8 @@ import json
 
 def test_mapping_name():
     mapper = converter.Mapper()
-    assert mapper.name({'name': ''}) is ''
+    assert mapper.name({'name': None}) == ''
+    assert mapper.name({'name': ''}) == ''
     assert mapper.name({'name': '100T Zeny Check'}) == '100T Zeny Check'
     assert mapper.name({'name': 'Knife [4]'}) == 'Knife'
     assert mapper.name({'name': 'Hunting Bow [2]'}) == 'Hunting Bow'
@@ -67,8 +68,12 @@ def test_mapping_weight():
 def test_mapping_job():
     mapper = converter.Mapper()
     assert mapper.job({'job': None}) is None
-    assert mapper.job({'job': 1048575}) is None
-    assert mapper.job({'job': 132112}) == {'Acolyte': True, 'Monk': True, 'Priest': True}
+    assert mapper.job({'job': 0xFFFFF}) is None
+    assert mapper.job({'job': 0}) is None
+    with pytest.raises(AssertionError):
+        mapper.job({'job': -1})
+        mapper.job({'job': 0x100000})
+    assert mapper.job({'job': 0x20410}) == {'Acolyte': True, 'Monk': True, 'Priest': True}
     assert mapper.job({'job': 1}) == {'Novice': True, 'SuperNovice': True}
     assert mapper.job({'job': 142}) == {'Summoner': True}
     assert mapper.job({'job': 144}) == {'KagerouOboro': True, 'Rebellion': True}
@@ -87,6 +92,9 @@ def test_mapping_gender():
     assert mapper.gender({'job': None}) is None
     assert mapper.gender({'job': 1}) is None
     assert mapper.gender({'job': 0xFFFFF}) is None
+    with pytest.raises(AssertionError):
+        mapper.gender({'job': -1})
+        mapper.gender({'job': 0x100000})
     assert mapper.gender({'job': 0x08000}) == 'Male'
     assert mapper.gender({'job': 0x10000}) == 'Female'
     assert mapper.gender({'job': 0x18000}) == 'Both'
