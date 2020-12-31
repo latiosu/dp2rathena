@@ -155,7 +155,7 @@
   "weight": 50.0,
   "requiredLevel": 2,
   "limitLevel": 0,
-  "itemLevel": null,
+  "itemLevel": 1,
   "job": 800995,
   "compositionPos": null,
   "attribute": null,

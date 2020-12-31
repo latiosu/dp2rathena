@@ -1,20 +1,6 @@
-import filecmp
-import os
-
-import json
 import pytest
 
-from context import dp2rathena
 from dp2rathena import item_mapper
-
-# TODO: implement remaining item mapper functions
-# def test_item_mapper():
-#     convert = item_mapper.Mapper()
-#     item_json = open(os.path.dirname(os.path.realpath(__file__)) + '/fixtures/item_1101.json').read()
-#     generated_yml = convert.to_item_yml(json.loads(item_json))
-#     print(generated_yml)
-#     expected_yml = open(os.path.dirname(os.path.realpath(__file__)) + '/fixtures/item_1101.yml').read()
-#     assert generated_yml == expected_yml
 
 def test_mapping_name():
     mapper = item_mapper.Mapper()
