@@ -360,14 +360,17 @@ class Mapper:
     def validate(self, data, *argv):
         for arg in argv:
             v = data[arg]
+            msg = f'Unrecognised {arg}: {v}'
             if arg == 'itemTypeId':
-                assert v in self.item_type_map, f'Unrecognised itemTypeId: {v}'
+                assert v in self.item_type_map, msg
             elif arg == 'itemSubTypeId':
-                assert v in self.item_subtype_map, f'Unrecognised itemSubTypeId: {v}'
+                assert v in self.item_subtype_map, msg
             elif arg == 'locationId' and v is not None:
-                assert v >= 0 and v <= 0x3FFFFF, f'Unrecognised locationId: {v}'
+                assert v >= 0 and v <= 0x3FFFFF, msg
             elif arg == 'job' and v is not None:
-                assert v >= 0 and v <= 0xFFFFF, f'Unrecognised job: {v}'
+                assert v >= 0 and v <= 0xFFFFF, msg
+            elif arg == 'itemLevel' and v is not None:
+                assert v >= 0 and v <= 4, msg
 
     def name(self, data):
         if data['name'] is None:
@@ -499,12 +502,10 @@ class Mapper:
         return locs
 
     def itemLevel(self, data):
-        self.validate(data, 'itemTypeId')
-        itemType = self.item_type_map[data['itemTypeId']]
-
-        if itemType == RAType.WEAPON:
-            return data['itemLevel']
-        return None
+        self.validate(data, 'itemLevel')
+        if data['itemLevel'] == 0:
+            return None
+        return data['itemLevel']
 
     def itemMoveInfo(self, data):
         result = self.map_schema(copy.copy(self.trade_schema), data['itemMoveInfo'])

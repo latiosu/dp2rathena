@@ -128,11 +128,12 @@ def test_mapping_locationId():
 
 def test_mapping_itemLevel():
     mapper = item_mapper.Mapper()
-    assert mapper.itemLevel({'itemTypeId': 0}) is None
+    assert mapper.itemLevel({'itemLevel': 0}) is None
     with pytest.raises(AssertionError):
-        mapper.itemLevel({'itemTypeId': -1})
-    assert mapper.itemLevel({'itemTypeId': 1}) == '1/2/3/4'
-    assert mapper.itemLevel({'itemTypeId': 2}) is None
+        mapper.itemLevel({'itemLevel': -1})
+        mapper.itemLevel({'itemLevel': 5})
+    assert mapper.itemLevel({'itemLevel': 1}) == 1
+    assert mapper.itemLevel({'itemLevel': 4}) == 4
 
 def test_mapping_itemMoveInfo():
     mapper = item_mapper.Mapper()
