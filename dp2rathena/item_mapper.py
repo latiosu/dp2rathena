@@ -149,22 +149,22 @@ class Mapper:
         self.schema = {
             'Id': 'id',                       # Item ID.
             'AegisName': 'aegisName',         # Server name to reference the item in scripts and lookups, no spaces.
-            'Name': self.name,                # Name in English for displaying as output.
-            'Type': self.itemTypeId,          # Item type.
-            'SubType': self.itemSubTypeId,    # Weapon or Ammo type.
+            'Name': self._name,                # Name in English for displaying as output.
+            'Type': self._itemTypeId,          # Item type.
+            'SubType': self._itemSubTypeId,    # Weapon or Ammo type.
             'Buy': 'price',                   # Buying price. When not specified, becomes double the sell price.
-            'Sell': self.sell,                # Selling price. When not specified, becomes half the buy price.
-            'Weight': self.weight,            # Item weight. Each 10 is 1 weight.
+            'Sell': self._sell,                # Selling price. When not specified, becomes half the buy price.
+            'Weight': self._weight,            # Item weight. Each 10 is 1 weight.
             'Attack': 'attack',               # Weapon's attack.
             'MagicAttack': 'matk',            # Weapon's magic attack.
             'Defense': 'defense',             # Armor's defense.
             'Range': 'range',                 # Weapon's attack range.
             'Slots': 'slots',                 # Available slots in item.
-            'Jobs': self.job,                 # Jobs that can equip the item. (Map default is 'All: true')
-            'Classes': self.classNum,         # Upper class types that can equip item. (Map default is 'All: true')
-            'Gender': self.gender,            # Gender that can equip the item.
-            'Locations': self.locationId,     # Equipment's placement.
-            'WeaponLevel': self.itemLevel,    # Weapon level.
+            'Jobs': self._job,                 # Jobs that can equip the item. (Map default is 'All: true')
+            'Classes': self._classNum,         # Upper class types that can equip item. (Map default is 'All: true')
+            'Gender': self._gender,            # Gender that can equip the item.
+            'Locations': self._locationId,     # Equipment's placement.
+            'WeaponLevel': self._itemLevel,    # Weapon level.
             'EquipLevelMin': 'requiredLevel', # Minimum required level to equip.
             'EquipLevelMax': 'limitLevel',    # Maximum level that can equip.
             'Refineable': 'refinable',        # If the item can be refined.
@@ -195,7 +195,7 @@ class Mapper:
             #     'Override': None,           # Group level to override these conditions.
             #     'Sitting': None,            # If the item can not be used while sitting.
             # },
-            'Trade': self.itemMoveInfo,
+            'Trade': self._itemMoveInfo,
             # 'Script': None,                 # Script to execute when the item is used/equipped.
             # 'EquipScript': None,            # Script to execute when the item is equipped.
             # 'UnEquipScript': None,          # Script to execute when the item is unequipped or a rental item expires.
@@ -357,7 +357,7 @@ class Mapper:
             0x200000: RALocation.SHADOW_LEFT_ACCESSORY,  # DP location: Accessory
         }
 
-    def validate(self, data, *argv):
+    def _validate(self, data, *argv):
         for arg in argv:
             v = data[arg]
             msg = f'Unrecognised {arg}: {v}'
@@ -372,13 +372,13 @@ class Mapper:
             elif arg == 'itemLevel' and v is not None:
                 assert v >= 0 and v <= 4, msg
 
-    def name(self, data):
+    def _name(self, data):
         if data['name'] is None:
             return ''
         return re.sub(r'\s\[[1-9]\]$', '', data['name'])
 
-    def itemTypeId(self, data):
-        self.validate(data, 'itemTypeId', 'itemSubTypeId')
+    def _itemTypeId(self, data):
+        self._validate(data, 'itemTypeId', 'itemSubTypeId')
         itemType = self.item_type_map[data['itemTypeId']]
         itemSubType = self.item_subtype_map[data['itemSubTypeId']]
 
@@ -403,8 +403,8 @@ class Mapper:
             return RAType.ARMOR.value
         return None if itemType is None else itemType.value
 
-    def itemSubTypeId(self, data):
-        self.validate(data, 'itemTypeId', 'itemSubTypeId')
+    def _itemSubTypeId(self, data):
+        self._validate(data, 'itemTypeId', 'itemSubTypeId')
         itemType = self.item_type_map[data['itemTypeId']]
         itemSubType = self.item_subtype_map[data['itemSubTypeId']]
 
@@ -416,18 +416,18 @@ class Mapper:
             return None if itemSubType is None else itemSubType.value
         return None
 
-    def sell(self, data):
+    def _sell(self, data):
         # Note: This value is currently omitted in rathena YAML by default
         return None
 
-    def weight(self, data):
+    def _weight(self, data):
         w = data['weight']
         if w < 0:
             return 0
         return int(w * 10)
 
-    def job(self, data):
-        self.validate(data, 'job')
+    def _job(self, data):
+        self._validate(data, 'job')
         job_id = data['job']
         if job_id is None or job_id == 0:
             return None
@@ -455,11 +455,11 @@ class Mapper:
         # Result is sorted alphabetically in rathena
         return dict(sorted(jobs.items()))
 
-    def classNum(self, data):
+    def _classNum(self, data):
         return f'TODO: {data["classNum"]}'
 
-    def gender(self, data):
-        self.validate(data, 'job')
+    def _gender(self, data):
+        self._validate(data, 'job')
         job_id = data['job']
         if job_id is None or job_id == 0:
             return None
@@ -477,8 +477,8 @@ class Mapper:
         else:
             return None
 
-    def locationId(self, data):
-        self.validate(data, 'locationId', 'itemTypeId')
+    def _locationId(self, data):
+        self._validate(data, 'locationId', 'itemTypeId')
         location_id = data['locationId']
         locs = dict()
         if location_id is None or location_id == 0:
@@ -501,14 +501,14 @@ class Mapper:
             del locs[RALocation.RIGHT_ACCESSORY.value]
         return locs
 
-    def itemLevel(self, data):
-        self.validate(data, 'itemLevel')
+    def _itemLevel(self, data):
+        self._validate(data, 'itemLevel')
         if data['itemLevel'] == 0:
             return None
         return data['itemLevel']
 
-    def itemMoveInfo(self, data):
-        result = self.map_schema(copy.copy(self.trade_schema), data['itemMoveInfo'])
+    def _itemMoveInfo(self, data):
+        result = self._map_schema(copy.copy(self.trade_schema), data['itemMoveInfo'])
         cleaned = {'Override': 100} # rathena outputs 100 by default
 
         # Note: rathena excludes this section when no trade restrictions exist
@@ -523,13 +523,17 @@ class Mapper:
             return None
         return cleaned
 
-    def map_schema(self, schema, data):
+    def _map_schema(self, schema, data):
+        if schema is None:
+            return None
+        elif data is None:
+            return schema
         result = copy.deepcopy(schema)
         for k, v in schema.items():
             if v is None:
                 del result[k]
             elif type(v) is str:
-                if data[v] == 0:
+                if data[v] == 0 or data[v] == None:
                     del result[k]
                 else:
                     result[k] = data[v]
@@ -539,19 +543,10 @@ class Mapper:
                 else:
                     result[k] = v(data)
             elif type(v) is dict:
-                result[k] = self.map_schema(v, data)
+                result[k] = self._map_schema(v, data)
             else:
                 result[k] = v
         return result
 
-    def wrap_result(self, item):
-        return {
-            'Header': {
-                'Type': 'ITEM_DB',
-                'Version': 1,
-            },
-            'Body': [item],
-        }
-
-    def map_data_to_schema(self, data):
-        return self.wrap_result(self.map_schema(self.schema, data))
+    def map_item(self, data):
+        return self._map_schema(self.schema, data)
