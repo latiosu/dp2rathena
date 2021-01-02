@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from dp2rathena import item_mapper
@@ -181,7 +183,7 @@ def test_map_schema():
     assert mapper._map_schema({'x': 1}, {1: 'y'}) == {'x': 'y'}
 
 
-def test_map_item():
+def test_map_item(fixture):
     mapper = item_mapper.Mapper()
     with pytest.raises(AssertionError):
         mapper.map_item({})

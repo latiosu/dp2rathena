@@ -25,8 +25,9 @@ def version():
 @click.option('-i', '--id', 'id_', multiple=True, type=int, help='Item id to convert, multiple allowed.')
 @click.option('-f', '--file', type=click.File('r'), help='A file with item ids to convert, newline separated.')
 @click.option('--sort/--no-sort', default=False, help='Sorts results by item id. Default: no sort.')
+@click.option('--wrap/--no-wrap', default=True, help='Wraps results with rathena Header and Body tags. Default: wrap.')
 @click.option('--debug/--no-debug', default=False, help='Shows debug information when querying Divine-Pride.')
-def item(api_key, id_, file, sort, debug):
+def item(api_key, id_, file, sort, wrap, debug):
     """Converts item ids to rathena item db yaml.
 
     \b
@@ -45,7 +46,7 @@ def item(api_key, id_, file, sort, debug):
         raise click.UsageError('Either --id or --file is required, please specify an option.')
 
     os.environ['DIVINEPRIDE_API_KEY'] = api_key
-    click.echo(converter.Converter(debug).convert(to_convert, sort))
+    click.echo(converter.Converter(debug).convert(to_convert, sort, wrap), nl=False)
 
 
 if __name__ == '__main__':

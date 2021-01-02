@@ -1,15 +1,10 @@
 import os
-import pytest
 import re
+
+import pytest
 
 from click.testing import CliRunner
 from dp2rathena import cli
-
-
-def fixture(filename):
-    current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
-    return os.path.join(os.path.realpath(current_path), 'fixtures', filename)
-
 
 def test_version():
     runner = CliRunner()
@@ -18,7 +13,7 @@ def test_version():
     assert re.fullmatch(r'\d+\.\d+\.\d+', result.output.rstrip())
 
 
-def test_item_invalid():
+def test_item_invalid(fixture):
     runner = CliRunner()
     result = runner.invoke(cli.dp2rathena, ['item'])
     assert result.exit_code == 2
@@ -47,7 +42,7 @@ def test_item_invalid():
 
 
 @pytest.mark.api
-def test_item_success():
+def test_item_success(fixture):
     # Note: These tests rely on API key being set in .env
     runner = CliRunner()
     with open(fixture('item_501.yml')) as f:

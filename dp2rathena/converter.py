@@ -33,10 +33,12 @@ class Converter:
             'Body': items,
         }
 
-    def convert(self, itemids, sort=False):
+    def convert(self, itemids, sort=False, wrap=True):
         items = list()
         for itemid in itemids:
             items.append(self.mapper.map_item(self.fetch_item(itemid)))
         if sort:
             items.sort(key=lambda item: item['Id'])
-        return yaml.dump(self.wrap_result(items), sort_keys=False)
+        if wrap:
+            items = self.wrap_result(items)
+        return yaml.dump(items, sort_keys=False)

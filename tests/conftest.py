@@ -1,3 +1,4 @@
+import os
 import pytest
 
 def pytest_addoption(parser):
@@ -5,8 +6,10 @@ def pytest_addoption(parser):
         "--api", action="store_true", default=False, help="run api tests"
     )
 
+
 def pytest_configure(config):
     config.addinivalue_line("markers", "api: mark test as using api")
+
 
 def pytest_collection_modifyitems(config, items):
     if config.getoption("--api"):
@@ -16,3 +19,11 @@ def pytest_collection_modifyitems(config, items):
     for item in items:
         if "api" in item.keywords:
             item.add_marker(skip_api)
+
+
+@pytest.fixture
+def fixture():
+    def _fixture(filename):
+        current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
+        return os.path.join(os.path.realpath(current_path), 'fixtures', filename)
+    return _fixture

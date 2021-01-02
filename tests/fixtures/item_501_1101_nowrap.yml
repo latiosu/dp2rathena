@@ -1,7 +1,9 @@
-Header:
-  Type: ITEM_DB
-  Version: 1
-Body:
+- Id: 501
+  AegisName: Red_Potion
+  Name: Red Potion
+  Type: Healing
+  Buy: 10
+  Weight: 70
 - Id: 1101
   AegisName: Sword
   Name: Sword
@@ -29,9 +31,3 @@ Body:
   WeaponLevel: 1
   EquipLevelMin: 2
   Refineable: true
-- Id: 501
-  AegisName: Red_Potion
-  Name: Red Potion
-  Type: Healing
-  Buy: 10
-  Weight: 70
