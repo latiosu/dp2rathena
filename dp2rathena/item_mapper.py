@@ -553,6 +553,6 @@ class Mapper:
         return result
 
     def map_item(self, data):
-        if data is None:
-            return None
+        if data is None or 'Error' in data:
+            return data
         return self._map_schema(self.schema, data)

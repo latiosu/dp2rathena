@@ -16,7 +16,12 @@ class Converter:
         self.mapper = item_mapper.Mapper()
 
     def fetch_item(self, itemid):
-        return self.api.item.get(itemid)
+        try:
+            return self.api.item.get(itemid)
+        except IOError as err:
+            if str(err).startswith('404'):
+                return {'Error': f'Item Id {itemid} not found'}
+            raise err
 
     def wrap_result(self, items):
         return {

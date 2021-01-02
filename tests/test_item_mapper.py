@@ -189,3 +189,4 @@ def test_map_item():
     with pytest.raises(AssertionError):
         mapper.map_item({})
     assert mapper.map_item(None) is None
+    assert mapper.map_item({'Error': 'message'}) == {'Error': 'message'}
