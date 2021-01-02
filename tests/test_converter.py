@@ -20,5 +20,5 @@ def test_fetch_item_api():
     convert = converter.Converter()
     item_json = open(os.path.dirname(os.path.realpath(__file__)) + '/fixtures/item_1101.json').read()
     expected_json = json.loads(item_json)
-    fetched_json = convert.fetch_item_api(1101)
+    fetched_json = convert.fetch_item(1101)
     assert fetched_json == expected_json
