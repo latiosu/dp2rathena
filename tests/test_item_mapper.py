@@ -84,14 +84,11 @@ def test_mapping_job():
     assert mapper._job({'job': 144}) == {'KagerouOboro': True, 'Rebellion': True}
 
 
-# TODO ...
-# def test_mapping_classNum():
-#     mapper = item_mapper.Mapper()
-#     assert mapper._classNum({'classNum': 0}) is None
-#     assert mapper._classNum({'classNum': -1}) is None
-#     assert mapper._classNum({'classNum': 1}) == ''
-#     assert mapper._classNum({'classNum': 5}) == ''
-#     assert mapper._classNum({'classNum': 10}) == ''
+def test_mapping_classNum():
+    mapper = item_mapper.Mapper()
+    assert mapper._classNum({}) is None
+    assert mapper._classNum({'classNum': 0}) is None
+    assert mapper._classNum({'classNum': -1}) is None
 
 
 def test_mapping_gender():

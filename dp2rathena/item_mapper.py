@@ -459,7 +459,9 @@ class Mapper:
         return dict(sorted(jobs.items()))
 
     def _classNum(self, data):
-        return f'TODO: {data["classNum"]}'
+        # Note: DP is missing information on how this value works. Will revisit
+        # once more information is available.
+        return None
 
     def _gender(self, data):
         self._validate(data, 'job')
