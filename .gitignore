@@ -43,4 +43,4 @@ cover/
 .env
 
 # VS Code
-.vscode/*
+.vscode/

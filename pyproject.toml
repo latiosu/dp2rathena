@@ -4,6 +4,19 @@ version = "0.0.1"
 description = "Convert Divine-Pride API data to rAthena YAML"
 authors = ["Eric Liu <latiosworks@gmail.com>"]
 license = "MIT"
+repository = "https://github.com/Latiosu/dp2rathena"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Database",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
 
 [tool.poetry.dependencies]
 python = ">=3.7"
@@ -15,6 +28,9 @@ python-dotenv = "^0.15.0"
 [tool.poetry.dev-dependencies]
 tox = "^3.20.1"
 pytest = "^6.2.1"
+
+[tool.poetry.scripts]
+dp2rathena = "dp2rathena.cli:dp2rathena"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
