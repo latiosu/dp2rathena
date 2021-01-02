@@ -22,4 +22,4 @@ def test_fetch_item_api():
     expected_json = json.loads(item_json)
     fetched_json = convert.fetch_item(1101)
     assert fetched_json == expected_json
-    assert convert.fetch_item(-1) == {'Error': 'Item Id -1 not found'}
+    assert convert.fetch_item(-1) == {'Id': -1, 'Error': 'Item not found'}

@@ -1,5 +1,4 @@
 import pytest
-from dotenv import load_dotenv
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -7,7 +6,6 @@ def pytest_addoption(parser):
     )
 
 def pytest_configure(config):
-    load_dotenv()
     config.addinivalue_line("markers", "api: mark test as using api")
 
 def pytest_collection_modifyitems(config, items):
