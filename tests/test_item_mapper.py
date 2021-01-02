@@ -4,6 +4,8 @@ from dp2rathena import item_mapper
 
 def test_mapping_name():
     mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        assert mapper._name({}) == ''
     assert mapper._name({'name': None}) == ''
     assert mapper._name({'name': ''}) == ''
     assert mapper._name({'name': '100T Zeny Check'}) == '100T Zeny Check'
@@ -16,10 +18,13 @@ def test_mapping_name():
 
 def test_mapping_itemTypeId():
     mapper = item_mapper.Mapper()
-    assert mapper._itemTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
     with pytest.raises(AssertionError):
+        mapper._itemTypeId({})
+        mapper._itemTypeId({'itemTypeId': 0})
+        mapper._itemTypeId({'itemSubTypeId': 0})
         mapper._itemTypeId({'itemTypeId': -1, 'itemSubTypeId': -1})
         mapper._itemTypeId({'itemTypeId': 1, 'itemSubTypeId': -1})
+    assert mapper._itemTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
     assert mapper._itemTypeId({'itemTypeId': 1, 'itemSubTypeId': 0}) == 'Weapon'
     assert mapper._itemTypeId({'itemTypeId': 2, 'itemSubTypeId': 518, 'name': 'Isis Egg'}) == 'PetEgg'
     assert mapper._itemTypeId({'itemTypeId': 2, 'itemSubTypeId': 518, 'name': 'Broken Shell'}) == 'PetArmor'
@@ -32,10 +37,13 @@ def test_mapping_itemTypeId():
 
 def test_mapping_itemSubTypeId():
     mapper = item_mapper.Mapper()
-    assert mapper._itemSubTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
     with pytest.raises(AssertionError):
+        mapper._itemTypeId({})
+        mapper._itemTypeId({'itemTypeId': 0})
+        mapper._itemTypeId({'itemSubTypeId': 0})
         mapper._itemSubTypeId({'itemTypeId': -1, 'itemSubTypeId': -1})
         mapper._itemSubTypeId({'itemTypeId': 1, 'itemSubTypeId': -1})
+    assert mapper._itemSubTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
     assert mapper._itemSubTypeId({'itemTypeId': 4, 'itemSubTypeId': 1025}) \
         == 'Arrow/Dagger/Bullet/Shell/Grenade/Shuriken/Kunai/CannonBall/ThrowWeapon'
     assert mapper._itemSubTypeId({'itemTypeId': 4, 'itemSubTypeId': 0}) \
@@ -53,6 +61,8 @@ def test_mapping_sell():
 
 def test_mapping_weight():
     mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        mapper._weight({})
     assert mapper._weight({'weight': 0}) == 0
     assert mapper._weight({'weight': 50.0}) == 500
     assert mapper._weight({'weight': 0.1}) == 1
@@ -61,12 +71,13 @@ def test_mapping_weight():
 
 def test_mapping_job():
     mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        mapper._job({})
+        mapper._job({'job': -1})
+        mapper._job({'job': 0x100000})
     assert mapper._job({'job': None}) is None
     assert mapper._job({'job': 0xFFFFF}) is None
     assert mapper._job({'job': 0}) is None
-    with pytest.raises(AssertionError):
-        mapper._job({'job': -1})
-        mapper._job({'job': 0x100000})
     assert mapper._job({'job': 0x20410}) == {'Acolyte': True, 'Monk': True, 'Priest': True}
     assert mapper._job({'job': 1}) == {'Novice': True, 'SuperNovice': True}
     assert mapper._job({'job': 142}) == {'Summoner': True}
@@ -85,12 +96,13 @@ def test_mapping_job():
 
 def test_mapping_gender():
     mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        mapper._gender({})
+        mapper._gender({'job': -1})
+        mapper._gender({'job': 0x100000})
     assert mapper._gender({'job': None}) is None
     assert mapper._gender({'job': 1}) is None
     assert mapper._gender({'job': 0xFFFFF}) is None
-    with pytest.raises(AssertionError):
-        mapper._gender({'job': -1})
-        mapper._gender({'job': 0x100000})
     assert mapper._gender({'job': 0x08000}) == 'Male'
     assert mapper._gender({'job': 0x10000}) == 'Female'
     assert mapper._gender({'job': 0x18000}) == 'Both'
@@ -98,11 +110,14 @@ def test_mapping_gender():
 
 def test_mapping_locationId():
     mapper = item_mapper.Mapper()
-    assert mapper._locationId({'locationId': None, 'itemTypeId': 0}) is None
-    assert mapper._locationId({'locationId': 0, 'itemTypeId': 0}) is None
     with pytest.raises(AssertionError):
+        mapper._locationId({})
+        mapper._locationId({'locationId': 0})
+        mapper._locationId({'itemTypeId': 0})
         mapper._locationId({'locationId': -1, 'itemTypeId': 0})
         mapper._locationId({'locationId': 0x400000, 'itemTypeId': 0})
+    assert mapper._locationId({'locationId': None, 'itemTypeId': 0}) is None
+    assert mapper._locationId({'locationId': 0, 'itemTypeId': 0}) is None
     assert mapper._locationId({'locationId': 0x10, 'itemTypeId': 0}) == {'Armor': True}
     assert mapper._locationId({'locationId': 0, 'itemTypeId': 4}) == {'Ammo': True}
     assert mapper._locationId({'locationId': 0x22, 'itemTypeId': 0}) == {'Both_Hand': True}
@@ -117,16 +132,19 @@ def test_mapping_locationId():
 
 def test_mapping_itemLevel():
     mapper = item_mapper.Mapper()
-    assert mapper._itemLevel({'itemLevel': 0}) is None
     with pytest.raises(AssertionError):
+        mapper._itemLevel({})
         mapper._itemLevel({'itemLevel': -1})
         mapper._itemLevel({'itemLevel': 5})
+    assert mapper._itemLevel({'itemLevel': 0}) is None
     assert mapper._itemLevel({'itemLevel': 1}) == 1
     assert mapper._itemLevel({'itemLevel': 4}) == 4
 
 
 def test_mapping_itemMoveInfo():
     mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        mapper._itemMoveInfo({})
     assert mapper._itemMoveInfo({'itemMoveInfo': {
         'drop': True,
         'trade': True,
@@ -162,4 +180,12 @@ def test_map_schema():
     assert mapper._map_schema({'x': lambda x: None}, {'y': 'z'}) == {}
     assert mapper._map_schema({'x': len}, {'y': 'z'}) == {'x': 1}
     assert mapper._map_schema({'x': {'y': 'to_map'}}, {'to_map': 'z'}) == {'x': {'y': 'z'}}
-    assert mapper._map_schema({'x': 1}, {'not_mapped': 'value'}) == {'x': 1}
+    assert mapper._map_schema({'x': 1}, {'not_mapped': 'value'}) == {}
+    assert mapper._map_schema({'x': 1}, {1: 'y'}) == {'x': 'y'}
+
+
+def test_map_item():
+    mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        mapper.map_item({})
+    assert mapper.map_item(None) is None

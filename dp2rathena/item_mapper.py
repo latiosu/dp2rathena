@@ -359,6 +359,7 @@ class Mapper:
 
     def _validate(self, data, *argv):
         for arg in argv:
+            assert arg in data
             v = data[arg]
             msg = f'Unrecognised {arg}: {v}'
             if arg == 'itemTypeId':
@@ -373,6 +374,7 @@ class Mapper:
                 assert v >= 0 and v <= 4, msg
 
     def _name(self, data):
+        self._validate(data, 'name')
         if data['name'] is None:
             return ''
         return re.sub(r'\s\[[1-9]\]$', '', data['name'])
@@ -421,6 +423,7 @@ class Mapper:
         return None
 
     def _weight(self, data):
+        self._validate(data, 'weight')
         w = data['weight']
         if w < 0:
             return 0
@@ -508,6 +511,7 @@ class Mapper:
         return data['itemLevel']
 
     def _itemMoveInfo(self, data):
+        self._validate(data, 'itemMoveInfo')
         result = self._map_schema(copy.copy(self.trade_schema), data['itemMoveInfo'])
         cleaned = {'Override': 100} # rathena outputs 100 by default
 
@@ -532,11 +536,6 @@ class Mapper:
         for k, v in schema.items():
             if v is None:
                 del result[k]
-            elif type(v) is str:
-                if data[v] == 0 or data[v] == None:
-                    del result[k]
-                else:
-                    result[k] = data[v]
             elif callable(v):
                 if v(data) == None:
                     del result[k]
@@ -544,9 +543,16 @@ class Mapper:
                     result[k] = v(data)
             elif type(v) is dict:
                 result[k] = self._map_schema(v, data)
+            elif type(v) is str or type(v) is int:
+                if v not in data or data[v] == 0 or data[v] == None:
+                    del result[k]
+                else:
+                    result[k] = data[v]
             else:
                 result[k] = v
         return result
 
     def map_item(self, data):
+        if data is None:
+            return None
         return self._map_schema(self.schema, data)
