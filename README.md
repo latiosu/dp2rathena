@@ -5,15 +5,15 @@ Convert Divine-Pride API data to rAthena YAML files.
 ## Requirements
 
 * Python 3.7+
-* [pipenv](https://pypi.org/project/pipenv/)
+* [poetry](https://pypi.org/project/pipenv/)
 
 ## Installation
 
-Setup local development environment with `pipenv install -e .`
+Setup local development environment with `poetry install`.
 
 ## Documentation
 
-Run tests with `pipenv run tox`
+Run tests with `poetry run pytest`
 
 ## Changelog
 
