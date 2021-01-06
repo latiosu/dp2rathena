@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dp2rathena"
-version = "0.0.1"
+version = "0.1.0"
 description = "Convert Divine-Pride API data to rAthena YAML"
 authors = ["Eric Liu <latiosworks@gmail.com>"]
 license = "MIT"
