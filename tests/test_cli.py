@@ -43,7 +43,6 @@ def test_item_invalid(fixture):
 
 @pytest.mark.api
 def test_item_success(fixture):
-    # Note: These tests rely on API key being set in .env
     runner = CliRunner()
     with open(fixture('item_501.yml')) as f:
         expected = f.read()
@@ -73,5 +72,15 @@ def test_item_success(fixture):
     with open(fixture('item_1101_501.yml')) as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '-f', fixture('1101_501.txt')])
+        assert result.exit_code == 0
+        assert result.output == expected
+
+
+@pytest.mark.api
+def test_item_mixed(fixture):
+    runner = CliRunner()
+    with open(fixture('item_900_1101.yml')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['item', '-i', 900, '-i', 1101, '--sort'])
         assert result.exit_code == 0
         assert result.output == expected

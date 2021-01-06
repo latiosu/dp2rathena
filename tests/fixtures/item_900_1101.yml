@@ -1,0 +1,33 @@
+Header:
+  Type: ITEM_DB
+  Version: 1
+Body:
+- Id: 900
+  Error: Item not found
+- Id: 1101
+  AegisName: Sword
+  Name: Sword
+  Type: Weapon
+  SubType: 1hSword
+  Buy: 100
+  Weight: 500
+  Attack: 25
+  Range: 1
+  Slots: 3
+  Jobs:
+    Alchemist: true
+    Assassin: true
+    Blacksmith: true
+    Crusader: true
+    Knight: true
+    Merchant: true
+    Novice: true
+    Rogue: true
+    SuperNovice: true
+    Swordman: true
+    Thief: true
+  Locations:
+    Right_Hand: true
+  WeaponLevel: 1
+  EquipLevelMin: 2
+  Refineable: true

@@ -21,7 +21,7 @@ class Converter:
             return self.api.item.get(itemid)
         except IOError as err:
             if str(err).startswith('404'):
-                return {'Id': itemid, 'Error': 'Item not found'}
+                return {'Id': int(itemid), 'Error': 'Item not found'}
             raise err
 
     def wrap_result(self, items):

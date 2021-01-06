@@ -8,7 +8,7 @@ def pytest_addoption(parser):
 
 
 def pytest_configure(config):
-    config.addinivalue_line("markers", "api: mark test as using api")
+    config.addinivalue_line("markers", "api: requires DIVINEPRIDE_API_KEY in .env")
 
 
 def pytest_collection_modifyitems(config, items):
