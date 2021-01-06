@@ -28,6 +28,7 @@ python-dotenv = "^0.15.0"
 [tool.poetry.dev-dependencies]
 tox = "^3.20.1"
 pytest = "^6.2.1"
+tox-travis = "^0.12"
 
 [tool.poetry.scripts]
 dp2rathena = "dp2rathena.cli:dp2rathena"
