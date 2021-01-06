@@ -1,7 +1,7 @@
 # dp2rathena: Divine-Pride API to rAthena
 
-![PyPI](https://img.shields.io/pypi/v/dp2rathena)
-![TravisCI Status](https://img.shields.io/travis/com/Latiosu/dp2rathena)
+[![PyPI](https://img.shields.io/pypi/v/dp2rathena)](https://pypi.org/project/dp2rathena/)
+[![TravisCI Status](https://img.shields.io/travis/com/Latiosu/dp2rathena)](https://travis-ci.com/github/Latiosu/dp2rathena)
 
 Convert Divine-Pride API data to rAthena DB formats (item_db.yml).
 
