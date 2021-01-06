@@ -1,19 +1,22 @@
-# Divine-Pride API to rAthena YAML (dp2rathena)
+# Divine-Pride API to rAthena (dp2rathena)
 
-Convert Divine-Pride API data to rAthena YAML files.
+Convert Divine-Pride API data to rAthena DB formats (item_db.yml).
 
 ## Requirements
 
 * Python 3.7+
-* [poetry](https://pypi.org/project/pipenv/)
 
 ## Installation
 
-Setup local development environment with `poetry install`.
+`pip install dp2rathena`
 
-## Documentation
+## Contributing
 
-Run tests with `poetry run pytest`
+This project uses [poetry](https://python-poetry.org/) to manage the development enviroment.
+
+* Setup a local development environment with `poetry install`.
+* Run tests with `poetry run pytest`
+* Execute script with `poetry run dp2rathena`
 
 ## Changelog
 
