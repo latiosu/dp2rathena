@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.7
+before_install:
+- pip install poetry
+install:
+- poetry install
+script:
+- poetry run tox
+before_deploy:
+- poetry config pypi-token.pypi $PYPI_TOKEN
+- poetry build
+deploy:
+  provider: script
+  script: poetry publish -r dp2rathena
+  skip_cleanup: true
+  on:
+    tags: true
