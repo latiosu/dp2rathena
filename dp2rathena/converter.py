@@ -11,8 +11,6 @@ from dp2rathena import item_mapper
 class Converter:
     def __init__(self, debug=False):
         self.api = tortilla.wrap('https://divine-pride.net/api/database', debug=debug)
-        if 'DIVINEPRIDE_API_KEY' not in os.environ:
-            exit('API key missing from .env')
         self.api.config.params.apiKey = os.getenv('DIVINEPRIDE_API_KEY')
         self.mapper = item_mapper.Mapper()
 

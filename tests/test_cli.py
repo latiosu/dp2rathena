@@ -13,6 +13,7 @@ def test_version():
     assert re.fullmatch(r'\d+\.\d+\.\d+', result.output.rstrip())
 
 
+@pytest.mark.api
 def test_item_invalid(fixture):
     runner = CliRunner()
     result = runner.invoke(cli.dp2rathena, ['item'])
