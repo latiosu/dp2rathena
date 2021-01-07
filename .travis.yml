@@ -2,6 +2,9 @@ language: python
 python:
 - 3.7
 - 3.8
+env:
+  global:
+  - secure: "ffW+ml1AsdRQpOXmjiYL3z6HCegRFET+uDK735sZ2XALo2xTH0kxXsxDxiFiGB/Jw2cd8PfxM5RGmZisReR/uGaJWDOE47REHGsy+9jM7UUmKX9bCap0m1i7p5STSefepoc8/4voZ/FRwqoXAyO0PqGUzUcR23iLSllSnmTFtmKQna9QbGJfp0NUabPPR5/M3NaJ3L+DFT8xoSkz2NVJaHCu5qaVSqTJasB3NirqscX21ZAPmVMYvUsM5ns+5LscTGCY2rwjVl5om8JKgJNuhQoB16JAoW9Gt2OF7leXTaPeAosmwWl8ypvqeBkP2IkGABb5FCZsXV3bPoHDdWY+C2huQhqwdLQVWabUfIPJQXupwyQS8xCGgXSAHuRLl9+JLkXpQfPLpSuGuPOeexR/g3qviP8vNehOrXvIyBfMJrnKrwb/QXGyHrKVVR6xY5QCjDpH/u6w8IrAaBUtIoeuz9m2OgLZGP1vGBFmkbGKHaEc/hxv8yi8vSw/Ao/wzee5Bk+KYJ+xXZyCfpYFbHsJGVAlvh6hNLKRprmPA1hfi9+f+GJ8Kdbj0JmMTj0v/e+DwsCThkObfhTkkjm5ucmkYDoLWrZK0W4JvaQTbkRx6XX9b3O4jkat/wz6LGBA0rD0Fch09WjIWtO3i4u5iKJqnIDA0zDinYjqHgVV/Kzg80I="
 before_install:
 - pip install poetry
 install:
@@ -10,9 +13,9 @@ script:
 - poetry run tox
 before_deploy:
 - poetry build
+- poetry config pypi-token.pypi $PYPI_TOKEN
 deploy:
   provider: script
   script: poetry publish
-  skip_cleanup: true
   on:
     tags: true
