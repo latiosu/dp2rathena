@@ -24,6 +24,12 @@ Generate a [divine-pride.net](https://www.divine-pride.net/) API key if you don'
 dp2rathena item --api-key <your-api-key> -i 501 -i 1101
 ```
 
+Alternatively, you can use an environment variable to pass your API key:
+```bash
+export DIVINEPRIDE_API_KEY=<your-api-key>
+dp2rathena item -i 501 -i 1101
+```
+
 ## Contributing
 
 This project uses [poetry](https://python-poetry.org/) to manage the development enviroment.
