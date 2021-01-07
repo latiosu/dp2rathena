@@ -9,7 +9,6 @@ install:
 script:
 - poetry run tox
 before_deploy:
-- poetry config http-basic.pypi $PYPI_USER $PYPI_TOKEN
 - poetry build
 deploy:
   provider: script
