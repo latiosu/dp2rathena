@@ -12,7 +12,7 @@ before_deploy:
 - poetry build
 deploy:
   provider: script
-  script: poetry publish -r dp2rathena
+  script: poetry publish
   skip_cleanup: true
   on:
     tags: true
