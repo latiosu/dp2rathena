@@ -34,7 +34,6 @@ class ApiKey(click.ParamType):
 @click.option(
     '-k', '--api-key',
     type=ApiKey(),
-    envvar=DP_KEY,
     help='Divine-Pride API Key.'
 )
 @click.pass_context
@@ -46,9 +45,9 @@ def dp2rathena(ctx, api_key):
         dp2rathena config
         dp2rathena item 501
     """
-    if ENV_PATH.exists:
+    if ENV_PATH.exists():
         load_dotenv(dotenv_path=ENV_PATH)
-    elif CONFIG_PATH.exists:
+    elif CONFIG_PATH.exists():
         load_dotenv(dotenv_path=CONFIG_PATH)
 
     if api_key:
