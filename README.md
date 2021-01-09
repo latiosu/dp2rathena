@@ -1,7 +1,9 @@
 # dp2rathena: Divine-Pride API to rAthena
 
-[![PyPI](https://img.shields.io/pypi/v/dp2rathena)](https://pypi.org/project/dp2rathena/)
+[![PyPI - Version](https://img.shields.io/pypi/v/dp2rathena)](https://pypi.org/project/dp2rathena/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dp2rathena)](https://pypi.org/project/dp2rathena/)
 [![TravisCI Status](https://img.shields.io/travis/com/Latiosu/dp2rathena)](https://travis-ci.com/github/Latiosu/dp2rathena)
+[![codecov](https://codecov.io/gh/Latiosu/dp2rathena/branch/master/graph/badge.svg?token=B7G9O57UR8)](https://codecov.io/gh/Latiosu/dp2rathena)
 
 Convert Divine-Pride API data to rAthena DB formats (item_db.yml).
 
@@ -17,17 +19,12 @@ pip install dp2rathena
 
 ## Usage
 
-Generate a [divine-pride.net](https://www.divine-pride.net/) API key if you don't have one yet.
+A [divine-pride.net](https://www.divine-pride.net/) API key is required, create an account and
+generate a key if you don't have one yet.
 
 ```bash
-# Fetch items with id 501 and 1101
-dp2rathena item --api-key <your-api-key> -i 501 -i 1101
-```
-
-Alternatively, you can use an environment variable to pass your API key:
-```bash
-export DIVINEPRIDE_API_KEY=<your-api-key>
-dp2rathena item -i 501 -i 1101
+dp2rathena config
+dp2rathena item 501 1101
 ```
 
 ## Contributing
@@ -35,7 +32,7 @@ dp2rathena item -i 501 -i 1101
 This project uses [poetry](https://python-poetry.org/) to manage the development enviroment.
 
 * Setup a local development environment with `poetry install`.
-* Run tests with `poetry run pytest`
+* Run tests with `poetry run tox`
 * Execute script with `poetry run dp2rathena`
 
 ## Changelog
