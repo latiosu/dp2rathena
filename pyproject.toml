@@ -23,15 +23,15 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.7"
-tortilla = "^0.5.0"
 PyYAML = "^5.3.1"
+tortilla = "^0.5.0"
 click = "^7.1.2"
-python-dotenv = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
 tox = "^3.20.1"
-pytest = "^6.2.1"
 tox-travis = "^0.12"
+pytest = "^6.2.1"
+python-dotenv = "^0.15.0"
 
 [tool.poetry.scripts]
 dp2rathena = "dp2rathena.cli:dp2rathena"
