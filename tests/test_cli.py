@@ -81,6 +81,22 @@ def test_item_invalid(fixture):
     assert 'One file required for processing' in result.output
 
 
+def test_item_invalid_config():
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        env_path = Path('.') / '.env'
+        env_path.write_text('')
+        result = runner.invoke(cli.dp2rathena, ['item', '501'])
+        assert result.exit_code == 1
+        assert isinstance(result.exception, KeyError)
+    with runner.isolated_filesystem():
+        config_path = Path.home() / '.dp2rathena.conf'
+        config_path.write_text('')
+        result = runner.invoke(cli.dp2rathena, ['item', '501'])
+        assert result.exit_code == 1
+        assert isinstance(result.exception, KeyError)
+
+
 @pytest.mark.api
 def test_item_valid(fixture):
     runner = CliRunner()

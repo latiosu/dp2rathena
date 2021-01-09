@@ -46,15 +46,15 @@ def dp2rathena(ctx, api_key):
         dp2rathena item 501
     """
     if ENV_PATH.exists():
-        load_dotenv(dotenv_path=ENV_PATH)
+        env_values = dotenv_values(dotenv_path=ENV_PATH)
     elif CONFIG_PATH.exists():
-        load_dotenv(dotenv_path=CONFIG_PATH)
+        env_values = dotenv_values(dotenv_path=CONFIG_PATH)
 
     if api_key:
         ctx.ensure_object(dict)
         ctx.obj[DP_KEY] = api_key
     else:
-        ctx.obj = dotenv_values()
+        ctx.obj = env_values
 
 
 @dp2rathena.command()
