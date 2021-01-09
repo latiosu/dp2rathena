@@ -18,6 +18,9 @@ def test_fetch_item(fixture):
     fetched_json = convert.fetch_item(1101)
     assert fetched_json == expected_json
     assert convert.fetch_item(-1) == {'Id': -1, 'Error': 'Item not found'}
+    convert = converter.Converter('fake-api-key')
+    with pytest.raises(IOError):
+        convert.fetch_item(1101)
 
 
 def test_wrap_result(fixture):

@@ -183,6 +183,7 @@ def test_map_schema():
     assert mapper._map_schema({'x': 1}, {'not_mapped': 'value'}) == {}
     assert mapper._map_schema({'x': 1}, {1: 'y'}) == {'x': 'y'}
     assert mapper._map_schema({1.0: 1}, {1: 'y'}) == {1.0: 'y'}
+    assert mapper._map_schema({'x': 1.0}, {'not_mapped': 'value'}) == {'x': 1.0}
 
 
 def test_map_item(fixture):
