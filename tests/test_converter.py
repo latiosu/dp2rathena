@@ -7,9 +7,13 @@ import yaml
 
 from dp2rathena import converter
 
+
+api_key = os.getenv('DIVINEPRIDE_API_KEY')
+
+
 @pytest.mark.api
 def test_fetch_item(fixture):
-    convert = converter.Converter()
+    convert = converter.Converter(api_key)
     expected_json = json.loads(open(fixture('item_1101.json')).read())
     fetched_json = convert.fetch_item(1101)
     assert fetched_json == expected_json
@@ -17,7 +21,7 @@ def test_fetch_item(fixture):
 
 
 def test_wrap_result(fixture):
-    convert = converter.Converter()
+    convert = converter.Converter(api_key)
     yml = "{ 'Header': { 'Type': 'ITEM_DB', 'Version': 1, }, 'Body': [], }"
     expected_yml = yaml.load(yml, Loader=yaml.FullLoader)
     assert convert.wrap_result([]) == expected_yml
@@ -28,7 +32,7 @@ def test_wrap_result(fixture):
 
 @pytest.mark.api
 def test_convert(fixture):
-    convert = converter.Converter()
+    convert = converter.Converter(api_key)
     expected_yml = open(fixture('item_1101_nowrap.yml')).read()
     generated_yml = convert.convert([1101], sort=False, wrap=False)
     assert generated_yml == expected_yml

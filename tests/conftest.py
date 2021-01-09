@@ -1,6 +1,12 @@
 import os
 import pytest
 
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+
 def pytest_addoption(parser):
     parser.addoption(
         "--api", action="store_true", default=False, help="run api tests"

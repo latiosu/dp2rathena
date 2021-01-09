@@ -6,6 +6,7 @@ import pytest
 from click.testing import CliRunner
 from dp2rathena import cli
 
+
 def test_version():
     runner = CliRunner()
     result = runner.invoke(cli.dp2rathena, ['version'])
@@ -13,44 +14,48 @@ def test_version():
     assert re.fullmatch(r'\d+\.\d+\.\d+', result.output.rstrip())
 
 
+def test_config():
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        result = runner.invoke(cli.dp2rathena, ['config'], input="abc-123")
+        assert not result.exception
+        assert 'Enter your Divine-Pride API key:' in result.output
+        assert 'Configuration saved to' in result.output
+        result = runner.invoke(cli.dp2rathena, ['config'], input="aaaabbbbccccdddd1111222233334444")
+        assert not result.exception
+        assert 'Enter your Divine-Pride API key:' in result.output
+        assert 'Configuration saved to' in result.output
+
+
 @pytest.mark.api
 def test_item_invalid(fixture):
     runner = CliRunner()
     result = runner.invoke(cli.dp2rathena, ['item'])
     assert result.exit_code == 2
-    assert 'Either --id or --file is required' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k'])
+    assert 'Item id required' in result.output
+    result = runner.invoke(cli.dp2rathena, ['item', 'hello'])
     assert result.exit_code == 2
-    assert 'Error: -k option requires an argument' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k', 123])
+    assert 'Non-integer item id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['item', 'hello', 'world'])
     assert result.exit_code == 2
-    assert 'Either --id or --file is required' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k', 'key', '-i'])
+    assert 'Non-integer item id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['item', '-f'])
     assert result.exit_code == 2
-    assert 'Error: -i option requires an argument' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k', 'key', '-i', 'hello'])
+    assert 'One file required for processing' in result.output
+    result = runner.invoke(cli.dp2rathena, ['item', '-f', 'missing.txt'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, FileNotFoundError)
+    result = runner.invoke(cli.dp2rathena, ['item', '123', '-f', fixture('1101_501.txt')])
     assert result.exit_code == 2
-    assert 'not a valid integer' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k', 'key', '-f'])
-    assert result.exit_code == 2
-    assert 'Error: -f option requires an argument' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k', 'key', '-f', 'missing.txt'])
-    assert result.exit_code == 2
-    assert 'Could not open file: missing.txt: No such file' in result.output
-    result = runner.invoke(cli.dp2rathena, ['item', '-k', 'key', '-i', 123, '-f', fixture('1101_501.txt')])
-    assert result.exit_code == 2
-    assert 'Error: Both --id and --file were passed' in result.output
+    assert 'One file required for processing' in result.output
 
 
 @pytest.mark.api
-def test_item_success(fixture):
+def test_item_valid(fixture):
     runner = CliRunner()
     with open(fixture('item_501.yml')) as f:
         expected = f.read()
-        result = runner.invoke(cli.dp2rathena, ['item', '-i', 501])
-        assert result.exit_code == 0
-        assert result.output == expected
-        result = runner.invoke(cli.dp2rathena, ['item', '-i', '501'])
+        result = runner.invoke(cli.dp2rathena, ['item', '501'])
         assert result.exit_code == 0
         assert result.output == expected
         result = runner.invoke(cli.dp2rathena, ['item', '-f', '-'], input='501')
@@ -58,10 +63,10 @@ def test_item_success(fixture):
         assert result.output == expected
     with open(fixture('item_501_1101.yml')) as f:
         expected = f.read()
-        result = runner.invoke(cli.dp2rathena, ['item', '-i', 501, '-i', 1101])
+        result = runner.invoke(cli.dp2rathena, ['item', '501', '1101'])
         assert result.exit_code == 0
         assert result.output == expected
-        result = runner.invoke(cli.dp2rathena, ['item', '-i', 1101, '-i', 501, '--sort'])
+        result = runner.invoke(cli.dp2rathena, ['item', '--sort', '1101', '501'])
         assert result.exit_code == 0
         assert result.output == expected
         result = runner.invoke(cli.dp2rathena, ['item', '-f', fixture('1101_501.txt'), '--sort'])
@@ -75,13 +80,8 @@ def test_item_success(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '-f', fixture('1101_501.txt')])
         assert result.exit_code == 0
         assert result.output == expected
-
-
-@pytest.mark.api
-def test_item_mixed(fixture):
-    runner = CliRunner()
     with open(fixture('item_900_1101.yml')) as f:
         expected = f.read()
-        result = runner.invoke(cli.dp2rathena, ['item', '-i', 900, '-i', 1101, '--sort'])
+        result = runner.invoke(cli.dp2rathena, ['item', '900', '1101', '--sort'])
         assert result.exit_code == 0
         assert result.output == expected

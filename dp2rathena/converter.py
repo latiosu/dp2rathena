@@ -1,7 +1,6 @@
 import bisect
 import importlib
 import json
-import os
 
 import tortilla
 import yaml
@@ -9,9 +8,9 @@ import yaml
 from dp2rathena import item_mapper
 
 class Converter:
-    def __init__(self, debug=False):
+    def __init__(self, api_key, debug=False):
         self.api = tortilla.wrap('https://divine-pride.net/api/database', debug=debug)
-        self.api.config.params.apiKey = os.getenv('DIVINEPRIDE_API_KEY')
+        self.api.config.params.apiKey = api_key
         self.mapper = item_mapper.Mapper()
 
     def fetch_item(self, itemid):
