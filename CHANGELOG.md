@@ -1,11 +1,15 @@
 Changelog
 =========
 
-0.2.1 - 2021-01-09
+0.2.2 - 2021-01-10
+------------------
+* Fixed config not loading saved values correctly
+
+0.2.1 - 2021-01-10
 ------------------
 * Fixed issue with loading ~/.dp2rathena.conf
 
-0.2.0 - 2021-01-10
+0.2.0 - 2021-01-09
 ------------------
 * Added support for Python 3.6
 * Added "config" CLI command for storing API key
