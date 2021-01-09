@@ -4,6 +4,7 @@ import pytest
 
 from dp2rathena import item_mapper
 
+
 def test_mapping_name():
     mapper = item_mapper.Mapper()
     with pytest.raises(AssertionError):
@@ -181,6 +182,7 @@ def test_map_schema():
     assert mapper._map_schema({'x': {'y': 'to_map'}}, {'to_map': 'z'}) == {'x': {'y': 'z'}}
     assert mapper._map_schema({'x': 1}, {'not_mapped': 'value'}) == {}
     assert mapper._map_schema({'x': 1}, {1: 'y'}) == {'x': 'y'}
+    assert mapper._map_schema({1.0: 1}, {1: 'y'}) == {1.0: 'y'}
 
 
 def test_map_item(fixture):
