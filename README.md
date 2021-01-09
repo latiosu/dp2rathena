@@ -9,7 +9,7 @@ Convert Divine-Pride API data to rAthena DB formats (item_db.yml).
 
 ## Requirements
 
-* Python 3.7+
+* Python 3.6+
 
 ## Installation
 
