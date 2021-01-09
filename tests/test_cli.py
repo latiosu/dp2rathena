@@ -97,6 +97,14 @@ def test_item_invalid_config():
         assert isinstance(result.exception, KeyError)
 
 
+# These tests could fail if DP API is down
+def test_item_flaky():
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'item', '501'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, IOError)
+
+
 @pytest.mark.api
 def test_item_valid(fixture):
     runner = CliRunner()
@@ -132,6 +140,3 @@ def test_item_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '900', '1101', '--sort'])
         assert result.exit_code == 0
         assert result.output == expected
-    result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'item', '501'])
-    assert result.exit_code == 1
-    assert isinstance(result.exception, IOError)
