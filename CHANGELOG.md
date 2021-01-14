@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.3 - 2021-01-14
+------------------
+* Fixed config failing during first call in clean install
+
 0.2.2 - 2021-01-10
 ------------------
 * Fixed config not loading saved values correctly
