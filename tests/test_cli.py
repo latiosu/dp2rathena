@@ -8,6 +8,13 @@ from click.testing import CliRunner
 from dp2rathena import cli
 
 
+def test_config_filesystem():
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['config'], input="123")
+    assert 'Enter your Divine-Pride API key:' in result.output
+    assert 'Configuration saved to' in result.output
+
+
 def test_dp2rathena():
     runner = CliRunner()
     result = runner.invoke(cli.dp2rathena)

@@ -49,6 +49,8 @@ def dp2rathena(ctx, api_key):
         env_values = dotenv_values(dotenv_path=ENV_PATH)
     elif CONFIG_PATH.exists():
         env_values = dotenv_values(dotenv_path=CONFIG_PATH)
+    else:
+        env_values = dict()
 
     if api_key:
         ctx.ensure_object(dict)
