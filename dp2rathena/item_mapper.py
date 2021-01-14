@@ -161,14 +161,14 @@ class Mapper:
             'Range': 'range',                 # Weapon's attack range.
             'Slots': 'slots',                 # Available slots in item.
             'Jobs': self._job,                 # Jobs that can equip the item. (Map default is 'All: true')
-            'Classes': self._classNum,         # Upper class types that can equip item. (Map default is 'All: true')
+            'Classes': self._classes,         # Upper class types that can equip item. (Map default is 'All: true')
             'Gender': self._gender,            # Gender that can equip the item.
             'Locations': self._locationId,     # Equipment's placement.
             'WeaponLevel': self._itemLevel,    # Weapon level.
             'EquipLevelMin': 'requiredLevel', # Minimum required level to equip.
             'EquipLevelMax': 'limitLevel',    # Maximum level that can equip.
             'Refineable': 'refinable',        # If the item can be refined.
-            # 'View': None,                   # View sprite of an item.
+            'View': self._classNum,           # View sprite of an item.
             # 'AliasName': None,              # Another item's AegisName to be sent to client instead of this AegisName.
             # 'Flags': {                      # Item flags.
             #     'BuyingStore': None,        # If the item is available for Buyingstores.
@@ -372,6 +372,8 @@ class Mapper:
                 assert v >= 0 and v <= 0xFFFFF, msg
             elif arg == 'itemLevel' and v is not None:
                 assert v >= 0 and v <= 4, msg
+            elif arg == 'classNum' and v is not None:
+                assert v >= 0, msg
 
     def _name(self, data):
         self._validate(data, 'name')
@@ -458,9 +460,9 @@ class Mapper:
         # Result is sorted alphabetically in rathena
         return dict(sorted(jobs.items()))
 
-    def _classNum(self, data):
-        # Note: DP is missing information on how this value works. Will revisit
-        # once more information is available.
+    def _classes(self, data):
+        # Note: This value isn't clearly defined by DP, will revisit when more
+        # information is available
         return None
 
     def _gender(self, data):
@@ -511,6 +513,12 @@ class Mapper:
         if data['itemLevel'] == 0:
             return None
         return data['itemLevel']
+
+    def _classNum(self, data):
+        self._validate(data, 'classNum')
+        if data['classNum'] == 0:
+            return None
+        return data['classNum']
 
     def _itemMoveInfo(self, data):
         self._validate(data, 'itemMoveInfo')

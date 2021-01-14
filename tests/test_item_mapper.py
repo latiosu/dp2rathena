@@ -87,11 +87,9 @@ def test_mapping_job():
     assert mapper._job({'job': 144}) == {'KagerouOboro': True, 'Rebellion': True}
 
 
-def test_mapping_classNum():
+def test_mapping_classes():
     mapper = item_mapper.Mapper()
     assert mapper._classNum({}) is None
-    assert mapper._classNum({'classNum': 0}) is None
-    assert mapper._classNum({'classNum': -1}) is None
 
 
 def test_mapping_gender():
@@ -139,6 +137,16 @@ def test_mapping_itemLevel():
     assert mapper._itemLevel({'itemLevel': 0}) is None
     assert mapper._itemLevel({'itemLevel': 1}) == 1
     assert mapper._itemLevel({'itemLevel': 4}) == 4
+
+
+def test_mapping_classes():
+    mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        assert mapper._classNum({}) is None
+        assert mapper._classNum({'classNum': -1}) is None
+    assert mapper._classNum({'classNum': 0}) is None
+    assert mapper._classNum({'classNum': 2}) is 2
+    assert mapper._classNum({'classNum': 5231}) is 5231
 
 
 def test_mapping_itemMoveInfo():
