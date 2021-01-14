@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.4 - 2021-01-15
+------------------
+* Added view to converted output
+
 0.2.3 - 2021-01-14
 ------------------
 * Fixed config failing during first call in clean install
