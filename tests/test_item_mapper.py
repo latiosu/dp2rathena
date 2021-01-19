@@ -89,7 +89,7 @@ def test_mapping_job():
 
 def test_mapping_classes():
     mapper = item_mapper.Mapper()
-    assert mapper._classNum({}) is None
+    assert mapper._classes({}) is None
 
 
 def test_mapping_gender():
@@ -139,7 +139,19 @@ def test_mapping_itemLevel():
     assert mapper._itemLevel({'itemLevel': 4}) == 4
 
 
-def test_mapping_classes():
+def test_mapping_requiredLevel():
+    mapper = item_mapper.Mapper()
+    with pytest.raises(AssertionError):
+        mapper._requiredLevel({})
+        mapper._requiredLevel({'requiredLevel': -1})
+        mapper._requiredLevel({'requiredLevel': 1000})
+    assert mapper._requiredLevel({'requiredLevel': 0}) is None
+    assert mapper._requiredLevel({'requiredLevel': 999}) is None
+    assert mapper._requiredLevel({'requiredLevel': 1}) == 1
+    assert mapper._requiredLevel({'requiredLevel': 100}) == 100
+
+
+def test_mapping_classNum():
     mapper = item_mapper.Mapper()
     with pytest.raises(AssertionError):
         assert mapper._classNum({}) is None

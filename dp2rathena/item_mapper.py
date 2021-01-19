@@ -165,7 +165,7 @@ class Mapper:
             'Gender': self._gender,            # Gender that can equip the item.
             'Locations': self._locationId,     # Equipment's placement.
             'WeaponLevel': self._itemLevel,    # Weapon level.
-            'EquipLevelMin': 'requiredLevel', # Minimum required level to equip.
+            'EquipLevelMin': self._requiredLevel, # Minimum required level to equip.
             'EquipLevelMax': 'limitLevel',    # Maximum level that can equip.
             'Refineable': 'refinable',        # If the item can be refined.
             'View': self._classNum,           # View sprite of an item.
@@ -374,6 +374,8 @@ class Mapper:
                 assert v >= 0 and v <= 4, msg
             elif arg == 'classNum' and v is not None:
                 assert v >= 0, msg
+            elif arg == 'requiredLevel' and v is not None:
+                assert v >= 0 and v <= 999, msg
 
     def _name(self, data):
         self._validate(data, 'name')
@@ -513,6 +515,12 @@ class Mapper:
         if data['itemLevel'] == 0:
             return None
         return data['itemLevel']
+
+    def _requiredLevel(self, data):
+        self._validate(data, 'requiredLevel')
+        if data['requiredLevel'] == 0 or data['requiredLevel'] == 999:
+            return None
+        return data['requiredLevel']
 
     def _classNum(self, data):
         self._validate(data, 'classNum')
