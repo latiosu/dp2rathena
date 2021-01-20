@@ -126,7 +126,3 @@ def item(ctx, file, sort, wrap, debug, value):
     click.echo(
         converter.Converter(api_key, debug).convert(to_convert, sort, wrap)
     , nl=False)
-
-
-if __name__ == '__main__':
-    dp2rathena(obj={})
