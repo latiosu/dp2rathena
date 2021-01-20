@@ -12,18 +12,15 @@ api_key = os.getenv('DIVINEPRIDE_API_KEY')
 
 
 @pytest.mark.api
-def test_fetch_item():
-    convert = converter.Converter('fake-api-key')
-    with pytest.raises(IOError):
-        convert.fetch_item(1101)
-
-
-def test_fetch_item_flaky(fixture):
+def test_fetch_item(fixture):
     convert = converter.Converter(api_key)
     expected_json = json.loads(open(fixture('item_1101.json')).read())
     fetched_json = convert.fetch_item(1101)
     assert fetched_json == expected_json
     assert convert.fetch_item(-1) == {'Id': -1, 'Error': 'Item not found'}
+    convert = converter.Converter('fake-api-key')
+    with pytest.raises(IOError):
+        convert.fetch_item(1101)
 
 
 def test_wrap_result(fixture):
