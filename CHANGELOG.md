@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.5 - 2021-01-23
+------------------
+* Exclude max level if value is 999
+
 0.2.4 - 2021-01-15
 ------------------
 * Added view to converted output
