@@ -71,3 +71,23 @@ def test_convert_item_nonapi():
     assert generated_yml == 'Header:\n  Type: ITEM_DB\n  Version: 1\nBody: []\n'
     generated_yml = convert.convert_item([], sort=True, wrap=True)
     assert generated_yml == 'Header:\n  Type: ITEM_DB\n  Version: 1\nBody: []\n'
+
+
+@pytest.mark.api
+def test_convert_mob_skill(fixture):
+    convert = converter.Converter(api_key)
+    expected = open(fixture('mob_skill_1002.txt')).read()
+    generated = convert.convert_mob_skill([1002])
+    assert generated == expected
+    expected = open(fixture('mob_skill_1002_1050.txt')).read()
+    generated = convert.convert_mob_skill([1002, 1050])
+    assert generated == expected
+    expected = open(fixture('mob_skill_1050_1002.txt')).read()
+    generated = convert.convert_mob_skill([1050, 1002])
+    assert generated == expected
+
+
+def test_convert_mob_skill_nonapi():
+    convert = converter.Converter(api_key)
+    generated_txt = convert.convert_mob_skill([])
+    assert generated_txt == '\n'

@@ -126,3 +126,48 @@ def item(ctx, file, sort, wrap, debug, value):
     click.echo(
         converter.Converter(api_key, debug).convert_item(to_convert, sort, wrap)
     , nl=False)
+
+
+@dp2rathena.command()
+@click.option(
+    '-f', '--file',
+    is_flag=True,
+    help='A file with mob ids to convert, newline separated.'
+)
+@click.option(
+    '--debug',
+    is_flag=True,
+    help='Shows debug information when querying Divine-Pride.'
+)
+@click.argument('value', nargs=-1)
+@click.pass_context
+def mobskill(ctx, file, debug, value):
+    """Converts mob ids to rathena mob_skill_db.txt.
+
+    \b
+    Examples:
+        # Pass API key and convert mob ids 1002 and 1050
+        dp2rathena --api-key <your-api-key> mobskill 1002 1050
+    \b
+        # Pass API key and convert mobs via STDIN
+        dp2rathena -k <your-api-key> mobskill -f -
+    \b
+        # Save API key and convert mob ids in ids_to_convert.txt
+        dp2rathena config
+        dp2rathena mobskill -f ids_to_convert.txt
+    """
+    if file:
+        if len(value) != 1:
+            raise click.UsageError('One file required for processing.')
+        to_convert = click.open_file(value[0], 'r').read().splitlines()
+    else:
+        if len(value) == 0:
+            raise click.UsageError('Mob id required.')
+        for v in value:
+            if not v.isdigit():
+                raise click.UsageError(f'Non-integer mob id - {v}')
+        to_convert = value
+    api_key = ctx.obj[DP_KEY]
+    click.echo(
+        converter.Converter(api_key, debug).convert_mob_skill(to_convert)
+    , nl=False)

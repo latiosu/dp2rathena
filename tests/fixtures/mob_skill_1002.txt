@@ -1,0 +1,2 @@
+1002,Poring@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,
+1002,Poring@NPC_WATERATTACK,attack,184,1,2000,0,5000,yes,target,always,0,,,,,,,

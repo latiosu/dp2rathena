@@ -147,3 +147,59 @@ def test_item_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '900', '1101', '--sort'])
         assert result.exit_code == 0
         assert result.output == expected
+
+
+def test_mob_skill_invalid(fixture):
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['mobskill'])
+    assert result.exit_code == 2
+    assert 'Mob id required' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mobskill', 'hello'])
+    assert result.exit_code == 2
+    assert 'Non-integer mob id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mobskill', 'hello', 'world'])
+    assert result.exit_code == 2
+    assert 'Non-integer mob id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mobskill', '-f'])
+    assert result.exit_code == 2
+    assert 'One file required for processing' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', 'missing.txt'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, FileNotFoundError)
+    result = runner.invoke(cli.dp2rathena, ['mobskill', '123', '-f', fixture('1101_501.txt')])
+    assert result.exit_code == 2
+    assert 'One file required for processing' in result.output
+
+
+# These tests could fail if DP API is down
+def test_mob_skill_flaky():
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'mobskill', '1002'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, IOError)
+
+
+@pytest.mark.api
+def test_mob_skill_valid(fixture):
+    runner = CliRunner()
+    with open(fixture('mob_skill_1002.txt')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '1002'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1002')
+        assert result.exit_code == 0
+        assert result.output == expected
+    with open(fixture('mob_skill_1002_1050.txt')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '1002', '1050'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', fixture('1002_1050.txt')])
+        assert result.exit_code == 0
+        assert result.output == expected
+    with open(fixture('mob_skill_1050_1002.txt')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1050\n1002')
+        assert result.exit_code == 0
+        assert result.output == expected

@@ -47,3 +47,9 @@ class Converter:
             if str(err).startswith('404'):
                 return f'Id: {int(mobid)}, Error: Mob not found'
             raise err
+
+    def convert_mob_skill(self, mobids):
+        mobs = list()
+        for mobid in mobids:
+            mobs.append(self.mapper.map_mob_skill(self.fetch_mob(mobid)))
+        return '\n'.join(mobs)
