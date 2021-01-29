@@ -30,7 +30,7 @@ class Converter:
             'Body': items,
         }
 
-    def convert(self, itemids, sort=False, wrap=True):
+    def convert_item(self, itemids, sort=False, wrap=True):
         items = list()
         for itemid in itemids:
             items.append(self.mapper.map_item(self.fetch_item(itemid)))
@@ -39,3 +39,11 @@ class Converter:
         if wrap:
             items = self.wrap_result(items)
         return yaml.dump(items, sort_keys=False)
+
+    def fetch_mob(self, mobid):
+        try:
+            return self.api.monster.get(mobid)
+        except IOError as err:
+            if str(err).startswith('404'):
+                return f'Id: {int(mobid)}, Error: Mob not found'
+            raise err

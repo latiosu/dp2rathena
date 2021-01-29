@@ -1,0 +1,283 @@
+{
+    "id": 1002,
+    "dbname": "PORING",
+    "name": "Poring",
+    "stats": {
+        "attackRange": 1,
+        "level": 1,
+        "health": 55,
+        "sp": 1,
+        "str": 6,
+        "int": 0,
+        "vit": 1,
+        "dex": 6,
+        "agi": 1,
+        "luk": 5,
+        "rechargeTime": 1872,
+        "atk1": 1,
+        "atk2": 1,
+        "attack": {
+            "minimum": 7,
+            "maximum": 8
+        },
+        "magicAttack": {
+            "minimum": 1,
+            "maximum": 2
+        },
+        "defense": 2,
+        "baseExperience": 150,
+        "jobExperience": 40,
+        "aggroRange": 10,
+        "escapeRange": 12,
+        "movementSpeed": 400.0,
+        "attackSpeed": 672.0,
+        "attackedSpeed": 480.0,
+        "element": 21,
+        "scale": 1,
+        "race": 3,
+        "magicDefense": 5,
+        "hit": 202,
+        "flee": 177,
+        "ai": "MONSTER_TYPE_02",
+        "mvp": 0,
+        "class": 0,
+        "attr": 2048
+    },
+    "spawnSet": [],
+    "slaves": [],
+    "metamorphosis": [],
+    "sounds": [
+        "poring_attack.wav",
+        "poring_damage.wav",
+        "poring_die.wav",
+        "poring_move.wav"
+    ],
+    "questObjective": [
+        4276,
+        5094,
+        7122,
+        9107,
+        11339,
+        14001,
+        16001,
+        21002,
+        21909,
+        51001,
+        60029
+    ],
+    "drops": [
+        {
+            "itemId": 909,
+            "chance": 7000,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 909,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 1202,
+            "chance": 100,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 1202,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 938,
+            "chance": 400,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 938,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 512,
+            "chance": 1000,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 512,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 601,
+            "chance": 500,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 713,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 512,
+            "chance": 150,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 512,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 619,
+            "chance": 20,
+            "stealProtected": false,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 619,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        },
+        {
+            "itemId": 4001,
+            "chance": 20,
+            "stealProtected": true,
+            "serverTypeName": "Renewal"
+        },
+        {
+            "itemId": 4001,
+            "chance": 0,
+            "stealProtected": false,
+            "serverTypeName": "RE:Start"
+        }
+    ],
+    "mvpdrops": [],
+    "spawn": [
+        {
+            "mapname": "1@tower",
+            "amount": 5,
+            "respawnTime": 0
+        },
+        {
+            "mapname": "gef_fild00",
+            "amount": 30,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "gef_fild07",
+            "amount": 20,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "pay_fild01",
+            "amount": 30,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "pay_fild03",
+            "amount": 25,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "pay_fild04",
+            "amount": 15,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "prt_fild01",
+            "amount": 30,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "prt_fild06",
+            "amount": 30,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "prt_fild08",
+            "amount": 140,
+            "respawnTime": 5000
+        },
+        {
+            "mapname": "prt_maze01",
+            "amount": 5,
+            "respawnTime": 120000
+        },
+        {
+            "mapname": "xmas_dun01",
+            "amount": 10,
+            "respawnTime": 5000
+        }
+    ],
+    "skill": [
+        {
+            "idx": 0,
+            "skillId": 184,
+            "status": "UNKNOWN_ST",
+            "level": -1,
+            "chance": 50,
+            "casttime": 0,
+            "delay": 0,
+            "interruptable": false,
+            "changeTo": null,
+            "condition": "0",
+            "conditionValue": "0",
+            "sendType": null,
+            "sendValue": null
+        },
+        {
+            "idx": 1,
+            "skillId": 197,
+            "status": "MOVEITEM_ST",
+            "level": 1,
+            "chance": 200,
+            "casttime": 0,
+            "delay": 5000,
+            "interruptable": true,
+            "changeTo": null,
+            "condition": null,
+            "conditionValue": null,
+            "sendType": "SEND_EMOTICON",
+            "sendValue": "2"
+        },
+        {
+            "idx": 2,
+            "skillId": 184,
+            "status": "BERSERK_ST",
+            "level": 1,
+            "chance": 200,
+            "casttime": 0,
+            "delay": 5000,
+            "interruptable": true,
+            "changeTo": null,
+            "condition": null,
+            "conditionValue": null,
+            "sendType": null,
+            "sendValue": null
+        }
+    ],
+    "propertyTable": {
+        "0": 100,
+        "1": 25,
+        "2": 100,
+        "3": 90,
+        "4": 175,
+        "5": 100,
+        "6": 100,
+        "7": 100,
+        "8": 100,
+        "9": 100
+    }
+}

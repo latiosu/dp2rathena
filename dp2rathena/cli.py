@@ -124,5 +124,5 @@ def item(ctx, file, sort, wrap, debug, value):
         to_convert = value
     api_key = ctx.obj[DP_KEY]
     click.echo(
-        converter.Converter(api_key, debug).convert(to_convert, sort, wrap)
+        converter.Converter(api_key, debug).convert_item(to_convert, sort, wrap)
     , nl=False)

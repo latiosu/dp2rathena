@@ -34,28 +34,40 @@ def test_wrap_result(fixture):
 
 
 @pytest.mark.api
-def test_convert(fixture):
+def test_fetch_mob(fixture):
+    convert = converter.Converter(api_key)
+    expected_json = json.loads(open(fixture('mob_1002.json')).read())
+    fetched_json = convert.fetch_mob(1002)
+    assert fetched_json == expected_json
+    assert convert.fetch_mob(-1) == 'Id: -1, Error: Mob not found'
+    convert = converter.Converter('fake-api-key')
+    with pytest.raises(IOError):
+        convert.fetch_mob(1002)
+
+
+@pytest.mark.api
+def test_convert_item(fixture):
     convert = converter.Converter(api_key)
     expected_yml = open(fixture('item_1101_nowrap.yml')).read()
-    generated_yml = convert.convert([1101], sort=False, wrap=False)
+    generated_yml = convert.convert_item([1101], sort=False, wrap=False)
     assert generated_yml == expected_yml
     expected_yml = open(fixture('item_501_1101_nowrap.yml')).read()
-    generated_yml = convert.convert([1101, 501], sort=True, wrap=False)
+    generated_yml = convert.convert_item([1101, 501], sort=True, wrap=False)
     assert generated_yml == expected_yml
     expected_yml = open(fixture('item_501_1101.yml')).read()
-    generated_yml = convert.convert([501, 1101], sort=False, wrap=True)
+    generated_yml = convert.convert_item([501, 1101], sort=False, wrap=True)
     assert generated_yml == expected_yml
-    generated_yml = convert.convert([1101, 501], sort=True, wrap=True)
+    generated_yml = convert.convert_item([1101, 501], sort=True, wrap=True)
     assert generated_yml == expected_yml
 
 
-def test_convert_nonapi():
+def test_convert_item_nonapi():
     convert = converter.Converter(api_key)
-    generated_yml = convert.convert([], sort=False, wrap=False)
+    generated_yml = convert.convert_item([], sort=False, wrap=False)
     assert generated_yml == '[]\n'
-    generated_yml = convert.convert([], sort=True, wrap=False)
+    generated_yml = convert.convert_item([], sort=True, wrap=False)
     assert generated_yml == '[]\n'
-    generated_yml = convert.convert([], sort=False, wrap=True)
+    generated_yml = convert.convert_item([], sort=False, wrap=True)
     assert generated_yml == 'Header:\n  Type: ITEM_DB\n  Version: 1\nBody: []\n'
-    generated_yml = convert.convert([], sort=True, wrap=True)
+    generated_yml = convert.convert_item([], sort=True, wrap=True)
     assert generated_yml == 'Header:\n  Type: ITEM_DB\n  Version: 1\nBody: []\n'
