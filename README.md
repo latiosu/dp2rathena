@@ -19,8 +19,7 @@ pip install dp2rathena
 
 ## Usage
 
-A [divine-pride.net](https://www.divine-pride.net/) API key is required, create an account and
-generate a key if you don't have one yet.
+A [divine-pride.net](https://www.divine-pride.net/) API key is required, create an account and generate a key if you don't have one yet.
 
 ```bash
 dp2rathena config
@@ -29,7 +28,7 @@ dp2rathena item 501 1101
 
 ## Contributing
 
-This project uses [poetry](https://python-poetry.org/) to manage the development enviroment.
+This project uses [poetry](https://python-poetry.org/) to manage the development environment.
 
 * Setup a local development environment with `poetry install`.
 * Run tests with `poetry run tox`
