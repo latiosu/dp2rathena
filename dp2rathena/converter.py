@@ -6,12 +6,12 @@ import tortilla
 import yaml
 
 from dp2rathena import item_mapper
+from dp2rathena import mob_skill_mapper
 
 class Converter:
     def __init__(self, api_key, debug=False):
         self.api = tortilla.wrap('https://divine-pride.net/api/database', debug=debug)
         self.api.config.params.apiKey = api_key
-        self.mapper = item_mapper.Mapper()
 
     def fetch_item(self, itemid):
         try:
@@ -31,9 +31,10 @@ class Converter:
         }
 
     def convert_item(self, itemids, sort=False, wrap=True):
+        mapper = item_mapper.Mapper()
         items = list()
         for itemid in itemids:
-            items.append(self.mapper.map_item(self.fetch_item(itemid)))
+            items.append(mapper.map_item(self.fetch_item(itemid)))
         if sort:
             items.sort(key=lambda item: item['Id'])
         if wrap:
@@ -49,7 +50,8 @@ class Converter:
             raise err
 
     def convert_mob_skill(self, mobids):
+        mapper = mob_skill_mapper.Mapper()
         mobs = list()
         for mobid in mobids:
-            mobs.append(self.mapper.map_mob_skill(self.fetch_mob(mobid)))
+            mobs.append(mapper.map_mob_skill(self.fetch_mob(mobid)))
         return '\n'.join(mobs)
