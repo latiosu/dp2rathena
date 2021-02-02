@@ -45,7 +45,6 @@ The following item_db.yml fields are excluded as DP API doesn't expose sufficien
 - `"Delay"` - item use delay
 - `"Stack"` - item stack amount
 - `"NoUse"` - conditions when the item is unusable
-- `"View"` - view sprite of the item
 - `"AliasName"` - another item's AegisName to be sent to client instead of this AegisName
 
 ## Contributing
