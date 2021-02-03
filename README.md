@@ -32,13 +32,13 @@ dp2rathena item 501 1101
 
 ## Limitations
 
-Currently only items can be converted and with the following limitations:
+Currently, items can be converted and all fields mapped except the ones below:
 
+**Partially Mapped**
 - `"Type"` - when the item type is "Consumable" on DP and subtype "Special", we output a few possible options for user to choose the correct one (Healing, Usable, DelayConsume or Cash)
 - `"SubType"` - when the item type is "Ammo" on DP, we output all rathena ammo subtypes for user to choose correct option as DP doesn't map all rathena ammo subtypes
 
-The following item_db.yml fields are excluded as DP API doesn't expose sufficient data to reverse-engineer the mapping:
-
+**Excluded** _(not enough data to map)_
 - `"Script"` / `"EquipScript"` / `"UnEquipScript"` - script to execute when some action is performed with the item
 - `"Class"` - upper class types that can equip item
 - `"Flags"` - item flags such as `"BuyingStore"`, `"DeadBranch"`, `"BindOnEquip"`, etc...
