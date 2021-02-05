@@ -9,7 +9,8 @@ Convert Divine-Pride API data to rAthena DB formats.
 
 Currently supported formats are:
 - item_db.yml
-- (coming soon) mob_skill_db.txt
+- (future) mob_skill_db.txt
+- (future) mob_db.txt
 
 ## Requirements
 
