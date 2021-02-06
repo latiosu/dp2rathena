@@ -1,13 +1,15 @@
 from enum import Enum
 
 import copy
+import os
 import re
 import yaml
 
 
 class Mapper:
     def __init__(self):
-        self.skill_db = yaml.load('db/skill_db.yml', Loader=yaml.FullLoader)
+        # Lazy load skill_db until required
+        self.skill_db = None
 
         self.schema = {
             'MobId': 'id',
@@ -93,8 +95,16 @@ class Mapper:
             'MONSTER_TYPE_27': 0x8084, # (aggressive, immobile, random target)
         }
 
+    # Used for lazy loading skill_db.yml as loading is slow
+    def _require_skill_db(self):
+        if self.skill_db is None:
+            current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
+            skill_db_path = os.path.join(os.path.realpath(current_path), 'db', 'skill_db.yml')
+            self.skill_db = yaml.load(open(skill_db_path), Loader=yaml.FullLoader)
+
     def _dummy_value(self, data, parent_data):
-        return parent_data['name'] + '@' + self.skill_db[data['skillid']]['Name']
+        self._require_skill_db()
+        return parent_data['name'] + '@' + self.skill_db[data['skillId']]['Name']
 
     def _status(self, data):
         if data['status'] is None:
@@ -102,7 +112,7 @@ class Mapper:
         return self.state_map[data['status']]
 
     def _id(self, data):
-        return data['skillid']
+        return data['skillId']
 
     def _level(self, data):
         return data['level']
@@ -120,10 +130,11 @@ class Mapper:
         return data['interruptable']
 
     def _target(self, data):
+        self._require_skill_db()
         condition = data['condition']
         if condition == 'IF_COMRADEHP' or condition == 'IF_COMRADECONDITION':
             return 'friend'
-        elif self.skill_db[data['skillid']]['TargetType'] == 'Self':
+        elif self.skill_db[data['skillId']]['TargetType'] == 'Self':
             return 'self'
         # Default = 'target', other types not clear to extrapolate from data
         return 'target'

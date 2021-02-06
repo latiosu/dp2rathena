@@ -1,102 +1,97 @@
 import os
 
+import json
 import pytest
 
 from dp2rathena import mob_skill_mapper
 
 
-def test_dummy_value():
-    mapper = mob_skill_mapper.Mapper()
-    return None
+# Shared instance to reduce startup time
+mapper = mob_skill_mapper.Mapper()
+
+
+def test_dummy_value(fixture):
+    mob1002 = json.loads(open(fixture('mob_1002.json')).read())
+    generated = mapper._dummy_value(mob1002['skill'][1], mob1002)
+    assert generated == 'Poring@NPC_EMOTION'
+    generated = mapper._dummy_value(mob1002['skill'][2], mob1002)
+    assert generated == 'Poring@NPC_WATERATTACK'
+    mob1049 = json.loads(open(fixture('mob_1049.json')).read())
+    generated = mapper._dummy_value(mob1049['skill'][0], mob1049)
+    assert generated == 'Picky@NPC_EMOTION'
+    generated = mapper._dummy_value(mob1049['skill'][1], mob1049)
+    assert generated == 'Picky@NPC_FIREATTACK'
 
 
 def test_status():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_id():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_level():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_chance():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_casttime():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_delay():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_interruptable():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_target():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_condition():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_condition_value():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_val_1():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_val_2():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_val_3():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_val_4():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_val_5():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_send_emote():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_send_chat():
-    mapper = mob_skill_mapper.Mapper()
     return None
 
 
 def test_map_schema():
-    mapper = mob_skill_mapper.Mapper()
     assert mapper._map_schema(None, None) is None
     assert mapper._map_schema(None, {}) is None
     assert mapper._map_schema({}, None) == {}
@@ -115,7 +110,6 @@ def test_map_schema():
 
 
 def test_map_mob_skill():
-    mapper = mob_skill_mapper.Mapper()
     with pytest.raises(AssertionError):
         mapper.map_mob_skill({})
     assert mapper.map_mob_skill(None) is None
