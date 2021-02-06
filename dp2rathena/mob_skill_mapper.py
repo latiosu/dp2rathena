@@ -127,7 +127,7 @@ class Mapper:
         return data['delay']
 
     def _interruptable(self, data):
-        return data['interruptable']
+        return 'yes' if data['interruptable'] else 'no'
 
     def _target(self, data):
         self._require_skill_db()
