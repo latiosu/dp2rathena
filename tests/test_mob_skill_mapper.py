@@ -116,11 +116,19 @@ def test_val_5():
 
 
 def test_send_emote():
-    return None
+    assert mapper._send_emote(poring_emote) == '2'
+    assert mapper._send_emote(poring_water) == None
+    assert mapper._send_emote(picky_emote) == '2'
+    assert mapper._send_emote(picky_fire) == None
+    assert mapper._send_emote({'sendType': 'SEND_EMOTICON', 'sendValue': 2}) == 2
 
 
 def test_send_chat():
-    return None
+    assert mapper._send_chat(poring_emote) == None
+    assert mapper._send_chat(poring_water) == None
+    assert mapper._send_chat(picky_emote) == None
+    assert mapper._send_chat(picky_fire) == None
+    assert mapper._send_chat({'sendType': 'SEND_CHAT', 'sendValue': 5}) == 5
 
 
 def test_map_schema():
