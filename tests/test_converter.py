@@ -59,6 +59,8 @@ def test_convert_item(fixture):
     assert generated_yml == expected_yml
     generated_yml = convert.convert_item([1101, 501], sort=True, wrap=True)
     assert generated_yml == expected_yml
+    generated_yml = convert.convert_item([501, '', 1101], sort=False, wrap=True)
+    assert generated_yml == expected_yml
 
 
 def test_convert_item_nonapi():
@@ -82,6 +84,8 @@ def test_convert_mob_skill(fixture):
     expected = open(fixture('mob_skill_1002_1049.txt')).read()
     generated = convert.convert_mob_skill([1002, 1049])
     assert generated == expected
+    generated = convert.convert_mob_skill([1002, '', 1049])
+    assert generated == expected
     expected = open(fixture('mob_skill_1049_1002.txt')).read()
     generated = convert.convert_mob_skill([1049, 1002])
     assert generated == expected
@@ -90,4 +94,6 @@ def test_convert_mob_skill(fixture):
 def test_convert_mob_skill_nonapi():
     convert = converter.Converter(api_key)
     generated_txt = convert.convert_mob_skill([])
+    assert generated_txt == ''
+    generated_txt = convert.convert_mob_skill([''])
     assert generated_txt == ''

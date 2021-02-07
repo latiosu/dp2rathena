@@ -34,7 +34,8 @@ class Converter:
         mapper = item_mapper.Mapper()
         items = list()
         for itemid in itemids:
-            items.append(mapper.map_item(self.fetch_item(itemid)))
+            if itemid.isnumeric():
+                items.append(mapper.map_item(self.fetch_item(itemid)))
         if sort:
             items.sort(key=lambda item: item['Id'])
         if wrap:
@@ -53,7 +54,8 @@ class Converter:
         mapper = mob_skill_mapper.Mapper()
         all_mob_skills = list()
         for mobid in mobids:
-            all_mob_skills.append(mapper.map_mob_skill(self.fetch_mob(mobid)))
+            if mobid.isnumeric():
+                all_mob_skills.append(mapper.map_mob_skill(self.fetch_mob(mobid)))
 
         result = ''
         for mob_skills in all_mob_skills:
