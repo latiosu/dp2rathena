@@ -50,16 +50,6 @@ All fields are mapped except the ones listed below:
 - `"NoUse"` - conditions when the item is unusable
 - `"AliasName"` - another item's AegisName to be sent to client instead of this AegisName
 
-### `mob_skill_db.txt`
-
-Below skills are not fully mapped yet, as `val1` - `val4` do not yet list the slaves/monsters/summons.
-
-**Partially Mapped**
-- NPC_SUMMONSLAVE
-- NPC_SUMMONMONSTER
-- NPC_DEATHSUMMON
-- NPC_METAMORPHOSIS
-
 ## Contributing
 
 This project uses [poetry](https://python-poetry.org/) to manage the development environment.
