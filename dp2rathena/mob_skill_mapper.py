@@ -152,7 +152,7 @@ class Mapper:
         elif data['conditionValue'] == 'BODY_ALL':
             return 'anybad'
         # Other statuses have no current use-cases in rathena or DP
-        return data['conditionValue']
+        return 0 if data['conditionValue'] is None else data['conditionValue']
 
     # TODO: Handle following skills:
     # NPC_EMOTION, NPC_SUMMONSLAVE, NPC_SUMMONMONSTER, NPC_DEATHSUMMON,

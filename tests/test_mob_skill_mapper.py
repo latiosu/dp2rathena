@@ -96,11 +96,26 @@ def test_target():
 
 
 def test_condition():
-    return None
+    assert mapper._condition(poring_emote) == 'always'
+    assert mapper._condition(poring_water) == 'always'
+    assert mapper._condition(picky_emote) == 'always'
+    assert mapper._condition(picky_fire) == 'always'
+    assert mapper._condition({'condition': None}) == 'always'
+    assert mapper._condition({'condition': 'IF_HP'}) == 'myhpltmaxrate'
+    assert mapper._condition({'condition': 'IF_COMRADEHP'}) == 'friendhpltmaxrate'
+    assert mapper._condition({'condition': 'IF_COMRADECONDITION'}) == 'friendstatuson'
 
 
 def test_condition_value():
-    return None
+    assert mapper._condition_value(poring_emote) == 0
+    assert mapper._condition_value(poring_water) == 0
+    assert mapper._condition_value(picky_emote) == 0
+    assert mapper._condition_value(picky_fire) == 0
+    assert mapper._condition_value({'condition': None, 'conditionValue': None}) == 0
+    assert mapper._condition_value({'condition': None, 'conditionValue': 0}) == 0
+    assert mapper._condition_value({'condition': None, 'conditionValue': 5}) == 5
+    assert mapper._condition_value({'condition': 'IF_HIDING'}) == 'hiding'
+    assert mapper._condition_value({'condition': None, 'conditionValue': 'BODY_ALL'}) == 'anybad'
 
 
 def test_val_1():
