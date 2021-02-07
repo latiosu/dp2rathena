@@ -1,9 +1,19 @@
 Changelog
 =========
 
+0.3.0 - 2021-02-08
+------------------
+* Added mob_skill_db.txt converter
+* Updated dependencies:
+    - packaging (20.8 -> 20.9)
+    - virtualenv (20.2.2 -> 20.4.2)
+    - pytest (6.2.1 -> 6.2.2)
+    - tox (3.21.0 -> 3.21.4)
+    - pyyaml (5.3.1 -> 5.4.1)
+
 0.2.5 - 2021-01-23
 ------------------
-* Exclude max level if value is 999
+* Excluded max level when value is 999
 
 0.2.4 - 2021-01-15
 ------------------
