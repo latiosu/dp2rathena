@@ -94,12 +94,26 @@ class Mapper:
             'MONSTER_TYPE_27': 0x8084, # (aggressive, immobile, random target)
         }
 
+        self.summon_skills = [
+            'NPC_SUMMONSLAVE',
+            'NPC_SUMMONMONSTER',
+            'NPC_DEATHSUMMON',
+            'NPC_TRANSFORMATION',
+            'NPC_METAMORPHOSIS',
+        ]
+
     # Used for lazy loading skill_db.yml as loading is slow
     def _require_skill_db(self):
         if self.skill_db is None:
             current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
             skill_db_path = os.path.join(os.path.realpath(current_path), 'db', 'skill_db.yml')
             self.skill_db = yaml.load(open(skill_db_path), Loader=yaml.FullLoader)
+
+    # Helper for checking skill db values
+    def _skill_db_value(self, skillId, value):
+        if skillId in self.skill_db and value in self.skill_db[skillId]:
+            return self.skill_db[skillId][value]
+        return None
 
     def _id(self, data, parent_data = {}):
         return parent_data['id']
@@ -118,7 +132,9 @@ class Mapper:
     def _skillid(self, data, parent_data = {}):
         return data['skillId']
 
-    def _level(self, data, parent_data = {}):
+    def _level(self, data, parent_data):
+        if self._skill_db_value(data['skillId'], 'Name') in self.summon_skills:
+            return len(parent_data['slaves'])
         return data['level']
 
     def _chance(self, data, parent_data = {}):
@@ -138,12 +154,9 @@ class Mapper:
         if data['condition'] == 'IF_COMRADEHP' \
             or data['condition'] == 'IF_COMRADECONDITION':
             return 'friend'
-        elif data['skillId'] in self.skill_db \
-            and 'TargetType' in self.skill_db[data['skillId']] \
-            and self.skill_db[data['skillId']]['TargetType'] == 'Self':
-                return 'self'
-        # Default = 'target', other types not clear to extrapolate from data
-        return 'target'
+        elif self._skill_db_value(data['skillId'], 'TargetType') == 'Self':
+            return 'self'
+        return 'target' # Default value, other types unclear from DP data
 
     def _condition(self, data, parent_data = {}):
         if data['condition'] is None \
@@ -157,34 +170,55 @@ class Mapper:
         elif data['conditionValue'] == 'BODY_ALL':
             return 'anybad'
         # Other statuses have no current use-cases in rathena or DP
-        return 0 if data['conditionValue'] is None else data['conditionValue']
+        return data['conditionValue']
 
-    # TODO: Handle following skills:
-    # NPC_SUMMONSLAVE, NPC_SUMMONMONSTER, NPC_DEATHSUMMON, NPC_METAMORPHOSIS
-    def _val_1(self, data, parent_data = {}):
-        # NPC_EMOTION is mapped by val1 in RA
-        if data['sendType'] == 'SEND_CHAT' or data['sendType'] == 'SEND_EMOTICON':
+    def _val_1(self, data, parent_data):
+        # Summoned monster no. 1
+        if self._skill_db_value(data['skillId'], 'Name') in self.summon_skills \
+            and len(parent_data['slaves']) >= 1:
+            return parent_data['slaves'][0]['id']
+        # NPC_EMOTION is mapped by val1 in RA, otherwise send_emote is used
+        if self._skill_db_value(data['skillId'], 'Name') in ['NPC_EMOTION', 'NPC_EMOTION_ON']:
             return data['sendValue']
         return None
 
-    def _val_2(self, data, parent_data = {}):
+    def _val_2(self, data, parent_data):
+        # Summoned monster no. 2
+        if self._skill_db_value(data['skillId'], 'Name') in self.summon_skills \
+            and len(parent_data['slaves']) >= 2:
+            return parent_data['slaves'][1]['id']
         return None
 
-    def _val_3(self, data, parent_data = {}):
+    def _val_3(self, data, parent_data):
+        # Summoned monster no. 3
+        if self._skill_db_value(data['skillId'], 'Name') in self.summon_skills \
+            and len(parent_data['slaves']) >= 3:
+            return parent_data['slaves'][2]['id']
         return None
 
-    def _val_4(self, data, parent_data = {}):
+    def _val_4(self, data, parent_data):
+        # Summoned monster no. 4
+        if self._skill_db_value(data['skillId'], 'Name') in self.summon_skills \
+            and len(parent_data['slaves']) >= 4:
+            return parent_data['slaves'][3]['id']
         return None
 
-    def _val_5(self, data, parent_data = {}):
+    def _val_5(self, data, parent_data):
+        # Summoned monster no. 5
+        if self._skill_db_value(data['skillId'], 'Name') in self.summon_skills \
+            and len(parent_data['slaves']) >= 5:
+            return parent_data['slaves'][4]['id']
         return None
 
-    # TODO: Identify how this field is used in rathena
-    def _send_emote(self, data, parent_data = {}):
+    # Used whenever val1 is required for another purpose
+    def _send_emote(self, data, parent_data):
+        if data['sendType'] == 'SEND_EMOTICON' and len(parent_data['slaves']) > 0:
+            return data['sendValue']
         return None
 
-    # TODO: Identify how this field is used in rathena
     def _send_chat(self, data, parent_data = {}):
+        if data['sendType'] == 'SEND_CHAT':
+            return data['sendValue']
         return None
 
     def _map_schema(self, schema, data, parent_data):
