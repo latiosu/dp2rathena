@@ -102,6 +102,8 @@ class Mapper:
             'NPC_METAMORPHOSIS',
         ]
 
+        self.emote_skills = ['NPC_EMOTION', 'NPC_EMOTION_ON']
+
     # Used for lazy loading skill_db.yml as loading is slow
     def _require_skill_db(self):
         if self.skill_db is None:
@@ -178,7 +180,7 @@ class Mapper:
             and len(parent_data['slaves']) >= 1:
             return parent_data['slaves'][0]['id']
         # NPC_EMOTION is mapped by val1 in RA, otherwise send_emote is used
-        if self._skill_db_value(data['skillId'], 'Name') in ['NPC_EMOTION', 'NPC_EMOTION_ON']:
+        if self._skill_db_value(data['skillId'], 'Name') in self.emote_skills:
             return data['sendValue']
         return None
 
@@ -212,7 +214,8 @@ class Mapper:
 
     # Used whenever val1 is required for another purpose
     def _send_emote(self, data, parent_data):
-        if data['sendType'] == 'SEND_EMOTICON' and len(parent_data['slaves']) > 0:
+        if self._skill_db_value(data['skillId'], 'Name') not in self.emote_skills \
+            and data['sendType'] == 'SEND_EMOTICON':
             return data['sendValue']
         return None
 

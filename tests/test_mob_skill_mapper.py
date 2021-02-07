@@ -51,11 +51,12 @@ def test_skillid():
 
 
 def test_level():
-    assert mapper._level(poring_emote) == 1
-    assert mapper._level(poring_water) == 1
-    assert mapper._level(picky_emote) == 1
-    assert mapper._level(picky_fire) == 1
-    assert mapper._level({'level': 0}) == 0
+    assert mapper._level(poring_emote, poring) == 1
+    assert mapper._level(poring_water, poring) == 1
+    assert mapper._level(picky_emote, picky) == 1
+    assert mapper._level(picky_fire, picky) == 1
+    assert mapper._level({'level': 0, 'skillId': 0}, {}) == 0
+    assert mapper._level({'level': 1, 'skillId': 196}, {'slaves': [1,2,3,4,5]}) == 5
 
 
 def test_chance():
@@ -117,11 +118,11 @@ def test_condition():
 
 
 def test_condition_value():
-    assert mapper._condition_value(poring_emote) == 0
-    assert mapper._condition_value(poring_water) == 0
-    assert mapper._condition_value(picky_emote) == 0
-    assert mapper._condition_value(picky_fire) == 0
-    assert mapper._condition_value({'condition': None, 'conditionValue': None}) == 0
+    assert mapper._condition_value(poring_emote) is None
+    assert mapper._condition_value(poring_water) is None
+    assert mapper._condition_value(picky_emote) is None
+    assert mapper._condition_value(picky_fire) is None
+    assert mapper._condition_value({'condition': None, 'conditionValue': None}) is None
     assert mapper._condition_value({'condition': None, 'conditionValue': 0}) == 0
     assert mapper._condition_value({'condition': None, 'conditionValue': 5}) == 5
     assert mapper._condition_value({'condition': 'IF_HIDING'}) == 'hiding'
@@ -129,36 +130,87 @@ def test_condition_value():
 
 
 def test_val_1():
-    assert mapper._val_1(poring_emote) == '2'
-    assert mapper._val_1(poring_water) is None
-    assert mapper._val_1(picky_emote) == '2'
-    assert mapper._val_1(picky_fire) is None
-    assert mapper._val_1({'sendType': 'SEND_EMOTICON', 'sendValue': 2}) == 2
-    assert mapper._val_1({'sendType': 'SEND_CHAT', 'sendValue': 5}) == 5
+    assert mapper._val_1(poring_emote, poring) == '2'
+    assert mapper._val_1(poring_water, poring) is None
+    assert mapper._val_1(picky_emote, picky) == '2'
+    assert mapper._val_1(picky_fire, picky) is None
+    assert mapper._val_1({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) is None
+    assert mapper._val_1({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) is None
+    assert mapper._val_1({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) == 27
+    assert mapper._val_1({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 27
+    assert mapper._val_1({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 1
 
 
 def test_val_2():
-    return None
+    assert mapper._val_2(poring_emote, poring) is None
+    assert mapper._val_2(poring_water, poring) is None
+    assert mapper._val_2(picky_emote, picky) is None
+    assert mapper._val_2(picky_fire, picky) is None
+    assert mapper._val_2({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) is None
+    assert mapper._val_2({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) is None
+    assert mapper._val_2({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) is None
+    assert mapper._val_2({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
+    assert mapper._val_2({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 2
 
 
 def test_val_3():
-    return None
+    assert mapper._val_3(poring_emote, poring) is None
+    assert mapper._val_3(poring_water, poring) is None
+    assert mapper._val_3(picky_emote, picky) is None
+    assert mapper._val_3(picky_fire, picky) is None
+    assert mapper._val_3({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) is None
+    assert mapper._val_3({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) is None
+    assert mapper._val_3({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) is None
+    assert mapper._val_3({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
+    assert mapper._val_3({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 3
 
 
 def test_val_4():
-    return None
+    assert mapper._val_4(poring_emote, poring) is None
+    assert mapper._val_4(poring_water, poring) is None
+    assert mapper._val_4(picky_emote, picky) is None
+    assert mapper._val_4(picky_fire, picky) is None
+    assert mapper._val_4({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) is None
+    assert mapper._val_4({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) is None
+    assert mapper._val_4({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) is None
+    assert mapper._val_4({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
+    assert mapper._val_4({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 4
 
 
 def test_val_5():
-    return None
+    assert mapper._val_5(poring_emote, poring) is None
+    assert mapper._val_5(poring_water, poring) is None
+    assert mapper._val_5(picky_emote, picky) is None
+    assert mapper._val_5(picky_fire, picky) is None
+    assert mapper._val_5({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) is None
+    assert mapper._val_5({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) is None
+    assert mapper._val_5({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) is None
+    assert mapper._val_5({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
+    assert mapper._val_5({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 5
 
 
 def test_send_emote():
-    return None
+    assert mapper._send_emote(poring_emote, poring) is None
+    assert mapper._send_emote(poring_water, poring) is None
+    assert mapper._send_emote(picky_emote, picky) is None
+    assert mapper._send_emote(picky_fire, picky) is None
+    assert mapper._send_emote({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) is None
+    assert mapper._send_emote({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) == 2
+    assert mapper._send_emote({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) is None
+    assert mapper._send_emote({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
+    assert mapper._send_emote({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) == 27
 
 
 def test_send_chat():
-    return None
+    assert mapper._send_chat(poring_emote, poring) is None
+    assert mapper._send_chat(poring_water, poring) is None
+    assert mapper._send_chat(picky_emote, picky) is None
+    assert mapper._send_chat(picky_fire, picky) is None
+    assert mapper._send_chat({'sendType': 'SEND_CHAT', 'sendValue': 5, 'skillId': 1}, {}) == 5
+    assert mapper._send_chat({'sendType': 'SEND_EMOTICON', 'sendValue': 2, 'skillId': 1}, {}) is None
+    assert mapper._send_chat({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {}) is None
+    assert mapper._send_chat({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 197}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
+    assert mapper._send_chat({'sendType': 'SEND_EMOTICON', 'sendValue': 27, 'skillId': 196}, {'slaves': [{'id': 1},{'id': 2},{'id': 3},{'id': 4},{'id': 5}]}) is None
 
 
 def test_map_schema():
