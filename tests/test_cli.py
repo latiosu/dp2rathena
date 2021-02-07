@@ -190,16 +190,16 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1002')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_1002_1050.txt')) as f:
+    with open(fixture('mob_skill_1002_1049.txt')) as f:
         expected = f.read()
-        result = runner.invoke(cli.dp2rathena, ['mobskill', '1002', '1050'])
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '1002', '1049'])
         assert result.exit_code == 0
         assert result.output == expected
-        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', fixture('1002_1050.txt')])
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', fixture('1002_1049.txt')])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_1050_1002.txt')) as f:
+    with open(fixture('mob_skill_1049_1002.txt')) as f:
         expected = f.read()
-        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1050\n1002')
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1049\n1002')
         assert result.exit_code == 0
         assert result.output == expected

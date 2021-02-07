@@ -18,6 +18,13 @@ picky_emote = picky['skill'][0]
 picky_fire = picky['skill'][1]
 
 
+def test_id(fixture):
+    assert mapper._id(poring_emote, poring) == 1002
+    assert mapper._id(poring_water, poring) == 1002
+    assert mapper._id(picky_emote, picky) == 1049
+    assert mapper._id(picky_fire, picky) == 1049
+
+
 def test_dummy_value(fixture):
     assert mapper._dummy_value(poring_emote, poring) == 'Poring@NPC_EMOTION'
     assert mapper._dummy_value(poring_water, poring) == 'Poring@NPC_WATERATTACK'
@@ -32,14 +39,15 @@ def test_status():
     assert mapper._status(picky_fire) == 'attack'
     assert mapper._status({'status': None}) == 'any'
     assert mapper._status({'status': 'IDLE_ST'}) == 'idle'
+    assert mapper._status({'status': 'UNKNOWN_ST'}) is None
 
 
-def test_id():
-    assert mapper._id(poring_emote) == 197
-    assert mapper._id(poring_water) == 184
-    assert mapper._id(picky_emote) == 197
-    assert mapper._id(picky_fire) == 186
-    assert mapper._id({'skillId': 0}) == 0
+def test_skillid():
+    assert mapper._skillid(poring_emote) == 197
+    assert mapper._skillid(poring_water) == 184
+    assert mapper._skillid(picky_emote) == 197
+    assert mapper._skillid(picky_fire) == 186
+    assert mapper._skillid({'skillId': 0}) == 0
 
 
 def test_level():
@@ -101,6 +109,8 @@ def test_condition():
     assert mapper._condition(picky_emote) == 'always'
     assert mapper._condition(picky_fire) == 'always'
     assert mapper._condition({'condition': None}) == 'always'
+    assert mapper._condition({'condition': 0}) == 'always'
+    assert mapper._condition({'condition': '0'}) == 'always'
     assert mapper._condition({'condition': 'IF_HP'}) == 'myhpltmaxrate'
     assert mapper._condition({'condition': 'IF_COMRADEHP'}) == 'friendhpltmaxrate'
     assert mapper._condition({'condition': 'IF_COMRADECONDITION'}) == 'friendstatuson'
@@ -119,7 +129,12 @@ def test_condition_value():
 
 
 def test_val_1():
-    return None
+    assert mapper._val_1(poring_emote) == '2'
+    assert mapper._val_1(poring_water) is None
+    assert mapper._val_1(picky_emote) == '2'
+    assert mapper._val_1(picky_fire) is None
+    assert mapper._val_1({'sendType': 'SEND_EMOTICON', 'sendValue': 2}) == 2
+    assert mapper._val_1({'sendType': 'SEND_CHAT', 'sendValue': 5}) == 5
 
 
 def test_val_2():
@@ -139,19 +154,11 @@ def test_val_5():
 
 
 def test_send_emote():
-    assert mapper._send_emote(poring_emote) == '2'
-    assert mapper._send_emote(poring_water) == None
-    assert mapper._send_emote(picky_emote) == '2'
-    assert mapper._send_emote(picky_fire) == None
-    assert mapper._send_emote({'sendType': 'SEND_EMOTICON', 'sendValue': 2}) == 2
+    return None
 
 
 def test_send_chat():
-    assert mapper._send_chat(poring_emote) == None
-    assert mapper._send_chat(poring_water) == None
-    assert mapper._send_chat(picky_emote) == None
-    assert mapper._send_chat(picky_fire) == None
-    assert mapper._send_chat({'sendType': 'SEND_CHAT', 'sendValue': 5}) == 5
+    return None
 
 
 def test_map_schema():
@@ -163,13 +170,13 @@ def test_map_schema():
     assert mapper._map_schema(None, {}, {}) is None
     assert mapper._map_schema({}, None, {}) == {}
     assert mapper._map_schema({}, {}, {}) == {}
-    assert mapper._map_schema({'x': None}, {}, {}) == {}
-    assert mapper._map_schema({'x': 'to_map'}, {'to_map': 0}, {}) == {}
-    assert mapper._map_schema({'x': 'to_map'}, {'to_map': None}, {}) == {}
+    assert mapper._map_schema({'x': None}, {}, {}) == {'x': None}
+    assert mapper._map_schema({'x': 'to_map'}, {'to_map': 0}, {}) == {'x': 0}
+    assert mapper._map_schema({'x': 'to_map'}, {'to_map': None}, {}) == {'x': None}
     assert mapper._map_schema({'x': 'to_map'}, {'to_map': 'y'}, {}) == {'x': 'y'}
-    assert mapper._map_schema({'x': lambda x: None}, {'y': 'z'}, {}) == {}
+    assert mapper._map_schema({'x': lambda x, y: None}, {'y': 'z'}, {}) == {'x': None}
     assert mapper._map_schema({'x': {'y': 'to_map'}}, {'to_map': 'z'}, {}) == {'x': {'y': 'z'}}
-    assert mapper._map_schema({'x': 1}, {'not_mapped': 'value'}, {}) == {}
+    assert mapper._map_schema({'x': 1}, {'not_mapped': 'value'}, {}) == {'x': 1}
     assert mapper._map_schema({'x': 1}, {1: 'y'}, {}) == {'x': 'y'}
     assert mapper._map_schema({1.0: 1}, {1: 'y'}, {}) == {1.0: 'y'}
     assert mapper._map_schema({'x': 1.0}, {'not_mapped': 'value'}, {}) == {'x': 1.0}

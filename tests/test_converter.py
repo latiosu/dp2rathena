@@ -79,11 +79,11 @@ def test_convert_mob_skill(fixture):
     expected = open(fixture('mob_skill_1002.txt')).read()
     generated = convert.convert_mob_skill([1002])
     assert generated == expected
-    expected = open(fixture('mob_skill_1002_1050.txt')).read()
-    generated = convert.convert_mob_skill([1002, 1050])
+    expected = open(fixture('mob_skill_1002_1049.txt')).read()
+    generated = convert.convert_mob_skill([1002, 1049])
     assert generated == expected
-    expected = open(fixture('mob_skill_1050_1002.txt')).read()
-    generated = convert.convert_mob_skill([1050, 1002])
+    expected = open(fixture('mob_skill_1049_1002.txt')).read()
+    generated = convert.convert_mob_skill([1049, 1002])
     assert generated == expected
 
 

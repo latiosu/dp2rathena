@@ -12,10 +12,10 @@ class Mapper:
         self.skill_db = None
 
         self.schema = {
-            'MobId': 'id',
-            'Dummy': self._dummy_value,              # Rathena info value
-            'State': self._status,                   # State that triggers skill cast
-            'SkillId': self._id,
+            'MobId': self._id,
+            'Dummy': self._dummy_value,        # Rathena info value
+            'State': self._status,             # State that triggers skill cast
+            'SkillId': self._skillid,
             'SkillLv': self._level,
             'Rate': self._chance,              # Chance of skill cast when condition is met (10000 = 100%)
             'CastTime': self._casttime,        # Fixed cast time of skill
@@ -34,7 +34,7 @@ class Mapper:
         }
 
         self.state_map = {
-            # 'null': 'any',        # except dead
+            # 'null': 'any',        # except dead; note 'anytarget' is RA shorthand notation and not used in DP
             'IDLE_ST': 'idle',      # in standby
             'RMOVE_ST': 'walk',     # in movement
             'DEAD_ST': 'dead',      # on kill
@@ -43,7 +43,6 @@ class Mapper:
             'ANGRY_ST': 'angry',    # like attack, except player has not attacked mob yet
             'RUSH_ST': 'chase',     # following target, after being attacked
             'FOLLOW_ST': 'follow',  # following target, without being attacked
-            # 'anytarget' is RA shorthand notation and not used in DP
         }
 
         self.condition_map = {
@@ -102,34 +101,39 @@ class Mapper:
             skill_db_path = os.path.join(os.path.realpath(current_path), 'db', 'skill_db.yml')
             self.skill_db = yaml.load(open(skill_db_path), Loader=yaml.FullLoader)
 
+    def _id(self, data, parent_data = {}):
+        return parent_data['id']
+
     def _dummy_value(self, data, parent_data):
         self._require_skill_db()
         return parent_data['name'] + '@' + self.skill_db[data['skillId']]['Name']
 
-    def _status(self, data):
+    def _status(self, data, parent_data = {}):
         if data['status'] is None:
             return 'any'
+        elif data['status'] not in self.state_map:
+            return None
         return self.state_map[data['status']]
 
-    def _id(self, data):
+    def _skillid(self, data, parent_data = {}):
         return data['skillId']
 
-    def _level(self, data):
+    def _level(self, data, parent_data = {}):
         return data['level']
 
-    def _chance(self, data):
+    def _chance(self, data, parent_data = {}):
         return data['chance'] * 10
 
-    def _casttime(self, data):
+    def _casttime(self, data, parent_data = {}):
         return data['casttime']
 
-    def _delay(self, data):
+    def _delay(self, data, parent_data = {}):
         return data['delay']
 
-    def _interruptable(self, data):
+    def _interruptable(self, data, parent_data = {}):
         return 'yes' if data['interruptable'] else 'no'
 
-    def _target(self, data):
+    def _target(self, data, parent_data = {}):
         self._require_skill_db()
         if data['condition'] == 'IF_COMRADEHP' \
             or data['condition'] == 'IF_COMRADECONDITION':
@@ -141,12 +145,13 @@ class Mapper:
         # Default = 'target', other types not clear to extrapolate from data
         return 'target'
 
-    def _condition(self, data):
-        if data['condition'] is None:
+    def _condition(self, data, parent_data = {}):
+        if data['condition'] is None \
+            or data['condition'] not in self.condition_map:
             return 'always'
         return self.condition_map[data['condition']]
 
-    def _condition_value(self, data):
+    def _condition_value(self, data, parent_data = {}):
         if data['condition'] == 'IF_HIDING':
             return 'hiding'
         elif data['conditionValue'] == 'BODY_ALL':
@@ -155,31 +160,31 @@ class Mapper:
         return 0 if data['conditionValue'] is None else data['conditionValue']
 
     # TODO: Handle following skills:
-    # NPC_EMOTION, NPC_SUMMONSLAVE, NPC_SUMMONMONSTER, NPC_DEATHSUMMON,
-    # NPC_METAMORPHOSIS
-    def _val_1(self, data):
-        return None
-
-    def _val_2(self, data):
-        return None
-
-    def _val_3(self, data):
-        return None
-
-    def _val_4(self, data):
-        return None
-
-    def _val_5(self, data):
-        return None
-
-    def _send_emote(self, data):
-        if data['sendType'] == 'SEND_EMOTICON':
+    # NPC_SUMMONSLAVE, NPC_SUMMONMONSTER, NPC_DEATHSUMMON, NPC_METAMORPHOSIS
+    def _val_1(self, data, parent_data = {}):
+        # NPC_EMOTION is mapped by val1 in RA
+        if data['sendType'] == 'SEND_CHAT' or data['sendType'] == 'SEND_EMOTICON':
             return data['sendValue']
         return None
 
-    def _send_chat(self, data):
-        if data['sendType'] == 'SEND_CHAT':
-            return data['sendValue']
+    def _val_2(self, data, parent_data = {}):
+        return None
+
+    def _val_3(self, data, parent_data = {}):
+        return None
+
+    def _val_4(self, data, parent_data = {}):
+        return None
+
+    def _val_5(self, data, parent_data = {}):
+        return None
+
+    # TODO: Identify how this field is used in rathena
+    def _send_emote(self, data, parent_data = {}):
+        return None
+
+    # TODO: Identify how this field is used in rathena
+    def _send_chat(self, data, parent_data = {}):
         return None
 
     def _map_schema(self, schema, data, parent_data):
@@ -189,20 +194,12 @@ class Mapper:
             return schema
         result = copy.deepcopy(schema)
         for k, v in schema.items():
-            if v is None:
-                del result[k]
-            elif callable(v):
-                if v(data) == None:
-                    del result[k]
-                else:
-                    result[k] = v(data, parent_data)
+            if callable(v):
+                result[k] = v(data, parent_data)
             elif type(v) is dict:
                 result[k] = self._map_schema(v, data, parent_data)
-            elif type(v) is str or type(v) is int:
-                if v not in data or data[v] == 0 or data[v] == None:
-                    del result[k]
-                else:
-                    result[k] = data[v]
+            elif (type(v) is str or type(v) is int) and v in data:
+                result[k] = data[v]
             else:
                 result[k] = v
         return result

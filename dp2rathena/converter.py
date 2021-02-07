@@ -51,7 +51,16 @@ class Converter:
 
     def convert_mob_skill(self, mobids):
         mapper = mob_skill_mapper.Mapper()
-        mobs = list()
+        all_mob_skills = list()
         for mobid in mobids:
-            mobs.append(mapper.map_mob_skill(self.fetch_mob(mobid)))
-        return '\n'.join(mobs)
+            all_mob_skills.append(mapper.map_mob_skill(self.fetch_mob(mobid)))
+
+        result = ''
+        for mob_skills in all_mob_skills:
+            for skill in mob_skills:
+                if skill['SkillLv'] <= 0:
+                    continue
+                for value in skill.values():
+                    result += ('' if value is None else str(value)) + ','
+                result = result[:-1] + '\n'
+        return result
