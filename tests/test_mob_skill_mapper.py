@@ -185,5 +185,6 @@ def test_map_schema():
 def test_map_mob_skill():
     with pytest.raises(KeyError):
         mapper.map_mob_skill({})
+        mapper.map_mob_skill({'skill': [{}]}) == []
     assert mapper.map_mob_skill(None) is None
     assert mapper.map_mob_skill({'Error': 'message'}) == {'Error': 'message'}
