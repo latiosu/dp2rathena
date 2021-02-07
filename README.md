@@ -52,8 +52,8 @@ Currently, items can be converted and all fields mapped except the ones below:
 
 This project uses [poetry](https://python-poetry.org/) to manage the development environment.
 
-* Setup a local development environment with `poetry install`.
-* Run tests with `poetry run tox`
+* Setup a local development environment with `poetry install`
+* Run tests with `poetry run tox` (or `pytest` for current python version)
 * Execute script with `poetry run dp2rathena`
 
 ## Changelog
