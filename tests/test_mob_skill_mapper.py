@@ -84,7 +84,15 @@ def test_interruptable():
 
 
 def test_target():
-    return None
+    assert mapper._target(poring_emote) == 'self'
+    assert mapper._target(poring_water) == 'target'
+    assert mapper._target(picky_emote) == 'self'
+    assert mapper._target(picky_fire) == 'target'
+    assert mapper._target({'condition': None, 'skillId': 1}) == 'target'
+    assert mapper._target({'condition': 'IF_HP', 'skillId': 1}) == 'target'
+    assert mapper._target({'condition': None, 'skillId': 7}) == 'self'
+    assert mapper._target({'condition': 'IF_COMRADEHP'}) == 'friend'
+    assert mapper._target({'condition': 'IF_COMRADECONDITION'}) == 'friend'
 
 
 def test_condition():

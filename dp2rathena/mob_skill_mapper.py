@@ -131,11 +131,13 @@ class Mapper:
 
     def _target(self, data):
         self._require_skill_db()
-        condition = data['condition']
-        if condition == 'IF_COMRADEHP' or condition == 'IF_COMRADECONDITION':
+        if data['condition'] == 'IF_COMRADEHP' \
+            or data['condition'] == 'IF_COMRADECONDITION':
             return 'friend'
-        elif self.skill_db[data['skillId']]['TargetType'] == 'Self':
-            return 'self'
+        elif data['skillId'] in self.skill_db \
+            and 'TargetType' in self.skill_db[data['skillId']] \
+            and self.skill_db[data['skillId']]['TargetType'] == 'Self':
+                return 'self'
         # Default = 'target', other types not clear to extrapolate from data
         return 'target'
 
