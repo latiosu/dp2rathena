@@ -8,9 +8,9 @@
 Convert Divine-Pride API data to rAthena DB formats.
 
 Currently supported formats are:
-- item_db.yml
-- (future) mob_skill_db.txt
-- (future) mob_db.txt
+- `item_db.yml`
+- `mob_skill_db.txt`
+- (future) `mob_db.txt`
 
 ## Requirements
 
@@ -33,7 +33,9 @@ dp2rathena item 501 1101
 
 ## Limitations
 
-Currently, items can be converted and all fields mapped except the ones below:
+All fields are mapped except the ones listed below:
+
+### `item_db.yml`
 
 **Partially Mapped**
 - `"Type"` - when the item type is "Consumable" on DP and subtype "Special", we output a few possible options for user to choose the correct one (Healing, Usable, DelayConsume or Cash)
@@ -47,6 +49,16 @@ Currently, items can be converted and all fields mapped except the ones below:
 - `"Stack"` - item stack amount
 - `"NoUse"` - conditions when the item is unusable
 - `"AliasName"` - another item's AegisName to be sent to client instead of this AegisName
+
+### `mob_skill_db.txt`
+
+Below skills are not fully mapped yet, as `val1` - `val4` do not yet list the slaves/monsters/summons.
+
+**Partially Mapped**
+- NPC_SUMMONSLAVE
+- NPC_SUMMONMONSTER
+- NPC_DEATHSUMMON
+- NPC_METAMORPHOSIS
 
 ## Contributing
 

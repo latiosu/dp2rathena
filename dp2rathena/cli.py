@@ -146,8 +146,8 @@ def mobskill(ctx, file, debug, value):
 
     \b
     Examples:
-        # Pass API key and convert mob ids 1002 and 1050
-        dp2rathena --api-key <your-api-key> mobskill 1002 1050
+        # Pass API key and convert mob ids 1002 and 1049
+        dp2rathena --api-key <your-api-key> mobskill 1002 1049
     \b
         # Pass API key and convert mobs via STDIN
         dp2rathena -k <your-api-key> mobskill -f -
