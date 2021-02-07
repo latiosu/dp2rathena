@@ -90,4 +90,4 @@ def test_convert_mob_skill(fixture):
 def test_convert_mob_skill_nonapi():
     convert = converter.Converter(api_key)
     generated_txt = convert.convert_mob_skill([])
-    assert generated_txt == '\n'
+    assert generated_txt == ''
