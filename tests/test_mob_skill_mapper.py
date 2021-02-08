@@ -32,6 +32,7 @@ def test_dummy_value():
     assert mapper._dummy_value(poring_water, poring) == 'Poring@NPC_WATERATTACK'
     assert mapper._dummy_value(picky_emote, picky) == 'Picky@NPC_EMOTION'
     assert mapper._dummy_value(picky_fire, picky) == 'Picky@NPC_FIREATTACK'
+    assert mapper._dummy_value({'skillId': -1}, {'name': 'Monster'}) == 'Monster@Unknown Skill'
 
 
 def test_status():

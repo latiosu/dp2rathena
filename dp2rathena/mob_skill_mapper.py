@@ -113,6 +113,7 @@ class Mapper:
 
     # Helper for checking skill db values
     def _skill_db_value(self, skillId, value):
+        self._require_skill_db()
         if skillId in self.skill_db and value in self.skill_db[skillId]:
             return self.skill_db[skillId][value]
         return None
@@ -121,8 +122,10 @@ class Mapper:
         return parent_data['id']
 
     def _dummy_value(self, data, parent_data):
-        self._require_skill_db()
-        return parent_data['name'] + '@' + self.skill_db[data['skillId']]['Name']
+        skill_name = self._skill_db_value(data['skillId'], 'Name')
+        if skill_name is not None:
+            return parent_data['name'] + '@' + skill_name
+        return parent_data['name'] + '@Unknown Skill'
 
     def _status(self, data, parent_data = {}):
         if data['status'] is None:
@@ -152,7 +155,6 @@ class Mapper:
         return 'yes' if data['interruptable'] else 'no'
 
     def _target(self, data, parent_data = {}):
-        self._require_skill_db()
         if data['condition'] == 'IF_COMRADEHP' \
             or data['condition'] == 'IF_COMRADECONDITION':
             return 'friend'
