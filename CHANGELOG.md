@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.3.1 - 2021-02-08
+------------------
+* Fixed blank lines while reading a file causing errors
+
 0.3.0 - 2021-02-08
 ------------------
 * Added mob_skill_db.txt converter
