@@ -13,19 +13,21 @@ fixtures_path = os.path.join(os.path.realpath(current_path), 'fixtures')
 poring = json.loads(open(os.path.join(fixtures_path, 'mob_1002.json')).read())
 poring_emote = poring['skill'][1]
 poring_water = poring['skill'][2]
+poring_schema = json.loads(open(os.path.join(fixtures_path, 'mob_skill_schema_1002.json')).read())
 picky = json.loads(open(os.path.join(fixtures_path, 'mob_1049.json')).read())
 picky_emote = picky['skill'][0]
 picky_fire = picky['skill'][1]
+picky_schema = json.loads(open(os.path.join(fixtures_path, 'mob_skill_schema_1049.json')).read())
 
 
-def test_id(fixture):
+def test_id():
     assert mapper._id(poring_emote, poring) == 1002
     assert mapper._id(poring_water, poring) == 1002
     assert mapper._id(picky_emote, picky) == 1049
     assert mapper._id(picky_fire, picky) == 1049
 
 
-def test_dummy_value(fixture):
+def test_dummy_value():
     assert mapper._dummy_value(poring_emote, poring) == 'Poring@NPC_EMOTION'
     assert mapper._dummy_value(poring_water, poring) == 'Poring@NPC_WATERATTACK'
     assert mapper._dummy_value(picky_emote, picky) == 'Picky@NPC_EMOTION'
@@ -240,3 +242,5 @@ def test_map_mob_skill():
         mapper.map_mob_skill({'skill': [{}]}) == []
     assert mapper.map_mob_skill(None) is None
     assert mapper.map_mob_skill({'Error': 'message'}) == {'Error': 'message'}
+    assert mapper.map_mob_skill(poring) == poring_schema
+    assert mapper.map_mob_skill(picky) == picky_schema
