@@ -27,8 +27,17 @@ pip install dp2rathena
 A [divine-pride.net](https://www.divine-pride.net/) API key is required, create an account and generate a key if you don't have one yet.
 
 ```bash
+# Store API key
 dp2rathena config
+
+# Convert items with ids 501 and 1101
 dp2rathena item 501 1101
+
+# Convert mob skills from mob ids in a newline separated file
+dp2rathena mobskill -f my_mobs.txt
+
+# Print out help text
+dp2rathena -h
 ```
 
 ## Limitations
