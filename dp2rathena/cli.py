@@ -38,7 +38,7 @@ class ApiKey(click.ParamType):
 )
 @click.pass_context
 def dp2rathena(ctx, api_key):
-    """Converts Divine-Pride API data to rathena DB data.
+    """Converts Divine-Pride API data to rathena DB formats.
 
     \b
     Example:
@@ -97,7 +97,7 @@ def config():
 @click.argument('value', nargs=-1)
 @click.pass_context
 def item(ctx, file, sort, wrap, debug, value):
-    """Converts item ids to rathena item db yaml.
+    """Converts item ids to rathena item_db.yml.
 
     \b
     Examples:
