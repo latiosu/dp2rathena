@@ -19,7 +19,6 @@ def test_dp2rathena():
     runner = CliRunner()
     result = runner.invoke(cli.dp2rathena)
     assert not result.exception
-    assert 'Converts Divine-Pride API data to rathena DB data' in result.output
     result = runner.invoke(cli.dp2rathena, ['--api-key'])
     assert result.exception
     assert 'Error: --api-key option requires an argument' in result.output
@@ -34,13 +33,11 @@ def test_dp2rathena():
         env_path.write_text('DIVINEPRIDE_API_KEY=abc123\n')
         result = runner.invoke(cli.dp2rathena)
         assert not result.exception
-        assert 'Converts Divine-Pride API data to rathena DB data' in result.output
     with runner.isolated_filesystem():
         config_path = Path.home() / '.dp2rathena.conf'
         config_path.write_text('DIVINEPRIDE_API_KEY=abc123\n')
         result = runner.invoke(cli.dp2rathena)
         assert not result.exception
-        assert 'Converts Divine-Pride API data to rathena DB data' in result.output
 
 
 def test_version():
