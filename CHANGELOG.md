@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.3.4 - 2021-02-16
+------------------
+* Added commenting out of unknown skills in mobskill command
+
 0.3.3 - 2021-02-15
 ------------------
 * Fixed skill value output when condition is 'skillused' and DP condition value is a skill name
