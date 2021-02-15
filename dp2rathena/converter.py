@@ -50,7 +50,7 @@ class Converter:
                 return f'Id: {int(mobid)}, Error: Mob not found'
             raise err
 
-    def convert_mob_skill(self, mobids, comment=False):
+    def convert_mob_skill(self, mobids, comment=True):
         mapper = mob_skill_mapper.Mapper()
         all_mob_skills = list()
         for mobid in mobids:
@@ -60,7 +60,7 @@ class Converter:
         result = ''
         for mob_skills in all_mob_skills:
             for skill in mob_skills:
-                if skill['SkillLv'] <= 0:
+                if skill['SkillLv'] < 0:
                     continue
                 elif comment and 'Unknown Skill' in skill['Dummy']:
                     result += '//'

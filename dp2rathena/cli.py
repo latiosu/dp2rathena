@@ -136,8 +136,8 @@ def item(ctx, file, sort, wrap, debug, value):
 )
 @click.option(
     '--comment/--no-comment',
-    default=False,
-    help='Comment out unrecognised skills in output. Default: no-comment'
+    default=True,
+    help='Comment out unrecognised skills in output. Default: comment'
 )
 @click.option(
     '--debug',

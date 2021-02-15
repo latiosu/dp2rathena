@@ -182,6 +182,8 @@ class Mapper:
             return 'anybad'
         elif data['condition'] == 'IF_SKILLUSE':
             return self.skill_name_db[data['conditionValue']]
+        elif data['condition'] not in self.condition_map:
+            return 0
         # Other statuses have no current use-cases in rathena or DP
         return data['conditionValue']
 
