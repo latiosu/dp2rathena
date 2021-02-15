@@ -130,6 +130,7 @@ def test_condition_value():
     assert mapper._condition_value({'condition': None, 'conditionValue': 5}) == 5
     assert mapper._condition_value({'condition': 'IF_HIDING'}) == 'hiding'
     assert mapper._condition_value({'condition': None, 'conditionValue': 'BODY_ALL'}) == 'anybad'
+    assert mapper._condition_value({'condition': 'IF_SKILLUSE', 'conditionValue': 'AL_TELEPORT'}) == 26
 
 
 def test_val_1():

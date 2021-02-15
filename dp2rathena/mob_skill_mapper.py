@@ -11,6 +11,9 @@ class Mapper:
         # Lazy load skill_db until required
         self.skill_db = None
 
+        # Structure = {'AL_TELEPORT': 26}
+        self.skill_name_db = dict()
+
         self.schema = {
             'MobId': self._id,
             'Dummy': self._dummy_value,        # Rathena info value
@@ -111,6 +114,10 @@ class Mapper:
             skill_db_path = os.path.join(os.path.realpath(current_path), 'db', 'skill_db.yml')
             self.skill_db = yaml.load(open(skill_db_path), Loader=yaml.FullLoader)
 
+            for k, v in self.skill_db.items():
+                self.skill_name_db[v['Name']] = k
+
+
     # Helper for checking skill db values
     def _skill_db_value(self, skillId, value):
         self._require_skill_db()
@@ -173,6 +180,8 @@ class Mapper:
             return 'hiding'
         elif data['conditionValue'] == 'BODY_ALL':
             return 'anybad'
+        elif data['condition'] == 'IF_SKILLUSE':
+            return self.skill_name_db[data['conditionValue']]
         # Other statuses have no current use-cases in rathena or DP
         return data['conditionValue']
 

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.3.3 - 2021-02-15
+------------------
+* Fixed skill value output when condition is 'skillused' and DP condition value is a skill name
+
 0.3.2 - 2021-02-09
 ------------------
 * Fixed handling of unrecognised skill ids to now output "Unknown Skill"
