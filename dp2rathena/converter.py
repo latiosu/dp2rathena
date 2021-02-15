@@ -34,7 +34,7 @@ class Converter:
         mapper = item_mapper.Mapper()
         items = list()
         for itemid in itemids:
-            if itemid.isnumeric():
+            if type(itemid) is int or itemid.isnumeric():
                 items.append(mapper.map_item(self.fetch_item(itemid)))
         if sort:
             items.sort(key=lambda item: item['Id'])
@@ -50,11 +50,11 @@ class Converter:
                 return f'Id: {int(mobid)}, Error: Mob not found'
             raise err
 
-    def convert_mob_skill(self, mobids):
+    def convert_mob_skill(self, mobids, comment=False):
         mapper = mob_skill_mapper.Mapper()
         all_mob_skills = list()
         for mobid in mobids:
-            if mobid.isnumeric():
+            if type(mobid) is int or mobid.isnumeric():
                 all_mob_skills.append(mapper.map_mob_skill(self.fetch_mob(mobid)))
 
         result = ''
@@ -62,6 +62,8 @@ class Converter:
             for skill in mob_skills:
                 if skill['SkillLv'] <= 0:
                     continue
+                elif comment and 'Unknown Skill' in skill['Dummy']:
+                    result += '//'
                 for value in skill.values():
                     result += ('' if value is None else str(value)) + ','
                 result = result[:-1] + '\n'

@@ -187,6 +187,11 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1002')
         assert result.exit_code == 0
         assert result.output == expected
+    with open(fixture('mob_skill_3212.txt')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mobskill', '--comment', '3212'])
+        assert result.exit_code == 0
+        assert result.output == expected
     with open(fixture('mob_skill_1002_1049.txt')) as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '1002', '1049'])

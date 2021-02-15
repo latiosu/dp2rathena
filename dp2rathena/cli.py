@@ -135,13 +135,18 @@ def item(ctx, file, sort, wrap, debug, value):
     help='A file with mob ids to convert, newline separated.'
 )
 @click.option(
+    '--comment/--no-comment',
+    default=False,
+    help='Comment out unrecognised skills in output. Default: no-comment'
+)
+@click.option(
     '--debug',
     is_flag=True,
     help='Shows debug information when querying Divine-Pride.'
 )
 @click.argument('value', nargs=-1)
 @click.pass_context
-def mobskill(ctx, file, debug, value):
+def mobskill(ctx, file, comment, debug, value):
     """Converts mob ids to rathena mob_skill_db.txt.
 
     \b
@@ -169,5 +174,5 @@ def mobskill(ctx, file, debug, value):
         to_convert = value
     api_key = ctx.obj[DP_KEY]
     click.echo(
-        converter.Converter(api_key, debug).convert_mob_skill(to_convert)
+        converter.Converter(api_key, debug).convert_mob_skill(to_convert, comment)
     , nl=False)
