@@ -198,6 +198,9 @@ def test_mapping_drops():
         mapper._drops({})
         mapper._drops({'drops': -1})
     assert mapper._drops({'drops': []}) == None
+    assert mapper._drops({'drops': [{'itemId': 501, 'chance': 0, 'stealProtected': False}]}) == None
+    assert mapper._drops({'drops': [{'itemId': -1, 'chance': 1, 'stealProtected': False}]}) \
+        == [{'Item': -1, 'Rate': 1}]
     assert mapper._drops({'drops': [{'itemId': 25159, 'chance': 1250, 'stealProtected': False}]}) \
         == [{'Item': 'Heart_Hunter_Seal', 'Rate': 1250}]
     assert mapper._drops({'drops': [{'itemId': 6213, 'chance': 30, 'stealProtected': False}, \

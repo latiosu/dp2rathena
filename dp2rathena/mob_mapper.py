@@ -53,7 +53,7 @@ class Mapper:
         }
 
         self.drops_schema = {
-            'Item': lambda d: self.item_db[d['itemId']],
+            'Item': lambda d: self.item_db[d['itemId']] if d['itemId'] in self.item_db else d['itemId'],
             'Rate': 'chance',
             'StealProtected': lambda d: True if d['stealProtected'] else None
             # 'RandomOptionGroup': None, # not provided by DP
