@@ -5,190 +5,208 @@ import pytest
 from dp2rathena import mob_mapper
 
 
-def test_mapping_name():
-    mapper = mob_mapper.Mapper()
+# Shared instance to reduce load times
+mapper = mob_mapper.Mapper()
+
+
+def test_mapping_sp():
     with pytest.raises(AssertionError):
-        assert mapper._name({}) == ''
-    assert mapper._name({'name': None}) == ''
-    assert mapper._name({'name': ''}) == ''
-    assert mapper._name({'name': '100T Zeny Check'}) == '100T Zeny Check'
-    assert mapper._name({'name': 'Knife [4]'}) == 'Knife'
-    assert mapper._name({'name': 'Hunting Bow [2]'}) == 'Hunting Bow'
-    assert mapper._name({'name': '[Katsua]Adventurer\'s Backpack [1]'}) == '[Katsua]Adventurer\'s Backpack'
-    assert mapper._name({'name': 'Travel Brochure [Amatsu]'}) == 'Travel Brochure [Amatsu]'
-    assert mapper._name({'name': 'MATK+1%(Lower)'}) == 'MATK+1%(Lower)'
+        mapper._sp({'stats':{}})
+        mapper._sp({'stats':{'sp': -1}})
+    assert mapper._sp({'stats':{'sp': 1}}) is None
+    assert mapper._sp({'stats':{'sp': 0}}) == 0
+    assert mapper._sp({'stats':{'sp': 2}}) == 2
 
 
-def test_mapping_itemTypeId():
-    mapper = mob_mapper.Mapper()
+# Scale
+# 0 - Small (default)
+# 1 - Medium
+# 2 - Large
+def test_mapping_scale():
     with pytest.raises(AssertionError):
-        mapper._itemTypeId({})
-        mapper._itemTypeId({'itemTypeId': 0})
-        mapper._itemTypeId({'itemSubTypeId': 0})
-        mapper._itemTypeId({'itemTypeId': -1, 'itemSubTypeId': -1})
-        mapper._itemTypeId({'itemTypeId': 1, 'itemSubTypeId': -1})
-    assert mapper._itemTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
-    assert mapper._itemTypeId({'itemTypeId': 1, 'itemSubTypeId': 0}) == 'Weapon'
-    assert mapper._itemTypeId({'itemTypeId': 2, 'itemSubTypeId': 518, 'name': 'Isis Egg'}) == 'PetEgg'
-    assert mapper._itemTypeId({'itemTypeId': 2, 'itemSubTypeId': 518, 'name': 'Broken Shell'}) == 'PetArmor'
-    assert mapper._itemTypeId({'itemTypeId': 3, 'itemSubTypeId': 0}) == 'Consumable'
-    assert mapper._itemTypeId({'itemTypeId': 3, 'itemSubTypeId': 768}) == 'Healing/Usable/DelayConsume/Cash'
-    assert mapper._itemTypeId({'itemTypeId': 3, 'itemSubTypeId': 769}) == 'Healing'
-    assert mapper._itemTypeId({'itemTypeId': 9, 'itemSubTypeId': 0}) == 'Armor'
-    assert mapper._itemTypeId({'itemTypeId': 10, 'itemSubTypeId': 0}) == 'ShadowGear'
+        mapper._scale({'stats':{}})
+        mapper._scale({'stats':{'scale': -1}})
+        mapper._scale({'stats':{'scale': 3}})
+    assert mapper._scale({'stats':{'scale': 0}}) == 'Small'
+    assert mapper._scale({'stats':{'scale': 1}}) == 'Medium'
+    assert mapper._scale({'stats':{'scale': 2}}) == 'Large'
 
 
-def test_mapping_itemSubTypeId():
-    mapper = mob_mapper.Mapper()
+# Race
+# 0 - Formless (Default)
+# 1 - Undead
+# 2 - Brute
+# 3 - Plant
+# 4 - Insect
+# 5 - Fish
+# 6 - Demon
+# 7 - Demihuman
+# 8 - Angel
+# 9 - Dragon
+def test_mapping_race():
     with pytest.raises(AssertionError):
-        mapper._itemTypeId({})
-        mapper._itemTypeId({'itemTypeId': 0})
-        mapper._itemTypeId({'itemSubTypeId': 0})
-        mapper._itemSubTypeId({'itemTypeId': -1, 'itemSubTypeId': -1})
-        mapper._itemSubTypeId({'itemTypeId': 1, 'itemSubTypeId': -1})
-    assert mapper._itemSubTypeId({'itemTypeId': 0, 'itemSubTypeId': 0}) is None
-    assert mapper._itemSubTypeId({'itemTypeId': 4, 'itemSubTypeId': 1025}) \
-        == 'Arrow/Dagger/Bullet/Shell/Grenade/Shuriken/Kunai/CannonBall/ThrowWeapon'
-    assert mapper._itemSubTypeId({'itemTypeId': 4, 'itemSubTypeId': 0}) \
-        == 'Arrow/Dagger/Bullet/Shell/Grenade/Shuriken/Kunai/CannonBall/ThrowWeapon'
-    assert mapper._itemSubTypeId({'itemTypeId': 1, 'itemSubTypeId': 258}) == '2hSword'
-    assert mapper._itemSubTypeId({'itemTypeId': 1, 'itemSubTypeId': 0}) is None
-    assert mapper._itemSubTypeId({'itemTypeId': 2, 'itemSubTypeId': 512}) is None
-    assert mapper._itemSubTypeId({'itemTypeId': 10, 'itemSubTypeId': 526}) is None
+        mapper._race({'stats':{}})
+        mapper._race({'stats':{'race': -1}})
+        mapper._race({'stats':{'race': 10}})
+    assert mapper._race({'stats':{'race': 0}}) == 'Formless'
+    assert mapper._race({'stats':{'race': 1}}) == 'Undead'
+    assert mapper._race({'stats':{'race': 2}}) == 'Brute'
+    assert mapper._race({'stats':{'race': 3}}) == 'Plant'
+    assert mapper._race({'stats':{'race': 4}}) == 'Insect'
+    assert mapper._race({'stats':{'race': 5}}) == 'Fish'
+    assert mapper._race({'stats':{'race': 6}}) == 'Demon'
+    assert mapper._race({'stats':{'race': 7}}) == 'Demihuman'
+    assert mapper._race({'stats':{'race': 8}}) == 'Angel'
+    assert mapper._race({'stats':{'race': 9}}) == 'Dragon'
 
 
-def test_mapping_sell():
-    mapper = mob_mapper.Mapper()
-    assert mapper._sell({}) is None
-
-
-def test_mapping_weight():
-    mapper = mob_mapper.Mapper()
+# Element is x % 10
+# 0 - Neutral (Default)
+# 1 - Water
+# 2 - Earth
+# 3 - Fire
+# 4 - Wind
+# 5 - Poison
+# 6 - Holy
+# 7 - Shadow
+# 8 - Ghost
+# 9 - Undead
+def test_mapping_element():
     with pytest.raises(AssertionError):
-        mapper._weight({})
-    assert mapper._weight({'weight': 0}) == 0
-    assert mapper._weight({'weight': 50.0}) == 500
-    assert mapper._weight({'weight': 0.1}) == 1
-    assert mapper._weight({'weight': -1}) == 0
+        mapper._element({'stats':{}})
+        mapper._element({'stats':{'element': -1}})
+        mapper._element({'stats':{'element': 19}})
+        mapper._element({'stats':{'element': 90}})
+    assert mapper._element({'stats':{'element': 20}}) == 'Neutral'
+    assert mapper._element({'stats':{'element': 21}}) == 'Water'
+    assert mapper._element({'stats':{'element': 22}}) == 'Earth'
+    assert mapper._element({'stats':{'element': 23}}) == 'Fire'
+    assert mapper._element({'stats':{'element': 24}}) == 'Wind'
+    assert mapper._element({'stats':{'element': 25}}) == 'Poison'
+    assert mapper._element({'stats':{'element': 26}}) == 'Holy'
+    assert mapper._element({'stats':{'element': 27}}) == 'Shadow'
+    assert mapper._element({'stats':{'element': 28}}) == 'Ghost'
+    assert mapper._element({'stats':{'element': 29}}) == 'Undead'
+    assert mapper._element({'stats':{'element': 80}}) == 'Neutral'
+    assert mapper._element({'stats':{'element': 81}}) == 'Water'
+    assert mapper._element({'stats':{'element': 82}}) == 'Earth'
+    assert mapper._element({'stats':{'element': 83}}) == 'Fire'
+    assert mapper._element({'stats':{'element': 84}}) == 'Wind'
+    assert mapper._element({'stats':{'element': 85}}) == 'Poison'
+    assert mapper._element({'stats':{'element': 86}}) == 'Holy'
+    assert mapper._element({'stats':{'element': 87}}) == 'Shadow'
+    assert mapper._element({'stats':{'element': 88}}) == 'Ghost'
+    assert mapper._element({'stats':{'element': 89}}) == 'Undead'
 
 
-def test_mapping_job():
-    mapper = mob_mapper.Mapper()
+# Element Level is int(x / 20) and value between 1-4
+def test_mapping_elementLevel():
     with pytest.raises(AssertionError):
-        mapper._job({})
-        mapper._job({'job': -1})
-        mapper._job({'job': 0x100000})
-    assert mapper._job({'job': None}) is None
-    assert mapper._job({'job': 0xFFFFF}) is None
-    assert mapper._job({'job': 0}) is None
-    assert mapper._job({'job': 0x20410}) == {'Acolyte': True, 'Monk': True, 'Priest': True}
-    assert mapper._job({'job': 1}) == {'Novice': True, 'SuperNovice': True}
-    assert mapper._job({'job': 142}) == {'Summoner': True}
-    assert mapper._job({'job': 144}) == {'KagerouOboro': True, 'Rebellion': True}
+        mapper._elementLevel({'stats':{}})
+        mapper._elementLevel({'stats':{'element': -1}})
+        mapper._element({'stats':{'element': 19}})
+        mapper._element({'stats':{'element': 90}})
+    assert mapper._elementLevel({'stats':{'element': 20}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 21}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 22}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 23}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 24}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 25}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 26}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 27}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 28}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 29}}) == 1
+    assert mapper._elementLevel({'stats':{'element': 80}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 81}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 82}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 83}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 84}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 85}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 86}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 87}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 88}}) == 4
+    assert mapper._elementLevel({'stats':{'element': 89}}) == 4
 
 
-def test_mapping_classes():
-    mapper = mob_mapper.Mapper()
-    assert mapper._classes({}) is None
-
-
-def test_mapping_gender():
-    mapper = mob_mapper.Mapper()
+def test_mapping_damageTaken():
     with pytest.raises(AssertionError):
-        mapper._gender({})
-        mapper._gender({'job': -1})
-        mapper._gender({'job': 0x100000})
-    assert mapper._gender({'job': None}) is None
-    assert mapper._gender({'job': 1}) is None
-    assert mapper._gender({'job': 0xFFFFF}) is None
-    assert mapper._gender({'job': 0x08000}) == 'Male'
-    assert mapper._gender({'job': 0x10000}) == 'Female'
-    assert mapper._gender({'job': 0x18000}) == 'Both'
+        mapper._damageTaken({'stats':{}})
+        mapper._damageTaken({'stats':{'mvp': ''}})
+        mapper._damageTaken({'stats':{'mvp': -1}})
+    assert mapper._damageTaken({'stats':{'mvp': 0}}) == 100
+    assert mapper._damageTaken({'stats':{'mvp': 1}}) == 10
 
 
-def test_mapping_locationId():
-    mapper = mob_mapper.Mapper()
+def test_mapping_ai():
     with pytest.raises(AssertionError):
-        mapper._locationId({})
-        mapper._locationId({'locationId': 0})
-        mapper._locationId({'itemTypeId': 0})
-        mapper._locationId({'locationId': -1, 'itemTypeId': 0})
-        mapper._locationId({'locationId': 0x400000, 'itemTypeId': 0})
-    assert mapper._locationId({'locationId': None, 'itemTypeId': 0}) is None
-    assert mapper._locationId({'locationId': 0, 'itemTypeId': 0}) is None
-    assert mapper._locationId({'locationId': 0x10, 'itemTypeId': 0}) == {'Armor': True}
-    assert mapper._locationId({'locationId': 0, 'itemTypeId': 4}) == {'Ammo': True}
-    assert mapper._locationId({'locationId': 0x22, 'itemTypeId': 0}) == {'Both_Hand': True}
-    assert mapper._locationId({'locationId': 0x88, 'itemTypeId': 0}) == {'Both_Accessory': True}
-    assert mapper._locationId({'locationId': 0x10000, 'itemTypeId': 0}) == {'Shadow_Armor': True}
-    assert mapper._locationId({'locationId': 0x400, 'itemTypeId': 0}) == {'Costume_Head_Top': True}
-    assert mapper._locationId({'locationId': 0x300, 'itemTypeId': 0}) \
-        == {'Head_Top': True, 'Head_Mid': True}
-    assert mapper._locationId({'locationId': 0x301, 'itemTypeId': 0}) \
-        == {'Head_Top': True, 'Head_Mid': True, 'Head_Low': True}
+        mapper._ai({'stats':{}})
+        mapper._ai({'stats':{'ai': ''}})
+        mapper._ai({'stats':{'ai': 'Unknown'}})
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_01'}}) == '01'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_02'}}) == '02'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_03'}}) == '03'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_04'}}) == '04'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_05'}}) == '05'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_06'}}) == '06'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_07'}}) == '07'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_08'}}) == '08'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_09'}}) == '09'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_10'}}) == '10'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_11'}}) == '11'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_12'}}) == '12'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_13'}}) == '13'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_17'}}) == '17'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_19'}}) == '19'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_20'}}) == '20'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_21'}}) == '21'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_24'}}) == '24'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_25'}}) == '25'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_26'}}) == '26'
+    assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_27'}}) == '27'
 
 
-def test_mapping_itemLevel():
-    mapper = mob_mapper.Mapper()
+# Class
+# 0 - Normal (default)
+# 1 - Boss
+# 2 - Guardian
+# 4 - Battlefield
+# 5 - Event
+def test_mapping_class():
     with pytest.raises(AssertionError):
-        mapper._itemLevel({})
-        mapper._itemLevel({'itemLevel': -1})
-        mapper._itemLevel({'itemLevel': 5})
-    assert mapper._itemLevel({'itemLevel': 0}) is None
-    assert mapper._itemLevel({'itemLevel': 1}) == 1
-    assert mapper._itemLevel({'itemLevel': 4}) == 4
+        mapper._class({'stats':{}})
+        mapper._class({'stats':{'class': -1}})
+        mapper._class({'stats':{'class': 3}})
+        mapper._class({'stats':{'class': 6}})
+    assert mapper._class({'stats':{'class': 0}}) is None
+    assert mapper._class({'stats':{'class': 1}}) == 'Boss'
+    assert mapper._class({'stats':{'class': 2}}) == 'Guardian'
+    assert mapper._class({'stats':{'class': 4}}) == 'Battlefield'
+    assert mapper._class({'stats':{'class': 5}}) == 'Event'
 
 
-def test_mapping_requiredLevel():
-    mapper = mob_mapper.Mapper()
+def test_mapping_mvpdrops():
     with pytest.raises(AssertionError):
-        mapper._requiredLevel({})
-        mapper._requiredLevel({'requiredLevel': -1})
-        mapper._requiredLevel({'requiredLevel': 1000})
-    assert mapper._requiredLevel({'requiredLevel': 0}) is None
-    assert mapper._requiredLevel({'requiredLevel': 999}) is None
-    assert mapper._requiredLevel({'requiredLevel': 1}) == 1
-    assert mapper._requiredLevel({'requiredLevel': 100}) == 100
+        mapper._drops({}, 'mvpdrops')
+        mapper._drops({'mvpdrops': -1}, 'mvpdrops')
+    assert mapper._drops({'mvpdrops': []}, 'mvpdrops') == None
+    assert mapper._drops({'mvpdrops': [{'itemId': 25159, 'chance': 1250, 'stealProtected': False}]}, 'mvpdrops') \
+        == [{'Item': 'Heart_Hunter_Seal', 'Rate': 1250}]
 
 
-def test_mapping_classNum():
-    mapper = mob_mapper.Mapper()
+def test_mapping_drops():
     with pytest.raises(AssertionError):
-        assert mapper._classNum({}) is None
-        assert mapper._classNum({'classNum': -1}) is None
-    assert mapper._classNum({'classNum': 0}) is None
-    assert mapper._classNum({'classNum': 2}) is 2
-    assert mapper._classNum({'classNum': 5231}) is 5231
-
-
-def test_mapping_itemMoveInfo():
-    mapper = mob_mapper.Mapper()
-    with pytest.raises(AssertionError):
-        mapper._itemMoveInfo({})
-    assert mapper._itemMoveInfo({'itemMoveInfo': {
-        'drop': True,
-        'trade': True,
-        'store': True,
-        'cart': True,
-        'sell': True,
-        'mail': True,
-        'auction': True,
-        'guildStore': True
-    }}) is None
-    assert mapper._itemMoveInfo({'itemMoveInfo': {
-        'drop': False,
-        'trade': True,
-        'store': True,
-        'cart': True,
-        'sell': True,
-        'mail': True,
-        'auction': True,
-        'guildStore': True
-    }}) == {'Override': 100, 'NoDrop': True}
+        mapper._drops({})
+        mapper._drops({'drops': -1})
+    assert mapper._drops({'drops': []}) == None
+    assert mapper._drops({'drops': [{'itemId': 25159, 'chance': 1250, 'stealProtected': False}]}) \
+        == [{'Item': 'Heart_Hunter_Seal', 'Rate': 1250}]
+    assert mapper._drops({'drops': [{'itemId': 6213, 'chance': 30, 'stealProtected': False}, \
+                                    {'itemId': 27306, 'chance': 1, 'stealProtected': True}]}) \
+        == [{'Item': 'Explosive_Powder', 'Rate': 30}, \
+            {'Item': 'Bellare_Card', 'Rate': 1, 'StealProtected': True}]
 
 
 def test_map_schema():
-    mapper = mob_mapper.Mapper()
     assert mapper._map_schema(None, None) is None
     assert mapper._map_schema(None, {}) is None
     assert mapper._map_schema({}, None) == {}
@@ -206,9 +224,8 @@ def test_map_schema():
     assert mapper._map_schema({'x': 1.0}, {'not_mapped': 'value'}) == {'x': 1.0}
 
 
-def test_map_item(fixture):
-    mapper = mob_mapper.Mapper()
-    with pytest.raises(AssertionError):
-        mapper.map_item({})
-    assert mapper.map_item(None) is None
-    assert mapper.map_item({'Error': 'message'}) == {'Error': 'message'}
+def test_map_mob(fixture):
+    assert mapper.map_mob(None) is None
+    assert mapper.map_mob({}) == {'Error': 'Mob stat data missing'}
+    assert mapper.map_mob({'stats': {}}) == {'Error': 'Mob stat data missing'}
+    assert mapper.map_mob({'Error': 'message'}) == {'Error': 'message'}
