@@ -176,3 +176,59 @@ def mobskill(ctx, file, comment, debug, value):
     click.echo(
         converter.Converter(api_key, debug).convert_mob_skill(to_convert, comment)
     , nl=False)
+
+
+
+@dp2rathena.command()
+@click.option(
+    '-f', '--file',
+    is_flag=True,
+    help='A file with mob ids to convert, newline separated.'
+)
+@click.option(
+    '--sort/--no-sort',
+    default=False,
+    help='Sorts result by mob id. Default: no sort.'
+)
+@click.option(
+    '--wrap/--no-wrap',
+    default=True,
+    help='Wraps result with rathena Header and Body tags.'
+)
+@click.option(
+    '--debug',
+    is_flag=True,
+    help='Shows debug information when querying Divine-Pride.'
+)
+@click.argument('value', nargs=-1)
+@click.pass_context
+def mob(ctx, file, sort, wrap, debug, value):
+    """Converts mob ids to rathena mob_db.yml.
+
+    \b
+    Examples:
+        # Pass API key and convert mob ids 1002 and 20355
+        dp2rathena --api-key <your-api-key> mob 1002 20355
+    \b
+        # Pass API key and convert mobs via STDIN and sort result by id
+        dp2rathena -k <your-api-key> mob --sort -f -
+    \b
+        # Save API key and convert mob ids in ids_to_convert.txt
+        dp2rathena config
+        dp2rathena mob -f ids_to_convert.txt
+    """
+    if file:
+        if len(value) != 1:
+            raise click.UsageError('One file required for processing.')
+        to_convert = click.open_file(value[0], 'r').read().splitlines()
+    else:
+        if len(value) == 0:
+            raise click.UsageError('Mob id required.')
+        for v in value:
+            if not v.isdigit():
+                raise click.UsageError(f'Non-integer mob id - {v}')
+        to_convert = value
+    api_key = ctx.obj[DP_KEY]
+    click.echo(
+        converter.Converter(api_key, debug).convert_mob(to_convert, sort, wrap)
+    , nl=False)

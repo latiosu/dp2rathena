@@ -205,3 +205,81 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1049\n1002')
         assert result.exit_code == 0
         assert result.output == expected
+
+
+def test_mob_invalid(fixture):
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['mob'])
+    assert result.exit_code == 2
+    assert 'Mob id required' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', 'hello'])
+    assert result.exit_code == 2
+    assert 'Non-integer mob id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', 'hello', 'world'])
+    assert result.exit_code == 2
+    assert 'Non-integer mob id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', '-f'])
+    assert result.exit_code == 2
+    assert 'One file required for processing' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', '-f', 'missing.txt'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, FileNotFoundError)
+    result = runner.invoke(cli.dp2rathena, ['mob', '123', '-f', fixture('20355_1002.txt')])
+    assert result.exit_code == 2
+    assert 'One file required for processing' in result.output
+
+
+def test_mob_invalid_config():
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        env_path = Path('.') / '.env'
+        env_path.write_text('')
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
+        assert result.exit_code == 1
+        assert isinstance(result.exception, KeyError)
+    with runner.isolated_filesystem():
+        config_path = Path.home() / '.dp2rathena.conf'
+        config_path.write_text('')
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
+        assert result.exit_code == 1
+        assert isinstance(result.exception, KeyError)
+
+
+# These tests could fail if DP API is down
+def test_mob_flaky():
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'mob', '1002'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, IOError)
+
+
+@pytest.mark.api
+def test_mob_valid(fixture):
+    runner = CliRunner()
+    with open(fixture('mob_1002.yml')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', '-'], input='1002')
+        assert result.exit_code == 0
+        assert result.output == expected
+    with open(fixture('mob_1002_1049.yml')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002', '1049'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '--sort', '1049', '1002'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', fixture('1049_1002.txt'), '--sort'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', '-', '--sort'], input='1049\n1002')
+        assert result.exit_code == 0
+        assert result.output == expected
+    with open(fixture('mob_1049_1002.yml')) as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', fixture('1049_1002.txt')])
+        assert result.exit_code == 0
+        assert result.output == expected
