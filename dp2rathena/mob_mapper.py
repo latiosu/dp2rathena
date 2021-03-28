@@ -68,7 +68,7 @@ class Mapper:
             4: 'Wind',
             5: 'Poison',
             6: 'Holy',
-            7: 'Shadow',
+            7: 'Dark',
             8: 'Ghost',
             9: 'Undead',
         }
