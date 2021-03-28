@@ -23,16 +23,6 @@ def test_fetch_item(fixture):
         convert.fetch_item(1101)
 
 
-def test_wrap_result(fixture):
-    convert = converter.Converter(api_key)
-    yml = "{ 'Header': { 'Type': 'ITEM_DB', 'Version': 1, }, 'Body': [], }"
-    expected_yml = yaml.load(yml, Loader=yaml.FullLoader)
-    assert convert.wrap_result([]) == expected_yml
-    yml = "{ 'Header': { 'Type': 'ITEM_DB', 'Version': 1, }, 'Body': [{'Key': 'Value'}], }"
-    expected_yml = yaml.load(yml, Loader=yaml.FullLoader)
-    assert convert.wrap_result([{'Key': 'Value'}]) == expected_yml
-
-
 @pytest.mark.api
 def test_fetch_mob(fixture):
     convert = converter.Converter(api_key)
@@ -97,3 +87,39 @@ def test_convert_mob_skill_nonapi():
     assert generated_txt == ''
     generated_txt = convert.convert_mob_skill([''])
     assert generated_txt == ''
+
+
+@pytest.mark.api
+def test_convert_mob(fixture):
+    convert = converter.Converter(api_key)
+    expected = open(fixture('mob_1002.yml')).read()
+    generated = convert.convert_mob([1002])
+    assert generated == expected
+    expected = open(fixture('mob_1002_1049.yml')).read()
+    generated = convert.convert_mob([1002, 1049])
+    assert generated == expected
+    generated = convert.convert_mob([1002, '', 1049])
+    assert generated == expected
+    expected = open(fixture('mob_1049_1002.yml')).read()
+    generated = convert.convert_mob([1049, 1002])
+    assert generated == expected
+
+
+def test_convert_mob_nonapi():
+    convert = converter.Converter(api_key)
+    generated_yml = convert.convert_mob([], sort=False, wrap=False)
+    assert generated_yml == '[]\n'
+    generated_yml = convert.convert_mob([], sort=True, wrap=False)
+    assert generated_yml == '[]\n'
+    generated_yml = convert.convert_mob([], sort=False, wrap=True)
+    assert generated_yml == 'Header:\n  Type: MOB_DB\n  Version: 2\nBody: []\n'
+    generated_yml = convert.convert_mob([], sort=True, wrap=True)
+    assert generated_yml == 'Header:\n  Type: MOB_DB\n  Version: 2\nBody: []\n'
+
+
+def test_remove_numerical_quotes():
+    convert = converter.Converter(api_key)
+    result = convert.remove_numerical_quotes('\'01\'')
+    assert result == '01'
+    result = convert.remove_numerical_quotes('Tell\'tale')
+    assert result == 'Tell\'tale'

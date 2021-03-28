@@ -133,15 +133,15 @@ def test_mapping_damageTaken():
         mapper._damageTaken({'stats':{}})
         mapper._damageTaken({'stats':{'mvp': ''}})
         mapper._damageTaken({'stats':{'mvp': -1}})
-    assert mapper._damageTaken({'stats':{'mvp': 0}}) == 100
+    assert mapper._damageTaken({'stats':{'mvp': 0}}) is None
     assert mapper._damageTaken({'stats':{'mvp': 1}}) == 10
 
 
 def test_mapping_ai():
     with pytest.raises(AssertionError):
         mapper._ai({'stats':{}})
-        mapper._ai({'stats':{'ai': ''}})
         mapper._ai({'stats':{'ai': 'Unknown'}})
+    assert mapper._ai({'stats':{'ai': ''}}) == 'Unknown'
     assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_01'}}) == '01'
     assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_02'}}) == '02'
     assert mapper._ai({'stats':{'ai': 'MONSTER_TYPE_03'}}) == '03'

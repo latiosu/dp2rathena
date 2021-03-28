@@ -180,5 +180,6 @@
   },
   "rewardForAchievement": [],
   "cardPrefix": null,
-  "pets": []
+  "pets": [],
+  "hasScript": false
 }

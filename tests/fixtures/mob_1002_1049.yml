@@ -1,0 +1,98 @@
+Header:
+  Type: MOB_DB
+  Version: 2
+Body:
+- Id: 1002
+  AegisName: PORING
+  Name: Poring
+  Level: 1
+  Hp: 60
+  BaseExp: 150
+  JobExp: 40
+  Attack: 8
+  Attack2: 1
+  Defense: 2
+  MagicDefense: 5
+  Str: 6
+  Agi: 1
+  Vit: 1
+  Int: 0
+  Dex: 6
+  Luk: 5
+  AttackRange: 1
+  SkillRange: 10
+  ChaseRange: 12
+  Size: Medium
+  Race: Plant
+  Element: Water
+  ElementLevel: 1
+  WalkSpeed: 400
+  AttackDelay: 1872
+  AttackMotion: 672
+  DamageMotion: 480
+  Ai: 02
+  Drops:
+  - Item: Jellopy
+    Rate: 7000
+  - Item: Knife_
+    Rate: 100
+  - Item: Sticky_Mucus
+    Rate: 400
+  - Item: Apple
+    Rate: 1000
+  - Item: Wing_Of_Fly
+    Rate: 500
+  - Item: Apple
+    Rate: 150
+  - Item: Unripe_Apple
+    Rate: 20
+  - Item: Poring_Card
+    Rate: 20
+    StealProtected: true
+- Id: 1049
+  AegisName: PICKY
+  Name: Picky
+  Level: 9
+  Hp: 95
+  BaseExp: 154
+  JobExp: 80
+  Attack: 18
+  Attack2: 1
+  Defense: 21
+  MagicDefense: 3
+  Str: 14
+  Agi: 9
+  Vit: 10
+  Int: 0
+  Dex: 10
+  Luk: 3
+  AttackRange: 1
+  SkillRange: 10
+  ChaseRange: 12
+  Size: Small
+  Race: Brute
+  Element: Fire
+  ElementLevel: 1
+  WalkSpeed: 200
+  AttackDelay: 988
+  AttackMotion: 288
+  DamageMotion: 168
+  Ai: 01
+  Drops:
+  - Item: Feather_Of_Birds
+    Rate: 7000
+  - Item: Feather
+    Rate: 1000
+  - Item: Cotton_Shirt_
+    Rate: 200
+  - Item: Red_Herb
+    Rate: 1000
+  - Item: Milk
+    Rate: 1000
+  - Item: Yellow_Gemstone
+    Rate: 60
+  - Item: Wing_Of_Fly
+    Rate: 500
+  - Item: Picky_Card
+    Rate: 20
+    StealProtected: true

@@ -40,10 +40,10 @@ class Mapper:
             # 'RaceGroups': None, # unique to rathena
             'Element': self._element,
             'ElementLevel': self._elementLevel,
-            'WalkSpeed': lambda d: d['stats']['movementSpeed'],
-            'AttackDelay': lambda d: d['stats']['attackSpeed'],
-            'AttackMotion': lambda d: d['stats']['rechargeTime'],
-            'DamageMotion': lambda d: d['stats']['attackedSpeed'],
+            'WalkSpeed': lambda d: int(d['stats']['movementSpeed']),
+            'AttackDelay': lambda d: int(d['stats']['rechargeTime']),
+            'AttackMotion': lambda d: int(d['stats']['attackSpeed']),
+            'DamageMotion': lambda d: int(d['stats']['attackedSpeed']),
             'DamageTaken': self._damageTaken,
             'Ai': self._ai,
             'Class': self._class,
@@ -52,7 +52,7 @@ class Mapper:
             'Drops': self._drops,
         }
 
-        self.drop_schema = {
+        self.drops_schema = {
             'Item': lambda d: self.item_db[d['itemId']],
             'Rate': 'chance',
             'StealProtected': lambda d: True if d['stealProtected'] else None
@@ -123,7 +123,7 @@ class Mapper:
             elif arg == 'mvp':
                 assert v in [0, 1]
             elif arg == 'ai':
-                assert v.startswith('MONSTER_TYPE_')
+                assert v == "" or v.startswith('MONSTER_TYPE_')
             elif arg == 'class':
                 assert v in [0, 1, 2, 4, 5]
 
@@ -153,14 +153,13 @@ class Mapper:
     # 10% for MVPs, 100% for all other mobs
     def _damageTaken(self, data):
         self._validate(data['stats'], 'mvp')
-        if data['stats']['mvp'] == 1:
-            return 10
-        else:
-            return 100
+        return 10 if data['stats']['mvp'] == 1 else None
 
     # Last two characters e.g. 'MONSTER_TYPE_13' -> 13
     def _ai(self, data):
         self._validate(data['stats'], 'ai')
+        if data['stats']['ai'] == '':
+            return 'Unknown'
         return data['stats']['ai'][-2:]
 
     def _class(self, data):
@@ -173,7 +172,10 @@ class Mapper:
     def _drops(self, data, field='drops'):
         self._require_item_db()
         self._validate(data, field)
-        result = [self._map_schema(copy.copy(self.drop_schema), i) for i in data[field]]
+        result = list()
+        for item in data[field]:
+            if item['chance'] > 0:
+                result.append(self._map_schema(copy.copy(self.drops_schema), item))
         if len(result) == 0:
             return None
         return result
