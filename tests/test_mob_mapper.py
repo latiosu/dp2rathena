@@ -84,7 +84,7 @@ def test_mapping_element():
     assert mapper._element({'stats':{'element': 24}}) == 'Wind'
     assert mapper._element({'stats':{'element': 25}}) == 'Poison'
     assert mapper._element({'stats':{'element': 26}}) == 'Holy'
-    assert mapper._element({'stats':{'element': 27}}) == 'Shadow'
+    assert mapper._element({'stats':{'element': 27}}) == 'Dark'
     assert mapper._element({'stats':{'element': 28}}) == 'Ghost'
     assert mapper._element({'stats':{'element': 29}}) == 'Undead'
     assert mapper._element({'stats':{'element': 80}}) == 'Neutral'
@@ -94,7 +94,7 @@ def test_mapping_element():
     assert mapper._element({'stats':{'element': 84}}) == 'Wind'
     assert mapper._element({'stats':{'element': 85}}) == 'Poison'
     assert mapper._element({'stats':{'element': 86}}) == 'Holy'
-    assert mapper._element({'stats':{'element': 87}}) == 'Shadow'
+    assert mapper._element({'stats':{'element': 87}}) == 'Dark'
     assert mapper._element({'stats':{'element': 88}}) == 'Ghost'
     assert mapper._element({'stats':{'element': 89}}) == 'Undead'
 
@@ -229,6 +229,9 @@ def test_map_schema():
 
 def test_map_mob(fixture):
     assert mapper.map_mob(None) is None
-    assert mapper.map_mob({}) == {'Error': 'Mob stat data missing'}
-    assert mapper.map_mob({'stats': {}}) == {'Error': 'Mob stat data missing'}
+    assert mapper.map_mob({'id': 1, 'dbname': 'x'}) == {'Id': 1, 'AegisName': 'x', 'Error': 'Mob stat data missing'}
+    assert mapper.map_mob({'id': 1, 'dbname': 'x', 'stats': {}}) \
+        == {'Id': 1, 'AegisName': 'x', 'Error': 'Mob stat data missing'}
+    assert mapper.map_mob({'id': 1, 'dbname': 'x', 'stats': {'level': 9}}) \
+        == {'Id': 1, 'AegisName': 'x', 'Error': 'General mob data missing'}
     assert mapper.map_mob({'Error': 'message'}) == {'Error': 'message'}

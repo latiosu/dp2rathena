@@ -113,19 +113,18 @@ class Mapper:
             v = data[arg]
             msg = f'Unrecognised {arg}: {v}'
             if arg == 'scale':
-                assert v in [0, 1, 2]
-            elif arg == 'race':
-                assert v >= 0 and v <= 9
+                assert v in [None, 0, 1, 2], msg
             elif arg == 'element':
-                assert v >= 20 and v <= 89
+                assert v is None or (v >= 20 and v <= 89), msg
             elif arg == 'mvp':
-                assert v in [0, 1]
+                assert v in [0, 1], msg
             elif arg == 'ai':
-                assert v == "" or v.startswith('MONSTER_TYPE_')
+                assert v == "" or v.startswith('MONSTER_TYPE_'), msg
             elif arg == 'class':
-                assert v in [0, 1, 2, 4, 5]
+                assert v in [0, 1, 2, 4, 5], msg
 
     def _sp(self, data):
+        self._validate(data['stats'], 'sp')
         sp = data['stats']['sp']
         if sp is None or sp == 1 or sp < 0:
             return None
@@ -133,19 +132,31 @@ class Mapper:
 
     def _scale(self, data):
         self._validate(data['stats'], 'scale')
-        return self.scale_map[data['stats']['scale']]
+        scale = data['stats']['scale']
+        if scale is None:
+            return 'Unknown'
+        return self.scale_map[scale]
 
     def _race(self, data):
         self._validate(data['stats'], 'race')
-        return self.race_map[data['stats']['race']]
+        race = data['stats']['race']
+        if race is None or race < 0 or race > 9:
+            return 'Unknown'
+        return self.race_map[race]
 
     def _element(self, data):
         self._validate(data['stats'], 'element')
-        return self.element_map[data['stats']['element'] % 10]
+        element = data['stats']['element']
+        if element is None:
+            return 'Unknown'
+        return self.element_map[element % 10]
 
     def _elementLevel(self, data):
         self._validate(data['stats'], 'element')
-        return int(data['stats']['element'] / 20)
+        element = data['stats']['element']
+        if element is None:
+            return 'Unknown'
+        return int(element / 20)
 
     # 10% for MVPs, 100% for all other mobs
     def _damageTaken(self, data):
@@ -206,5 +217,7 @@ class Mapper:
         if data is None or 'Error' in data:
             return data
         elif 'stats' not in data or len(data['stats']) == 0:
-            return {'Error': 'Mob stat data missing'}
+            return {'Id': data['id'], 'AegisName': data['dbname'], 'Error': 'Mob stat data missing'}
+        elif 'name' not in data or data['name'] is None:
+            return {'Id': data['id'], 'AegisName': data['dbname'], 'Error': 'General mob data missing'}
         return self._map_schema(self.schema, data)
