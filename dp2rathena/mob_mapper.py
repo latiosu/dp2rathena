@@ -112,9 +112,7 @@ class Mapper:
             assert arg in data
             v = data[arg]
             msg = f'Unrecognised {arg}: {v}'
-            if arg == 'sp':
-                assert v >= 0
-            elif arg == 'scale':
+            if arg == 'scale':
                 assert v in [0, 1, 2]
             elif arg == 'race':
                 assert v >= 0 and v <= 9
@@ -128,11 +126,10 @@ class Mapper:
                 assert v in [0, 1, 2, 4, 5]
 
     def _sp(self, data):
-        self._validate(data['stats'], 'sp')
         sp = data['stats']['sp']
-        if sp == 0 or sp > 1:
-            return sp
-        return None
+        if sp is None or sp == 1 or sp < 0:
+            return None
+        return sp
 
     def _scale(self, data):
         self._validate(data['stats'], 'scale')
