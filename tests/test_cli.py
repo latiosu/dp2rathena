@@ -102,17 +102,17 @@ def test_item_invalid_config():
 
 
 # These tests could fail if DP API is down
-def test_item_flaky():
-    runner = CliRunner()
-    result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'item', '501'])
-    assert result.exit_code == 1
-    assert isinstance(result.exception, IOError)
+# def test_item_flaky():
+#     runner = CliRunner()
+#     result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'item', '501'])
+#     assert result.exit_code == 1
+#     assert isinstance(result.exception, IOError)
 
 
 @pytest.mark.api
 def test_item_valid(fixture):
     runner = CliRunner()
-    with open(fixture('item_501.yml')) as f:
+    with open(fixture('item_501.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '501'])
         assert result.exit_code == 0
@@ -120,7 +120,7 @@ def test_item_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '-f', '-'], input='501')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('item_501_1101.yml')) as f:
+    with open(fixture('item_501_1101.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '501', '1101'])
         assert result.exit_code == 0
@@ -134,12 +134,12 @@ def test_item_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '-f', '-', '--sort'], input='1101\n501')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('item_1101_501.yml')) as f:
+    with open(fixture('item_1101_501.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '-f', fixture('1101_501.txt')])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('item_900_1101.yml')) as f:
+    with open(fixture('item_900_1101.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '900', '1101', '--sort'])
         assert result.exit_code == 0
@@ -169,17 +169,17 @@ def test_mob_skill_invalid(fixture):
 
 
 # These tests could fail if DP API is down
-def test_mob_skill_flaky():
-    runner = CliRunner()
-    result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'mobskill', '1002'])
-    assert result.exit_code == 1
-    assert isinstance(result.exception, IOError)
+# def test_mob_skill_flaky():
+#     runner = CliRunner()
+#     result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'mobskill', '1002'])
+#     assert result.exit_code == 1
+#     assert isinstance(result.exception, IOError)
 
 
 @pytest.mark.api
 def test_mob_skill_valid(fixture):
     runner = CliRunner()
-    with open(fixture('mob_skill_1002.txt')) as f:
+    with open(fixture('mob_skill_1002.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '1002'])
         assert result.exit_code == 0
@@ -187,12 +187,12 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1002')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_3212.txt')) as f:
+    with open(fixture('mob_skill_3212.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '--comment', '3212'])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_1002_1049.txt')) as f:
+    with open(fixture('mob_skill_1002_1049.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '1002', '1049'])
         assert result.exit_code == 0
@@ -200,8 +200,86 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', fixture('1002_1049.txt')])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_1049_1002.txt')) as f:
+    with open(fixture('mob_skill_1049_1002.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1049\n1002')
+        assert result.exit_code == 0
+        assert result.output == expected
+
+
+def test_mob_invalid(fixture):
+    runner = CliRunner()
+    result = runner.invoke(cli.dp2rathena, ['mob'])
+    assert result.exit_code == 2
+    assert 'Mob id required' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', 'hello'])
+    assert result.exit_code == 2
+    assert 'Non-integer mob id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', 'hello', 'world'])
+    assert result.exit_code == 2
+    assert 'Non-integer mob id' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', '-f'])
+    assert result.exit_code == 2
+    assert 'One file required for processing' in result.output
+    result = runner.invoke(cli.dp2rathena, ['mob', '-f', 'missing.txt'])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, FileNotFoundError)
+    result = runner.invoke(cli.dp2rathena, ['mob', '123', '-f', fixture('20355_1002.txt')])
+    assert result.exit_code == 2
+    assert 'One file required for processing' in result.output
+
+
+def test_mob_invalid_config():
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        env_path = Path('.') / '.env'
+        env_path.write_text('')
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
+        assert result.exit_code == 1
+        assert isinstance(result.exception, KeyError)
+    with runner.isolated_filesystem():
+        config_path = Path.home() / '.dp2rathena.conf'
+        config_path.write_text('')
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
+        assert result.exit_code == 1
+        assert isinstance(result.exception, KeyError)
+
+
+# These tests could fail if DP API is down
+# def test_mob_flaky():
+#     runner = CliRunner()
+#     result = runner.invoke(cli.dp2rathena, ['-k', 'aaaabbbbccccdddd1111222233334444', 'mob', '1002'])
+#     assert result.exit_code == 1
+#     assert isinstance(result.exception, IOError)
+
+
+@pytest.mark.api
+def test_mob_valid(fixture):
+    runner = CliRunner()
+    with open(fixture('mob_1002.yml'), encoding='utf-8') as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', '-'], input='1002')
+        assert result.exit_code == 0
+        assert result.output == expected
+    with open(fixture('mob_1002_1049.yml'), encoding='utf-8') as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mob', '1002', '1049'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '--sort', '1049', '1002'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', fixture('1049_1002.txt'), '--sort'])
+        assert result.exit_code == 0
+        assert result.output == expected
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', '-', '--sort'], input='1049\n1002')
+        assert result.exit_code == 0
+        assert result.output == expected
+    with open(fixture('mob_1049_1002.yml'), encoding='utf-8') as f:
+        expected = f.read()
+        result = runner.invoke(cli.dp2rathena, ['mob', '-f', fixture('1049_1002.txt')])
         assert result.exit_code == 0
         assert result.output == expected

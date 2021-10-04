@@ -1,215 +1,175 @@
 {
-    "id": 1049,
-    "dbname": "PICKY",
-    "name": "Picky",
-    "stats": {
-        "attackRange": 1,
-        "level": 9,
-        "health": 70,
-        "sp": 1,
-        "str": 14,
-        "int": 0,
-        "vit": 10,
-        "dex": 10,
-        "agi": 9,
-        "luk": 3,
-        "rechargeTime": 988,
-        "atk1": 1,
-        "atk2": 1,
-        "attack": {
-            "minimum": 23,
-            "maximum": 24
-        },
-        "magicAttack": {
-            "minimum": 9,
-            "maximum": 10
-        },
-        "defense": 21,
-        "baseExperience": 154,
-        "jobExperience": 80,
-        "aggroRange": 10,
-        "escapeRange": 12,
-        "movementSpeed": 200.0,
-        "attackSpeed": 288.0,
-        "attackedSpeed": 168.0,
-        "element": 23,
-        "scale": 0,
-        "race": 2,
-        "magicDefense": 3,
-        "hit": 218,
-        "flee": 189,
-        "ai": "MONSTER_TYPE_01",
-        "mvp": 0,
-        "class": 0,
-        "attr": 0
+  "id": 1049,
+  "dbname": "PICKY",
+  "name": "Picky",
+  "stats": {
+    "attackRange": 1,
+    "level": 9,
+    "health": 95,
+    "sp": 1,
+    "str": 14,
+    "int": 0,
+    "vit": 10,
+    "dex": 10,
+    "agi": 9,
+    "luk": 3,
+    "rechargeTime": 988,
+    "atk1": 18,
+    "atk2": 1,
+    "attack": {
+      "minimum": 37,
+      "maximum": 44
     },
-    "spawnSet": [],
-    "slaves": [],
-    "metamorphosis": [],
-    "sounds": [
-        "picky_damage.wav",
-        "picky_die.wav",
-        "picky_hop.wav"
-    ],
-    "questObjective": [
-        5097,
-        7123,
-        7488,
-        60405
-    ],
-    "drops": [
-        {
-            "itemId": 916,
-            "chance": 7000,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 916,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 949,
-            "chance": 1000,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 949,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 2302,
-            "chance": 200,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 2302,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 507,
-            "chance": 1000,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 507,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 519,
-            "chance": 1000,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 519,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 715,
-            "chance": 60,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 715,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 601,
-            "chance": 500,
-            "stealProtected": false,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 512,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        },
-        {
-            "itemId": 4008,
-            "chance": 20,
-            "stealProtected": true,
-            "serverTypeName": "Renewal"
-        },
-        {
-            "itemId": 4008,
-            "chance": 0,
-            "stealProtected": false,
-            "serverTypeName": "RE:Start"
-        }
-    ],
-    "mvpdrops": [],
-    "spawn": [
-        {
-            "mapname": "moc_fild07",
-            "amount": 10,
-            "respawnTime": 5000
-        },
-        {
-            "mapname": "moc_fild12",
-            "amount": 50,
-            "respawnTime": 5000
-        }
-    ],
-    "skill": [
-        {
-            "idx": 1,
-            "skillId": 197,
-            "status": "RMOVE_ST",
-            "level": 1,
-            "chance": 200,
-            "casttime": 0,
-            "delay": 5000,
-            "interruptable": true,
-            "changeTo": null,
-            "condition": null,
-            "conditionValue": null,
-            "sendType": "SEND_EMOTICON",
-            "sendValue": "2"
-        },
-        {
-            "idx": 2,
-            "skillId": 186,
-            "status": "BERSERK_ST",
-            "level": 1,
-            "chance": 200,
-            "casttime": 0,
-            "delay": 5000,
-            "interruptable": true,
-            "changeTo": null,
-            "condition": null,
-            "conditionValue": null,
-            "sendType": null,
-            "sendValue": null
-        }
-    ],
-    "propertyTable": {
-        "0": 100,
-        "1": 150,
-        "2": 90,
-        "3": 25,
-        "4": 100,
-        "5": 125,
-        "6": 100,
-        "7": 100,
-        "8": 100,
-        "9": 100
+    "magicAttack": {
+      "minimum": 9,
+      "maximum": 10
+    },
+    "defense": 21,
+    "baseExperience": 154,
+    "jobExperience": 80,
+    "aggroRange": 10,
+    "escapeRange": 12,
+    "movementSpeed": 200.0,
+    "attackSpeed": 288.0,
+    "attackedSpeed": 168.0,
+    "element": 23,
+    "scale": 0,
+    "race": 2,
+    "magicDefense": 3,
+    "hit": 218,
+    "flee": 189,
+    "ai": "MONSTER_TYPE_01",
+    "mvp": 0,
+    "class": 0,
+    "attr": 0
+  },
+  "spawnSet": [],
+  "slaves": [],
+  "metamorphosis": [],
+  "sounds": [
+    "picky_damage.wav",
+    "picky_die.wav",
+    "picky_hop.wav"
+  ],
+  "questObjective": [
+    5097,
+    7123,
+    7488,
+    60405
+  ],
+  "drops": [
+    {
+      "itemId": 916,
+      "chance": 7000,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "G0"
+    },
+    {
+      "itemId": 949,
+      "chance": 1000,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "G0"
+    },
+    {
+      "itemId": 2302,
+      "chance": 200,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "30L"
+    },
+    {
+      "itemId": 507,
+      "chance": 1000,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "G0"
+    },
+    {
+      "itemId": 519,
+      "chance": 1000,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "G0"
+    },
+    {
+      "itemId": 715,
+      "chance": 60,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "G0"
+    },
+    {
+      "itemId": 601,
+      "chance": 500,
+      "stealProtected": false,
+      "serverTypeName": null,
+      "optionGroup": "G0"
+    },
+    {
+      "itemId": 4008,
+      "chance": 20,
+      "stealProtected": true,
+      "serverTypeName": null,
+      "optionGroup": "G0"
     }
+  ],
+  "mvpdrops": [],
+  "spawn": [
+    {
+      "mapname": "moc_fild07",
+      "amount": 10,
+      "respawnTime": 5000
+    },
+    {
+      "mapname": "moc_fild12",
+      "amount": 50,
+      "respawnTime": 5000
+    }
+  ],
+  "skill": [
+    {
+      "idx": 1,
+      "skillId": 197,
+      "status": "RMOVE_ST",
+      "level": 1,
+      "chance": 200,
+      "casttime": 0,
+      "delay": 5000,
+      "interruptable": true,
+      "changeTo": null,
+      "condition": null,
+      "conditionValue": null,
+      "sendType": "SEND_EMOTICON",
+      "sendValue": "2"
+    },
+    {
+      "idx": 2,
+      "skillId": 186,
+      "status": "BERSERK_ST",
+      "level": 1,
+      "chance": 200,
+      "casttime": 0,
+      "delay": 5000,
+      "interruptable": true,
+      "changeTo": null,
+      "condition": null,
+      "conditionValue": null,
+      "sendType": null,
+      "sendValue": null
+    }
+  ],
+  "propertyTable": {
+    "0": 100,
+    "1": 150,
+    "2": 90,
+    "3": 25,
+    "4": 100,
+    "5": 125,
+    "6": 100,
+    "7": 100,
+    "8": 100,
+    "9": 100
+  }
 }

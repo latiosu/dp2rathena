@@ -9,8 +9,8 @@ Convert Divine-Pride API data to rAthena DB formats.
 
 Currently supported formats are:
 - `item_db.yml`
+- `mob_db.yml`
 - `mob_skill_db.txt`
-- (future) `mob_db.txt`
 
 ## Requirements
 
@@ -32,6 +32,9 @@ dp2rathena config
 
 # Convert items with ids 501 and 1101
 dp2rathena item 501 1101
+
+# Convert mob with id 20355
+dp2rathena mob 20355
 
 # Convert mob skills from mob ids in a newline separated file
 dp2rathena mobskill -f my_mobs.txt
@@ -59,12 +62,28 @@ All fields are mapped except the ones listed below:
 - `"NoUse"` - conditions when the item is unusable
 - `"AliasName"` - another item's AegisName to be sent to client instead of this AegisName
 
+### `mob_db.yml`
+
+**Not Mapped** _(insufficient data)_
+- `MvpExp` - MVP experience gained
+- `RaceGroups` - list of secondary groups the monster may be part of
+- `Modes` - list of unique behavior not defined by AI, Class, or Attribute
+- `JapaneseName` - name in Japanese
+- `Drops > RandomOptionGroup` - the Random Option Group applied to item on drop
+- `Drops > Index` - index used for overwriting item
+
+**Notes**
+- `Ai` - not always defined on DP and needs manual input (refer to [rathena docs](https://github.com/rathena/rathena/blob/master/doc/mob_db_mode_list.txt))
+- `Drops > Item` - relies on an internal db yaml file (updated every dp2rathena release) to determine output aegis name
+
 ## Contributing
 
 This project uses [poetry](https://python-poetry.org/) to manage the development environment.
 
 * Setup a local development environment with `poetry install`
 * Run tests with `poetry run tox` (or `pytest` for current python version)
+* Run live API tests with `poetry run pytest --api`
+* Update internal db yamls with `poetry run python tools/generate_item_db.py` (or `tools/generate_skill_db.py`)
 * Execute script with `poetry run dp2rathena`
 
 ## Changelog

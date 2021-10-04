@@ -112,7 +112,7 @@ class Mapper:
         if self.skill_db is None:
             current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
             skill_db_path = os.path.join(os.path.realpath(current_path), 'db', 'skill_db.yml')
-            self.skill_db = yaml.load(open(skill_db_path), Loader=yaml.FullLoader)
+            self.skill_db = yaml.load(open(skill_db_path, encoding='utf-8'), Loader=yaml.FullLoader)
 
             for k, v in self.skill_db.items():
                 self.skill_name_db[v['Name']] = k
@@ -182,6 +182,8 @@ class Mapper:
             return 'anybad'
         elif data['condition'] == 'IF_SKILLUSE':
             return self.skill_name_db[data['conditionValue']]
+        elif data['condition'] not in self.condition_map:
+            return 0
         # Other statuses have no current use-cases in rathena or DP
         return data['conditionValue']
 

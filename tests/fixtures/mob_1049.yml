@@ -1,0 +1,48 @@
+Header:
+  Type: MOB_DB
+  Version: 2
+Body:
+- Id: 1049
+  AegisName: PICKY
+  Name: Picky
+  Level: 9
+  Hp: 95
+  BaseExp: 63
+  JobExp: 47
+  Attack: 18
+  Attack2: 1
+  Defense: 21
+  MagicDefense: 3
+  Str: 14
+  Agi: 9
+  Vit: 10
+  Dex: 10
+  Luk: 3
+  AttackRange: 1
+  SkillRange: 10
+  ChaseRange: 12
+  Size: Small
+  Race: Brute
+  Element: Fire
+  ElementLevel: 1
+  WalkSpeed: 200
+  AttackDelay: 988
+  AttackMotion: 288
+  DamageMotion: 168
+  Ai: 01
+  Drops:
+  - Item: Feather_Of_Birds
+    Rate: 9000
+  - Item: Feather
+    Rate: 700
+  - Item: Cotton_Shirt_
+    Rate: 150
+  - Item: Red_Herb
+    Rate: 550
+  - Item: Milk
+    Rate: 300
+  - Item: Yellow_Gemstone
+    Rate: 50
+  - Item: Picky_Card
+    Rate: 1
+    StealProtected: true

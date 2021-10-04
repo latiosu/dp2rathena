@@ -1,12 +1,14 @@
 import bisect
 import importlib
 import json
+import re
 
 import tortilla
 import yaml
 
 from dp2rathena import item_mapper
 from dp2rathena import mob_skill_mapper
+from dp2rathena import mob_mapper
 
 class Converter:
     def __init__(self, api_key, debug=False):
@@ -21,15 +23,6 @@ class Converter:
                 return {'Id': int(itemid), 'Error': 'Item not found'}
             raise err
 
-    def wrap_result(self, items):
-        return {
-            'Header': {
-                'Type': 'ITEM_DB',
-                'Version': 1,
-            },
-            'Body': items,
-        }
-
     def convert_item(self, itemids, sort=False, wrap=True):
         mapper = item_mapper.Mapper()
         items = list()
@@ -39,7 +32,13 @@ class Converter:
         if sort:
             items.sort(key=lambda item: item['Id'])
         if wrap:
-            items = self.wrap_result(items)
+            items = {
+                'Header': {
+                    'Type': 'ITEM_DB',
+                    'Version': 1,
+                },
+                'Body': items,
+            }
         return yaml.dump(items, sort_keys=False)
 
     def fetch_mob(self, mobid):
@@ -50,7 +49,7 @@ class Converter:
                 return f'Id: {int(mobid)}, Error: Mob not found'
             raise err
 
-    def convert_mob_skill(self, mobids, comment=False):
+    def convert_mob_skill(self, mobids, comment=True):
         mapper = mob_skill_mapper.Mapper()
         all_mob_skills = list()
         for mobid in mobids:
@@ -60,7 +59,7 @@ class Converter:
         result = ''
         for mob_skills in all_mob_skills:
             for skill in mob_skills:
-                if skill['SkillLv'] <= 0:
+                if skill['SkillLv'] < 0:
                     continue
                 elif comment and 'Unknown Skill' in skill['Dummy']:
                     result += '//'
@@ -68,3 +67,24 @@ class Converter:
                     result += ('' if value is None else str(value)) + ','
                 result = result[:-1] + '\n'
         return result
+
+    def convert_mob(self, mobids, sort=False, wrap=True):
+        mapper = mob_mapper.Mapper()
+        mobs = list()
+        for mobid in mobids:
+            if type(mobid) is int or mobid.isnumeric():
+                mobs.append(mapper.map_mob(self.fetch_mob(mobid)))
+        if sort:
+            mobs.sort(key=lambda mob: mob['Id'])
+        if wrap:
+            mobs = {
+                'Header': {
+                    'Type': 'MOB_DB',
+                    'Version': 2,
+                },
+                'Body': mobs,
+            }
+        return self.remove_numerical_quotes(yaml.dump(mobs, sort_keys=False))
+
+    def remove_numerical_quotes(self, payload):
+        return re.sub(r'(.*)\'(\d+)\'(.*)', r'\1\2\3', payload)

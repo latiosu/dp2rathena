@@ -29,6 +29,9 @@ def pytest_collection_modifyitems(config, items):
 
 @pytest.fixture
 def fixture():
+    """
+    Examples of expected input and output to dp2rathena.
+    """
     def _fixture(filename):
         current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
         return os.path.join(os.path.realpath(current_path), 'fixtures', filename)

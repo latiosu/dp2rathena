@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.4.0 - 2021-03-29
+------------------
+* Added mob_db.yml mapping feature
+
 0.3.4 - 2021-02-16
 ------------------
 * Added commenting out of unknown skills in mobskill command
