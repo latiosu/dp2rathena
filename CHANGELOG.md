@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4.0 - 2021-03-29
+0.4.0 - 2021-10-05
 ------------------
 * Added mob_db.yml mapping feature
 
