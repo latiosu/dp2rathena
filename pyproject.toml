@@ -5,8 +5,8 @@ description = "Convert Divine-Pride API data to rAthena YAML"
 authors = ["Eric Liu <latiosworks@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/Latiosu/dp2rathena"
-documentation = "https://github.com/Latiosu/dp2rathena"
+repository = "https://github.com/latiosu/dp2rathena"
+documentation = "https://github.com/latiosu/dp2rathena"
 keywords = ["api", "rathena"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",

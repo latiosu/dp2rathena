@@ -2,8 +2,8 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/dp2rathena)](https://pypi.org/project/dp2rathena/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dp2rathena)](https://pypi.org/project/dp2rathena/)
-[![TravisCI Status](https://img.shields.io/travis/com/Latiosu/dp2rathena)](https://travis-ci.com/github/Latiosu/dp2rathena)
-[![codecov](https://codecov.io/gh/Latiosu/dp2rathena/branch/master/graph/badge.svg?token=B7G9O57UR8)](https://codecov.io/gh/Latiosu/dp2rathena)
+[![TravisCI Status](https://img.shields.io/travis/com/latiosu/dp2rathena)](https://travis-ci.com/github/latiosu/dp2rathena)
+[![codecov](https://codecov.io/gh/latiosu/dp2rathena/branch/master/graph/badge.svg?token=B7G9O57UR8)](https://codecov.io/gh/latiosu/dp2rathena)
 
 Convert Divine-Pride API data to rAthena DB formats.
 
@@ -88,8 +88,8 @@ This project uses [poetry](https://python-poetry.org/) to manage the development
 
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/Latiosu/dp2rathena/blob/master/CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/latiosu/dp2rathena/blob/master/CHANGELOG.md)
 
 ## License
 
-See [LICENSE](https://github.com/Latiosu/dp2rathena/blob/master/LICENSE)
+See [LICENSE](https://github.com/latiosu/dp2rathena/blob/master/LICENSE)
