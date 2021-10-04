@@ -72,6 +72,9 @@ All fields are mapped except the ones listed below:
 - `Drops > RandomOptionGroup` - the Random Option Group applied to item on drop
 - `Drops > Index` - index used for overwriting item
 
+**Notes**
+- `Ai` - not always defined on DP and needs manual input (refer to [rathena docs](https://github.com/rathena/rathena/blob/master/doc/mob_db_mode_list.txt))
+
 ## Contributing
 
 This project uses [poetry](https://python-poetry.org/) to manage the development environment.
