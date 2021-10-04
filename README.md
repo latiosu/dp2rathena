@@ -74,6 +74,7 @@ All fields are mapped except the ones listed below:
 
 **Notes**
 - `Ai` - not always defined on DP and needs manual input (refer to [rathena docs](https://github.com/rathena/rathena/blob/master/doc/mob_db_mode_list.txt))
+- `Drops > Item` - relies on an internal db yaml file (updated every dp2rathena release) to determine output aegis name
 
 ## Contributing
 
@@ -81,6 +82,8 @@ This project uses [poetry](https://python-poetry.org/) to manage the development
 
 * Setup a local development environment with `poetry install`
 * Run tests with `poetry run tox` (or `pytest` for current python version)
+* Run live API tests with `poetry run pytest --api`
+* Update internal db yamls with `poetry run python tools/generate_item_db.py` (or `tools/generate_skill_db.py`)
 * Execute script with `poetry run dp2rathena`
 
 ## Changelog
