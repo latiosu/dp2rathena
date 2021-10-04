@@ -25,7 +25,7 @@ items:
   523: Holy_Water
   525: Panacea
   526: Royal_Jelly
-  528: s_Feed
+  528: Monster's_Feed
   529: Candy
   530: Candy_Striper
   531: Apple_Juice
@@ -37,8 +37,8 @@ items:
   537: Pet_Food
   538: Well_Baked_Cookie
   539: Piece_Of_Cake
-  540: s_Feed
-  541: s_Feed
+  540: Falcon's_Feed
+  541: Pecopeco's_Feed
   542: Festive_Cookie
   543: Festive_Rainbow_Cake
   544: Fish_Slice
@@ -83,7 +83,7 @@ items:
   583: KETUPAT_
   584: Fish_Ball_Soup
   585: Wurst
-  586: s_Cake
+  586: Mother's_Cake
   587: Prickly_Fruit_
   588: Spaghetti
   589: Pizza_02
@@ -243,10 +243,11 @@ items:
   754: Raccoondog_Doll
   756: Oridecon_Stone
   757: Elunium_Stone
+  766: Silky_Fur_Bundle
   901: Danggie
   902: Tree_Root
   903: Reptile_Tongue
-  904: s_Tail
+  904: Scorpion's_Tail
   905: Stem
   906: Pointed_Scale
   907: Resin
@@ -261,7 +262,7 @@ items:
   916: Feather_Of_Birds
   917: Talon
   918: Sticky_Webfoot
-  919: s_Skin
+  919: Animal's_Skin
   920: Claw_Of_Wolves
   921: Mushroom_Spore
   922: Orcish_Cuspid
@@ -280,15 +281,15 @@ items:
   937: Posionous_Canine
   938: Sticky_Mucus
   939: Bee_Sting
-  940: s_Leg
+  940: Grasshopper's_Leg
   941: Nose_Ring
   942: Yoyo_Tail
   943: Solid_Shell
   944: Horseshoe
   945: Raccoon_Leaf
-  946: s_Shell
+  946: Snail's_Shell
   947: Horn
-  948: s_Foot
+  948: Bear's_Foot
   949: Feather
   950: Heart_Of_Mermaid
   951: Fin
@@ -354,7 +355,7 @@ items:
   1012: Lizard_Scruff
   1013: Colorful_Shell
   1014: Jaws_Of_Ant
-  1015: _Long_Tongue
+  1015: Thin_N'_Long_Tongue
   1016: Rat_Tail
   1017: Moustache_Of_Mole
   1018: Nail_Of_Mole
@@ -367,8 +368,8 @@ items:
   1025: Spiderweb
   1026: Acorn
   1027: Porcupine_Spike
-  1028: s_Mane
-  1029: s_Skin
+  1028: Wild_Boar's_Mane
+  1029: Tiger's_Skin
   1030: Tiger_Footskin
   1031: Limb_Of_Mantis
   1032: Blossom_Of_Maneater
@@ -379,7 +380,7 @@ items:
   1037: Dragon_Train
   1038: Petite_DiablOfs_Horn
   1039: Petite_DiablOfs_Wing
-  1040: s_Beard
+  1040: Elder_Pixie's_Beard
   1041: Lantern
   1042: Short_Leg
   1043: Nail_Of_Orc
@@ -423,7 +424,7 @@ items:
   1081: Merchant_Box_1
   1082: Merchant_Box_2
   1083: Merchant_Box_3
-  1084: s_Pass
+  1084: Kapra's_Pass
   1085: Mage_Test_2
   1086: Mage_Test_3
   1087: Mage_Test_4
@@ -488,6 +489,7 @@ items:
   1147: Town_Sword_
   1148: Star_Dust_Blade
   1149: Flamberge_
+  1150: Libra_Krasnaya_J
   1151: Slayer
   1152: Slayer_
   1153: Slayer__
@@ -565,7 +567,7 @@ items:
   1226: Damascus_
   1227: Weeder_Knife
   1228: Combat_Knife
-  1229: s_Knife
+  1229: Mama's_Knife
   1230: House_Auger
   1231: Bazerald
   1232: Assasin_Dagger
@@ -585,7 +587,7 @@ items:
   1246: Cinquedea_
   1247: Kindling_Dagger
   1248: Obsidian_Dagger
-  1249: s_Dagger
+  1249: Fisherman's_Dagger
   1250: Jur
   1251: Jur_
   1252: Katar
@@ -656,11 +658,14 @@ items:
   1317: Academy_Axe
   1318: Dofle_Axe
   1319: TE_Woe_Axe
+  1320: Diva_Axe
   1321: Dofle_Axe_
   1322: Ru_Blue_Axe
   1323: Ru_Gold_Axe
   1324: War_Axe_
+  1325: Mirage_Axe
   1326: Illusion_War_Axe
+  1331: Variant_Axe
   1333: Golden_Wrench
   1336: Guardian_Knight_Axe
   1351: Battle_Axe
@@ -756,10 +761,11 @@ items:
   1441: Ru_Blue_Spear
   1442: Ru_Gold_Spear
   1443: Scarlet_Spear
-  1445: _Hunting_Spear"
+  1444: Spear_of_Trust
+  1445: '[Rental]_Hunting_Spear'
   1446: Requiem_Spear
   1447: Poison_Forged_Spear
-  1448: s_Spear
+  1448: Warrior's_Spear
   1449: Gelerdria_
   1450: Sinister_Lance
   1451: Guisarme
@@ -780,7 +786,7 @@ items:
   1466: Crescent_Scythe
   1467: Bill_Guisarme
   1468: Zephyrus
-  1469: s_Spear
+  1469: Longinus's_Spear
   1470: Brionac
   1471: Hell_Fire
   1472: Staff_Of_Soul
@@ -868,7 +874,7 @@ items:
   1555: Book_Of_Blazing_Sun
   1556: Book_Of_Gust_Of_Wind
   1557: Book_Of_The_Apocalypse
-  1558: s_Diary
+  1558: Girl's_Diary
   1559: Legacy_Of_Dragon
   1560: Diary_Of_Great_Sage
   1561: Hardback
@@ -931,8 +937,8 @@ items:
   1618: Survival_Rod_
   1619: Survival_Rod2
   1620: Survival_Rod2_
-  1621: s_Staff
-  1622: s_Staff_
+  1621: Hypnotist's_Staff
+  1622: Hypnotist's_Staff_
   1623: Mighty_Staff_C
   1624: Lich_Bone_Wand
   1625: Healing_Staff
@@ -956,7 +962,7 @@ items:
   1643: Dead_Tree_Cane
   1644: Piercing_Staff_M
   1645: Lich_Bone_Wand_M
-  1646: cryma_Stick
+  1646: La'cryma_Stick
   1647: Croce_Staff
   1648: Staff_Of_Bordeaux
   1649: Rafini_Staff
@@ -982,6 +988,7 @@ items:
   1669: Thanos_Staff
   1670: RWC_Memory_Staff
   1671: Staff_Of_Evil_Slayer
+  1672: Safety_Rod
   1673: Half_BF_Staff4
   1674: Half_BF_Staff2
   1675: Walking_Stick_
@@ -997,6 +1004,8 @@ items:
   1685: DragonFry_Foxtail
   1686: BigSize_Foxtail
   1687: Beginner_FoxTail
+  1688: Staff_of_Trust
+  1689: Staff_of_Trust2
   1690: Amazing_Foxtail
   1691: Strange_Foxtail
   1692: Magical_Foxtail
@@ -1124,10 +1133,13 @@ items:
   1839: Scarlet_Knuckle
   1840: Requiem_Knuckle
   1841: Claw_Of_Flash_
+  1842: Diva_Claw
+  1843: Mirage_Claw
   1845: Probation_Knuckle
   1846: Combo_Battle_Glove_IL
   1847: Iron_Nail_K
   1848: Rebeginer_SR_Nuckle
+  1861: Variant_Claw
   1862: Burning_Knuckle_OS
   1864: Evt_Iron_Nail_K
   1865: Raging_Dragon_Fist
@@ -1178,6 +1190,8 @@ items:
   1941: Unity_Violin
   1942: Requiem_Violin
   1944: Hippie_Guitar
+  1945: Diva_Viollin
+  1946: Mirage_Viollin
   1950: Rope
   1951: Rope_
   1952: Line
@@ -1198,13 +1212,13 @@ items:
   1967: Whip_Of_Earth
   1968: Jump_Rope
   1969: Bladed_Whip
-  1970: s_Whip
+  1970: Queen's_Whip
   1971: Electric_Wire
   1972: Electric_Eel
   1973: Sea_Witch_Foot
   1974: Carrot_Whip
   1975: Queen_Is_Whip
-  1976: s_Whip_
+  1976: Queen's_Whip_
   1977: BF_Whip1
   1978: BF_Whip2
   1979: Stem_Of_Nepenthes
@@ -1249,19 +1263,21 @@ items:
   2021: Ganbantein
   2022: Staff_Of_Geffen
   2023: Thanos_Rod
-  2024: handed_Stick
+  2024: Infinity_Two-handed_Stick
   2025: Scarlet_Staff
   2026: Sinister_Staff
   2027: Staff_170
-  2030: Handed_Staff
+  2030: Unity_Two-Handed_Staff
   2032: Requiem_Wizardry_Staff
   2033: Toughen_Metal_Staff
+  2035: Diva_Staff
+  2036: Mirage_Staff
   2039: Wizardy_Staff_IL
   2040: Probation_Staff
-  2046: s_Staff
+  2046: Novice_Warlock's_Staff
   2048: Aeon_Staff
   2049: Blue_Flame_Cane
-  2051: s_Staff
+  2051: Illusion_Survivor's_Staff
   2053: Abyss_Staff
   2054: Sealed_Aeon_Staff
   2055: Staff_of_Miracle
@@ -1283,8 +1299,8 @@ items:
   2112: Novice_Guard
   2113: Novice_Shield
   2114: Stone_Buckler
-  2115: s_Shield
-  2116: s_Safeguard
+  2115: Valkyrja's_Shield
+  2116: Angel's_Safeguard
   2117: Arm_Guard
   2118: Arm_Guard_
   2119: Improved_Arm_Guard
@@ -1305,7 +1321,7 @@ items:
   2134: Shield_Of_Naga
   2135: Shadow_Guard
   2136: Cracked_Buckler
-  2137: s_Shield_C
+  2137: Valkyrja's_Shield_C
   2138: Bradium_Shield
   2139: Flame_Thrower
   2140: Energy_Rune_Guard
@@ -1351,7 +1367,7 @@ items:
   2180: TE_Woe_Magic_Guard
   2181: Hervor
   2182: Hervor_Alvitr
-  2183: s_Safeguard
+  2183: Impr_Angel's_Safeguard
   2184: Bunker_Shield
   2185: Magic_Reflector
   2186: Encyclopedia_Revision
@@ -1360,7 +1376,6 @@ items:
   2189: Mad_Bunny
   2190: Ancient_Shield_Of_Aeon
   2191: Solomon_Key
-  2192: Rose_Of_Eden
   2194: Rouban_Shield
   2195: Lian_Shield
   2196: White_Gold_Shield
@@ -1370,7 +1385,7 @@ items:
   2202: Sunglasses_
   2203: Glasses
   2204: Glasses_
-  2205: s_Goggles
+  2205: Diver's_Goggles
   2206: Wedding_Veil
   2207: Fancy_Flower
   2208: Ribbon
@@ -1401,7 +1416,7 @@ items:
   2233: Circlet_
   2234: Tiara
   2235: Crown
-  2236: s_Hat
+  2236: Santa's_Hat
   2237: Weird_Goatee
   2238: Weird_Moustache
   2239: One_Eyed_Glass
@@ -1409,10 +1424,10 @@ items:
   2241: Granpa_Beard
   2242: Luxury_Sunglasses
   2243: Spinning_Eyes
-  2244: _Ribbon
+  2244: Big_Sis'_Ribbon
   2245: Sweet_Gents
   2246: Golden_Gear
-  2247: s_Romance
+  2247: Oldman's_Romance
   2248: Western_Grace
   2249: Coronet
   2250: Fillet
@@ -1470,7 +1485,7 @@ items:
   2303: Leather_Jacket
   2304: Leather_Jacket_
   2305: Adventure_Suit
-  2306: s_Suit_
+  2306: Adventurere's_Suit_
   2307: Mantle
   2308: Mantle_
   2309: Coat
@@ -1517,9 +1532,9 @@ items:
   2350: Earth_Sprits_Armor
   2351: Earth_Sprits_Armor_
   2352: Novice_Plate
-  2353: s_Blessing
-  2354: s_Armor
-  2355: s_Protection
+  2353: Odin's_Blessing
+  2354: Goibne's_Armor
+  2355: Angel's_Protection
   2356: Vestment_Of_Grace
   2357: Valkyrie_Armor
   2358: Dress_Of_Angel
@@ -1557,7 +1572,7 @@ items:
   2390: Improved_Tights
   2391: Life_Link
   2392: Old_Pant
-  2393: s_Suit
+  2393: N_Adventurer's_Suit
   2394: Krieger_Suit1
   2395: Krieger_Suit2
   2396: Krieger_Suit3
@@ -1581,9 +1596,9 @@ items:
   2415: Slipper
   2416: Novice_Shoes
   2417: Fricco_Shoes
-  2418: s_Boots
-  2419: s_Combat_Boots
-  2420: s_Arrival
+  2418: Vidar's_Boots
+  2419: Goibne's_Combat_Boots
+  2420: Angel's_Arrival
   2421: Valkyrie_Shoes
   2422: High_Fashion_Sandals
   2423: Variant_Shoes
@@ -1652,10 +1667,10 @@ items:
   2486: Shadow_Walk_
   2487: Vital_Tree_Shoes_
   2488: Fricco_Shoes_
-  2489: s_Boots_
+  2489: Vidar's_Boots_
   2491: Bangungot_Boots
   2492: Bayani_Bangungot_Boots
-  2493: s_Combat_Boots_
+  2493: Goibne's_Combat_Boots_
   2494: Chrystal_Pumps_
   2495: Egir_Shoes
   2496: TE_Woe_Shoes
@@ -1672,17 +1687,17 @@ items:
   2508: Ragamuffin_Cape
   2509: Clack_Of_Servival
   2510: Novice_Hood
-  2511: s_Cape
+  2511: Skeleton's_Cape
   2512: Novice_Manteau
   2513: Celestial_Robe
   2514: Pauldron
   2515: Wing_Of_Eagle
   2516: Falcon_Robe
-  2517: s_Manteau
-  2518: s_Shawl
-  2519: s_Manteau
-  2520: s_Shoulder_Arms
-  2521: s_Warmth
+  2517: Vali's_Manteau
+  2518: Morpheus's_Shawl
+  2519: Morrigane's_Manteau
+  2520: Goibne's_Shoulder_Arms
+  2521: Angel's_Warmth
   2522: Undershirt
   2523: Undershirt_
   2524: Valkyrie_Manteau
@@ -1711,7 +1726,7 @@ items:
   2547: Cheap_Running_Shirts
   2548: Muffler_C
   2549: Krieger_Muffler1
-  2550: s_Muffler
+  2550: Fisher's_Muffler
   2551: Rider_Insignia_M
   2552: Mithril_Magic_Cape_M
   2553: Dragon_Manteau
@@ -1760,7 +1775,7 @@ items:
   2596: Sharel_Manteau
   2597: Scarlet_Poncho
   2598: Ramor_Manteau
-  2599: s_Shoulder_Arms_
+  2599: Goibne's_Shoulder_Arms_
   2601: Ring
   2602: Earring
   2603: Necklace
@@ -1777,7 +1792,7 @@ items:
   2615: Safety_Ring
   2616: Critical_Ring
   2617: Mitten_Of_Presbyter
-  2618: s_Flea_Guard
+  2618: Matyr's_Flea_Guard
   2619: Thimble_Of_Archer
   2620: Ring_Of_Rogue
   2621: Ring_
@@ -1801,19 +1816,19 @@ items:
   2639: Purification_Sachet
   2640: Kafra_Ring
   2641: Fashionable_Sack
-  2642: s_Gold_Ring
-  2643: s_Gold_Ring_
+  2642: Serin's_Gold_Ring
+  2643: Serin's_Gold_Ring_
   2644: The_Sign_
   2645: Moonlight_Ring
   2646: Bunch_Of_Carnation
   2647: Nile_Rose
-  2648: s_Ring
-  2649: s_Armlet
-  2650: s_Belt
-  2651: s_Pendant
+  2648: Morpheus's_Ring
+  2649: Morpheus's_Armlet
+  2650: Morrigane's_Belt
+  2651: Morrigane's_Pendant
   2652: Cursed_Lucky_Brooch
   2653: Sacrifice_Ring
-  2654: s_Sash
+  2654: Shinobi's_Sash
   2655: Bloody_Iron_Ball
   2656: Hyper_Changer
   2657: Lab_Passport
@@ -1827,7 +1842,7 @@ items:
   2665: Ring_Of_Exorcism
   2666: Lamp_Of_Hope
   2667: Glove_Of_Archer
-  2668: s_Glory
+  2668: Women's_Glory
   2669: Golden_Necklace_
   2670: Ring_Of_Longing
   2671: Thimble_Of_Archer_
@@ -1940,7 +1955,7 @@ items:
   2778: Shaman_Earing
   2779: Dark_Knight_Belt
   2780: Dark_Knight_Glove
-  2781: s_Grace
+  2781: Aumdura's_Grace
   2782: Ring_Of_Wise_King
   2783: Eyes_Stone_Ring
   2784: Oh_Holy_Night
@@ -1992,7 +2007,7 @@ items:
   2830: Magingiorde_C
   2831: Brysinggamen_C
   2832: Freyja_Ring
-  2833: s_Recall
+  2833: Odin's_Recall
   2834: F_All_In_One_Ring
   2835: F_Critical_Ring_C
   2836: F_Glove_C
@@ -2059,10 +2074,10 @@ items:
   2897: 2011RWC_Necklace_J
   2898: Black_Rosary
   2899: Sound_Amplifier
-  2900: s_Belt_
-  2901: s_Pendant_
-  2902: s_Ring_
-  2903: s_Armlet_
+  2900: Morrigane's_Belt_
+  2901: Morrigane's_Pendant_
+  2902: Morpheus's_Ring_
+  2903: Morpheus's_Armlet_
   2904: Naqsh
   2905: Super_Ora_Ora
   2906: Happy_Gauntlet
@@ -2112,6 +2127,7 @@ items:
   2960: Badge_Of_Manny
   2963: Body_Power_Up_Ring
   2964: Ring_Of_Spell_Explosion
+  2965: Angel_Egg
   2966: RWC_2012_Ring
   2967: RWC_2012_Ring_
   2968: RWC_2012_Pendant
@@ -2683,7 +2699,7 @@ items:
   4543: SLD_Garm_Card
   4544: SLD_Dark_Snake_Card
   4545: Novice_Poring_Card
-  4546: khiri_Card
+  4546: Val'khiri_Card
   4547: Upd_Byorgue_Card
   4548: Upd_Salamander_Card
   4549: Upd_Maya_Puple_Card
@@ -2997,7 +3013,7 @@ items:
   4872: Attack_Delay_2
   4873: Attack_Delay_3
   4874: Beryl_of_Spring
-  4875: s_Power
+  4875: Bear's_Power
   4876: Runaway_Magic
   4877: Speed_Of_Light
   4878: Muscle_Fool
@@ -3132,11 +3148,11 @@ items:
   5009: Safety_Helmet
   5010: Indian_Hair_Piece
   5011: Antenna
-  5012: D_Hat
+  5012: Ph.D_Hat
   5013: Horn_Of_Lord_Kaho
   5014: Fin_Helm
   5015: Egg_Shell
-  5016: s_Cap
+  5016: Boy's_Cap
   5017: Bone_Helm
   5018: Feather_Bonnet
   5019: Corsair
@@ -3164,7 +3180,7 @@ items:
   5041: Heart_Hair_Pin
   5042: Hair_Protector
   5043: Opera_Ghost_Mask
-  5044: s_Wing
+  5044: Devil's_Wing
   5045: Magician_Hat
   5046: Bongun_Hat
   5047: Fashion_Sunglass
@@ -3188,13 +3204,13 @@ items:
   5065: Fish_On_Head
   5066: Horn_Of_Succubus
   5067: Sombrero
-  5068: s_Wing
+  5068: Ear_Of_Devil's_Wing
   5069: Mask_Of_Fox
   5070: Headband_Of_Power
   5071: Indian_Headband
   5072: Inccubus_Horn
   5073: Cap_Of_Concentration
-  5074: s_Wing
+  5074: Ear_Of_Angel's_Wing
   5075: Cowboy_Hat
   5076: Fur_Hat
   5077: Tulip_Hairpin
@@ -3246,9 +3262,9 @@ items:
   5123: Ulle_Cap
   5124: Fricca_Circlet
   5125: Kiss_Of_Angel
-  5126: s_Hood
-  5127: s_Helm
-  5128: s_Helmet
+  5126: Morpheus's_Hood
+  5127: Morrigane's_Helm
+  5128: Goibne's_Helmet
   5129: Bird_Nest
   5130: Lion_Mask
   5131: Close_Helmet
@@ -3256,7 +3272,7 @@ items:
   5133: Sheep_Hat
   5134: Pumpkin_Hat
   5135: Cyclops_Visor
-  5136: s_Hat_
+  5136: Santa's_Hat_
   5137: Alice_Doll
   5138: Magic_Eyes
   5139: Hibiscus
@@ -3427,7 +3443,7 @@ items:
   5304: Cap_Of_Blindness
   5305: Pirate_Dagger
   5306: Freyja_Crown
-  5307: s_Hat
+  5307: Carmen_Miranda's_Hat
   5308: Brazilian_Flag_Hat
   5309: Mahican
   5310: Bulb_Hairband
@@ -3467,9 +3483,9 @@ items:
   5344: Binit_Doll_Hat
   5345: Debril_Doll_Hat
   5346: Gf_Recruiter_Hat
-  5347: D_Hat_
-  5348: _Ribbon_
-  5349: s_Cap_
+  5347: Ph.D_Hat_
+  5348: Big_Sis'_Ribbon_
+  5349: Boy's_Cap_
   5350: Pirate_Bandana_
   5351: Sunflower_
   5352: Poporing_Cap
@@ -3541,7 +3557,7 @@ items:
   5418: Soldier_Hat
   5419: Evolved_Leaf
   5420: Mask_Of_Ifrit
-  5421: s_Ear
+  5421: Ifrit's_Ear
   5422: Linguistic_Book_Cap
   5423: Lovecap_China
   5424: Fanta_Orange_Can
@@ -3556,7 +3572,7 @@ items:
   5433: Golden_Wreath
   5434: Cola_Can
   5435: Coke_Hat
-  5436: s_Corolla
+  5436: Bride's_Corolla
   5437: Flower_Of_Fairy
   5438: Fillet_Green
   5439: Fillet_Red
@@ -3599,7 +3615,7 @@ items:
   5476: Hairband_Of_Grandpeco
   5477: Bro_Flag
   5478: Classic_Hat
-  5479: s_Hair_Ornament
+  5479: Shaman's_Hair_Ornament
   5480: Bizofnil_Wing_Deco
   5481: Hermose_Cap
   5482: Dark_Knight_Mask
@@ -3612,7 +3628,7 @@ items:
   5489: Love_Daddy
   5490: Anubis_Helm
   5491: Hat_Of_Outlaw
-  5492: s_Cap_I
+  5492: Boy's_Cap_I
   5493: Ulle_Cap_I
   5494: Spinx_Helm_I
   5495: Power_Of_Thor
@@ -3621,8 +3637,8 @@ items:
   5498: Wondering_Wolf_Helm
   5499: Pizza_Hat
   5500: Icecream_Hat
-  5501: s_Pride
-  5502: s_Hood
+  5501: Pirate's_Pride
+  5502: Necromencer's_Hood
   5503: Rabbit_Magic_Hat
   5504: China_Wedding_Veil
   5505: Asara_Fairy_Hat
@@ -3649,7 +3665,7 @@ items:
   5526: Lady_Tanee_Doll
   5527: Lunatic_Hat
   5528: King_Frog_Hat
-  5529: s_Bone_Hat
+  5529: Evil's_Bone_Hat
   5530: Raven_Cap
   5531: B_Dragon_Hat
   5532: Pirate_Dagger_J
@@ -3699,7 +3715,7 @@ items:
   5576: Japan_Winecup
   5577: Dark_Knight_MaskB
   5578: Voyage_Hat
-  5579: s_Sakkat
+  5579: Wanderer's_Sakkat
   5580: Red_Beret
   5581: Cancer_Diadem
   5582: Cancer_Crown
@@ -3712,7 +3728,7 @@ items:
   5589: Leo_Diadem
   5590: K_Poring_Cake_Cap
   5591: Desert_Prince
-  5592: s_Wing
+  5592: Sigrun's_Wing
   5593: K_Rabbit_Bonnet
   5594: Donut_In_Mouth
   5595: Eye_Of_Juno
@@ -3930,10 +3946,10 @@ items:
   5807: October_Fest_Cap
   5808: Diabolus_Helmet
   5809: Boom_Boom_Hat
-  5810: D_Hat_V
+  5810: Ph.D_Hat_V
   5811: Santa_Beard
   5812: Hat_Of_Expert
-  5813: D_Hat
+  5813: Red_Ph.D_Hat
   5814: Ati_Atihan_Hat3
   5815: Classic_Hat_J
   5816: Cowboy_Hat_J
@@ -3995,6 +4011,7 @@ items:
   5885: Blue_Wizardry_Hat_C
   5886: Yellow_Wizardry_Hat_C
   5887: Half_L_Magestic_Goat
+  5891: Black_Cat_Hat
   5892: RCC2013_1ST_CROWN
   5893: RCC2013_2ND_CROWN
   5894: RCC2013_3RD_CROWN
@@ -4024,6 +4041,7 @@ items:
   5943: Owlviscount_Silk_Hat
   5944: Thief_Hood
   5945: Well_Chewed_Pencil
+  5946: Drama_Clockwork
   5965: _Riot_Chip
   5966: KarduiEar
   5967: FlyingGalapago
@@ -4106,11 +4124,11 @@ items:
   6067: Moon_Cake20
   6068: Rabbit_Skin
   6069: ABUNDANCE
-  6070: s_Old_Paper
+  6070: Shaman's_Old_Paper
   6071: Broken_Sword
   6072: Wing_Of_Bizofnil
-  6073: s_Mane
-  6074: s_Order
+  6073: Dragon's_Mane
+  6074: Bazett's_Order
   6075: Crystalized_Teardrop
   6076: Portable_Toolbox
   6077: Rough_Mineral
@@ -4160,7 +4178,7 @@ items:
   6121: Makeover_Brush
   6122: Paint_Brush
   6123: Surface_Paint
-  6124: s_Flute
+  6124: Wolf's_Flute
   6125: Lucky_Box
   6126: Happy_Box
   6127: Purification_Stone
@@ -4604,6 +4622,8 @@ items:
   6567: Choco_Drink_Recipe
   6581: Holy_Amulet
   6583: 3rd_Test_Pass
+  6584: Guarantee_Weapon_12Up
+  6585: Guarantee_Armor_12Up
   6592: Small_Wooden_Chest
   6593: Cryptura_Hair_Coupon
   6594: Magic_Bronze_Bullion
@@ -4700,7 +4720,7 @@ items:
   6716: Cri_Stone
   6717: MaxHP_Stone
   6718: MaxSP_Stone
-  6719: s_Tooth
+  6719: Jitterbug's_Tooth
   6720: Status_Reset_Coupon
   6721: Status_Reset_Coupon_
   6722: Delicious_Clam_Flesh
@@ -4840,7 +4860,7 @@ items:
   6885: Piece_Of_Soul_Dragon
   6886: Strong_Piece_Of_Soul_Dragon
   6892: Invasion_Plan
-  6893: s_Cookbook
+  6893: Human's_Cookbook
   6894: Champion_Badge
   6895: Processed_Ancient_Rune
   6896: Processed_Mystic_Rune
@@ -4904,6 +4924,7 @@ items:
   6956: Captured_Sheep
   6957: Lamb_Fleece
   6958: Lamb_Horns
+  6959: aegis_6959
   6960: Air_Stronghold_Key
   6961: LargeScrap
   6962: OldTank
@@ -4931,6 +4952,11 @@ items:
   6984: Reactor_A_MSP_
   6985: Reactor_A_FROZ_
   6986: Reactor_A_ASPD_
+  6993: Guarantee_Weapon_10Up
+  6994: Guarantee_Armor_10Up
+  6995: WarmStone
+  6996: Rabbit_Doll
+  6997: Antique_Arrow
   6999: HPdrainStone_Top
   7000: Evt_Cos_Coin
   7001: Mould_Powder
@@ -4949,15 +4975,15 @@ items:
   7014: Old_Portrait
   7015: Bookclip_In_Memory
   7016: Spoon_Stub
-  7017: s_Mitten
+  7017: Executioner's_Mitten
   7018: Young_Twig
-  7019: s_Whispers
-  7020: s_Nightmare
+  7019: Loki's_Whispers
+  7020: Mother's_Nightmare
   7021: Foolishness_Of_Blind
   7022: Old_Hilt
   7023: Blade_Lost_In_Darkness
   7024: Bloody_Edge
-  7025: s_Lament
+  7025: Lucifer's_Lament
   7026: Key_Of_Clock_Tower
   7027: Underground_Key
   7028: Invite_For_Duel
@@ -4979,7 +5005,7 @@ items:
   7044: Vigorgra
   7045: Magic_Paint
   7046: Cart_Parts
-  7047: s_Apron
+  7047: Alice's_Apron
   7048: Talon_Of_Griffin
   7049: Stone
   7050: Cotton_Mat
@@ -5038,26 +5064,26 @@ items:
   7103: Unknown_Liquid_Bottle
   7104: Fake_Angel_Wing
   7105: Fake_Angel_Loop
-  7106: s_Horn
-  7107: s_Skin
+  7106: Goat's_Horn
+  7107: Gaoat's_Skin
   7108: Boroken_Shiled_Piece
   7109: Shine_Spear_Blade
   7110: Vroken_Sword
   7111: Smooth_Paper
   7112: Fright_Paper_Blade
   7113: Broken_Pharaoh_Symbol
-  7114: s_Mask
-  7115: s_Feather
-  7116: s_Claw
+  7114: Tutankhamen's_Mask
+  7115: Harpy's_Feather
+  7116: Harpy's_Claw
   7117: Rent_Spell_Book
   7118: Rent_Scroll
   7119: Spawns
   7120: Burning_Horse_Shoe
   7121: Honey_Jar
   7122: Hot_Hair
-  7123: s_Skin
+  7123: Dragon's_Skin
   7124: Sand_Lump
-  7125: s_Nipper
+  7125: Scropion's_Nipper
   7126: Large_Jellopy
   7127: Alcol_Create_Book
   7128: FireBottle_Create_Book
@@ -5087,13 +5113,13 @@ items:
   7152: Glossy_Hair
   7153: Old_Japaness_Clothes
   7154: Poison_Powder
-  7155: s_Skin
+  7155: Poison_Toad's_Skin
   7156: Broken_Shuriken
   7157: Black_Mask
   7158: Broken_Wine_Vessel
-  7159: s_Nose
-  7160: s_Passable_Ticket
-  7161: s_Skin
+  7159: Tengu's_Nose
+  7160: Lord's_Passable_Ticket
+  7161: Black_Bear's_Skin
   7162: Cloud_Piece
   7163: Sharp_Feeler
   7164: Hard_Peach
@@ -5109,10 +5135,10 @@ items:
   7174: Packing_Ribbon
   7175: Packing_Paper
   7176: XMAS_Coupon
-  7177: s_Sob
-  7178: s_Sob
+  7177: Part_Of_Star's_Sob
+  7178: Star's_Sob
   7179: Donation_Card
-  7180: Han
+  7180: Introduction_Of_Mr.Han
   7181: Receipt_01
   7182: Cacao
   7183: Sister_Letter
@@ -5141,7 +5167,7 @@ items:
   7206: Black_Kitty_Doll
   7207: Old_Manteau
   7208: Rusty_Cleaver
-  7209: s_Helm
+  7209: Dullahan's_Helm
   7210: Dullahan_Armor
   7211: Rojerta_Piece
   7212: Hanging_Doll
@@ -5236,11 +5262,11 @@ items:
   7301: Sword_Accessory
   7302: KRATHONG
   7303: Bag_Of_Rice
-  7304: s_Spell_Book
+  7304: Witch's_Spell_Book
   7305: Authority_Of_Nine_World
   7306: Fragment_Of_Soul
   7307: Whisper_Of_Soul
-  7308: s_Potion
+  7308: Witch's_Potion
   7309: Wing_Of_Crow
   7310: Free_Peco_Ticket
   7311: Free_Flying_Ship_Ticket
@@ -5283,7 +5309,7 @@ items:
   7348: Indication_Of_Member01
   7349: Indication_Of_Member02
   7350: Pass
-  7351: s_Diary
+  7351: Friend's_Diary
   7352: Transparent_Plate01
   7353: Transparent_Plate02
   7354: Transparent_Plate03
@@ -5390,7 +5416,7 @@ items:
   7455: Hot_Sauce
   7456: Red_Spice
   7457: Cooking_Oil
-  7458: s_Horn
+  7458: Baphomet's_Horn
   7459: RAMADAN_
   7460: Niflheim_Ticket
   7461: BlueCard_A
@@ -5450,7 +5476,7 @@ items:
   7515: Marvelous_Medal
   7516: Green_Key_Card
   7517: Gold_Coin_
-  7518: s_Medal
+  7518: Women's_Medal
   7519: Money_Envelope
   7520: Chinese_Scroll
   7521: Flame_Stone
@@ -5526,7 +5552,7 @@ items:
   7591: Moon_Cake12
   7592: Moon_Cake13
   7593: Moon_Cake14
-  7594: s_Letter
+  7594: Sonia's_Letter
   7595: Unique_Sword
   7596: Unique_Shield
   7597: Magic_Stone
@@ -5599,6 +5625,7 @@ items:
   7680: Oneclick_Weapon_9UP
   7681: Oneclick_Armor_7UP
   7682: Oneclick_Armor_9UP
+  7685: Sour_Melon
   7690: Special_Exchange_Coupons
   7701: Dragon_Spirit
   7702: Special_Cogwheel
@@ -5703,6 +5730,7 @@ items:
   7801: Girl_Fan_Letter
   7802: Autograph_Book
   7803: Battle_Manual_TW
+  7804: Octopig_Tentacle
   7805: Brown_Ring
   7806: Black_Anvil
   7807: Ore
@@ -5817,7 +5845,7 @@ items:
   7917: Magic_Potion
   7918: Particle_Of_Memory
   7919: Festival_Ticket
-  7920: s_Arsenal
+  7920: Hero's_Arsenal
   7921: Essence_Of_Dragon
   7922: RWC_Ticket
   7923: KRATHONG_
@@ -5827,7 +5855,7 @@ items:
   7927: Candle_TW
   7928: Brazilian_Flag_
   7929: Golden_Coin_
-  7930: s_Nose_Ring
+  7930: Cowking's_Nose_Ring
   7931: Poison_Kit
   7932: Poison_Herb_Nerium
   7933: Poison_Herb_Rantana
@@ -5920,7 +5948,7 @@ items:
   9021: Isis_Egg
   9022: Green_Petite_Egg
   9023: Deviruchi_Egg
-  9024: _Egg
+  9024: Bapho_Jr._Egg
   9025: Bongun_Egg
   9026: Zherlthsh_Egg
   9027: Alice_Egg
@@ -6014,16 +6042,26 @@ items:
   9122: Gloom_Under_Egg
   9123: Ep_17_2_C_Admin1_Egg
   9124: Ep_17_2_C_Admin2_Egg
-  9510: Costume_Enchant_Stone_Box17
+  9510: Enchant_Stone_Box17
+  9514: Ein_Ddbox
   9523: Metal_Smelting_Ticket
+  9529: Ein_Ddbox2
   9550: Gemstone_Of_Time
   9551: Time_Unseal_Key
+  9785: Frozen_Box_IL
+  9894: aegis_9894
+  9895: aegis_9895
+  9896: aegis_9896
+  9909: aegis_9909
+  9933: True_Hunting_9Refine
+  9934: True_Hunting_Opt_A
+  9935: True_Hunting_Opt_B
   10001: Skull_Helm
   10002: Monster_Oxygen_Mask
   10003: Transparent_Headgear
   10004: Pacifier
   10005: Wig
-  10006: s_Hair_Ornament
+  10006: Queen's_Hair_Ornament
   10007: Silk_Ribbon
   10008: Punisher
   10009: Wild_Flower
@@ -6049,7 +6087,7 @@ items:
   10029: Jade_Trinket
   10030: Summer_Fan
   10031: Death_Coil
-  10032: s_Coronet
+  10032: Queen's_Coronet
   10033: Apro_Hair
   10034: Ball_Mask
   10035: Windup_Spring
@@ -6239,7 +6277,7 @@ items:
   11710: Sakura_Mist
   11711: Sakura_Milk_Tea
   11712: First_Leaf_Tea
-  11713: s_Candy
+  11713: Julia's_Candy
   12000: Cold_Scroll_2_5
   12001: Holy_Scroll_1_3
   12002: Holy_Scroll_1_5
@@ -6376,7 +6414,7 @@ items:
   12133: Ice_Cream_
   12134: Red_Envelope
   12135: Green_Ale
-  12136: s_Bundle
+  12136: Women's_Bundle
   12137: 1st_Stage_Prize
   12138: 2nd_Stage_Prize
   12139: 3rd_Stage_Prize
@@ -6579,14 +6617,14 @@ items:
   12339: Cherish_Box_Ori
   12340: Mysterious_Rice_Powder
   12341: Special_Alloy_Trap_Box
-  12342: s_Opportunity
-  12343: s_Courage
-  12344: s_fruit_Jam
-  12345: s_Honey_Jam
+  12342: Manuk's_Opportunity
+  12343: Manuk's_Courage
+  12344: Pinguicula's_fruit_Jam
+  12345: Luciola's_Honey_Jam
   12346: Unripe_Acorn
   12347: Acorn_Jelly
-  12348: s_Faith
-  12349: _Tears
+  12348: Manuk's_Faith
+  12349: Cornus'_Tears
   12350: Angeling_Potion
   12351: Shout_Megaphone
   12352: Dun_Tele_Scroll3
@@ -6607,16 +6645,16 @@ items:
   12367: Luxury_Whisky_Bottle
   12368: Splendid_Mirror
   12369: Oilpalm_Coconut
-  12370: s_Naivety
+  12370: Gril's_Naivety
   12371: Magical_Lithography
   12372: Hell_Contract
-  12373: s_Naivety
+  12373: Boy's_Naivety
   12374: Flaming_Ice
   12375: Acaraje
   12376: Mysterious_Can2
   12377: Mysterious_PET_Bottle2
   12378: 2009_Rice_Cake_Soup
-  12379: s_Cookie
+  12379: Pope's_Cookie
   12380: Desert_Wolf_Babe_Scroll
   12381: ValkyrieA_Scroll
   12382: ValkyrieB_Scroll
@@ -7333,9 +7371,12 @@ items:
   13127: Scarlet_Revolver
   13128: Sinister_Revolver
   13129: Unity_Revolver
+  13130: Gun_of_Trust
   13132: Toughen_Metal_Revolver
   13136: Probation_Revolver
   13138: Dark_Rose
+  13140: Diva_Handgun
+  13141: Mirage_Handgun
   13144: Rebeginer_RL_Gun
   13146: Calf_Deathadder
   13150: Branch
@@ -7490,10 +7531,13 @@ items:
   13329: Unity_Huuma_Shuriken
   13330: Toughen_Metal_Shuriken
   13332: Huuma_Hundred_Petal
+  13333: Diva_Huuma
+  13334: Mirage_Huuma
   13336: Probation_Huuma
   13337: Huuma_Flutter_Snow_IL
   13338: Illusion_Wing_Shuriken
   13341: Rebeginer_KO_Humma
+  13343: Variant_Huuma
   13345: Humma_Clear
   13346: Ein_BHHuuma
   13347: R_Huuma_Shuriken
@@ -7517,7 +7561,7 @@ items:
   13417: Krieger_Onehand_Sword2
   13418: Krieger_Onehand_Sword3
   13419: Holy_Saber
-  13420: s_Sword
+  13420: Honglyun's_Sword
   13421: Ruber
   13422: Flamberge_C
   13423: P_Sabre1
@@ -7557,8 +7601,10 @@ items:
   13460: Sealed_Magic_Sword
   13461: Sealed_Evil_Sword
   13462: Sealed_Max_Sword
+  13466: Diva_Blade
+  13467: Mirage_Blade
   13469: Illusion_Immaterial_Sword
-  13473: s_Sword
+  13473: God's_Sword
   13474: Sword___
   13475: Falchion___
   13476: Blade___
@@ -7568,7 +7614,7 @@ items:
   13480: Ring_Pommel_Saber__
   13481: Saber___
   13482: Orcish_Blade
-  13483: s_Sword
+  13483: Beginner_Genetic's_Sword
   13485: Sword_Of_Bluefire
   13492: Abyss_Blade
   13493: Cannon_Rapier_OS
@@ -8314,7 +8360,7 @@ items:
   14237: Steamed_Desert_Scorpions_Box_20
   14238: Stew_Of_Immortality_Box_20
   14239: Dragon_Breath_Cocktail_Box_20
-  14240: s_Tonic_Box_20
+  14240: Hwergelmir's_Tonic_Box_20
   14241: Nine_Tail_Dish_Box_20
   14242: Beholder_Ring_Box
   14243: Hallow_Ring_Box
@@ -8374,7 +8420,7 @@ items:
   14297: Devil_Scroll
   14298: Surprise_Scroll
   14300: Mask_Of_Ifrit_Box
-  14301: s_Ear_Box
+  14301: Ifrit's_Ear_Box
   14304: Scuba_Mask_Box
   14306: RWC_Special_Scroll
   14307: RWC_Limited_Scroll
@@ -8398,8 +8444,8 @@ items:
   14345: Animal_Scroll
   14349: Mental_Potion20_Box
   14350: Mental_Potion50_Box
-  14351: s_Blessing20_Box
-  14352: s_Blessing50_Box
+  14351: Tyr's_Blessing20_Box
+  14352: Tyr's_Blessing50_Box
   14361: Orc_HeroS_Box
   14362: Orc_LoadS_Box
   14363: Heart_Scroll
@@ -8430,21 +8476,21 @@ items:
   14429: Berserk_Guitar_Box
   14430: Doom_Slayer_Box
   14431: Huuma_Blaze_Shuriken_Box
-  14432: s_Blessing_Box
+  14432: Odin's_Blessing_Box
   14433: Ring_Of_Flame_Lord_Box
   14434: Ring_Of_Resonance_Box
   14435: Boys_Cap_Box
-  14436: s_Cap_Box
+  14436: Ulle's_Cap_Box
   14437: Sphinx_Helm_Box
-  14438: s_Sword_Box
+  14438: Honglyun's_Sword_Box
   14439: Power_Of_Thor_Box
   14440: Dice_Hat_Box
   14441: King_Tiger_Doll_Hat_Box
   14442: Wondering_Wolf_Helm_Box
   14443: Pizza_Hat_Box
   14444: Icecream_Hat_Box
-  14447: s_Pride_Box
-  14448: s_Hood_Box
+  14447: Pirate's_Pride_Box
+  14448: Necromencer's_Hood_Box
   14459: Rabbit_Magic_Hat_Box
   14460: China_Wedding_Veil_Box
   14461: Asara_Fairy_Hat_Box
@@ -8558,7 +8604,7 @@ items:
   14598: GhostringS
   14599: Greed_Scroll_C
   14600: Mental_Potion
-  14601: s_Blessing
+  14601: Tyr's_Blessing
   14602: TaogunkaS
   14603: MistressS
   14604: Orc_HeroS
@@ -8582,7 +8628,7 @@ items:
   14626: Indigo_Scroll
   14627: Christmas_Scroll
   14628: Costume_Festival_Box
-  14629: Costume_Enchantment_Stone_Box
+  14629: Enchant_Stone_Box
   14643: Violet_Scroll
   14663: Scroll_Sealed_Dark_Lord
   14664: Bi_Hwang_Scroll
@@ -8594,10 +8640,10 @@ items:
   14674: Cup_Of_Boza
   14675: Shadow_Box_II
   14679: Article_Sealed_Storm_Scroll
-  14681: Costume_Enchantment_Stone_Box_II
+  14681: Enchant_Stone_Box2
   14682: Sealed_Beelzebub_Scroll
-  14689: 01_Scroll
-  14695: Costume_Enchant_Stone_Box_3
+  14689: Sealed_Kiel-D-01_Scroll
+  14695: Enchant_Stone_Box3
   14696: Sealed_Gloom_Under_Night_Gachapon
   14699: Garuda_Scroll
   14701: TW_13y_Lucky_Egg_06
@@ -8626,8 +8672,25 @@ items:
   14765: Limited_Edition_JOB_Battle_Manual
   14766: Limited_Power_Booster
   14805: July_Lucky_Scroll
+  14841: DF_Songpyun
+  14843: DF_Insurance
+  14844: DF_Kafra_Card
+  14845: DF_Blessing_10_Scroll
+  14846: DF_Inc_Agi_10_Scroll
+  14847: DF_Small_Life_Potion
+  14849: DF_Vit_Dish10
+  14850: DF_Luk_Dish10
+  14851: DF_Dex_Dish10
+  14852: DF_Int_Dish10
+  14853: DF_Agi_Dish10
+  14854: DF_Str_Dish10
+  14861: DF_GhostringS
+  14862: DF_Tyr's_Blessing
+  14866: DF_Holy_Armor_S
+  14869: DF_Red_Booster
+  14886: UltimateCook_S
   15000: Bone_Plate
-  15001: s_Blessing_I
+  15001: Odin's_Blessing_I
   15002: Rune_Plate
   15003: Freyja_SRobe7
   15004: Freyja_SRobe30
@@ -8693,7 +8756,7 @@ items:
   15064: TE_Woe_Mage_Coat
   15066: Engraved_Armor
   15067: Rune_Suit
-  15068: s_Protection
+  15068: Im_Angel's_Protection
   15069: Suit_Of_Sid
   15070: Clothes_of_Happiness
   15071: Valkyrie_Robe
@@ -8763,6 +8826,8 @@ items:
   15184: Para_Team_Uniform145
   15185: Para_Team_Uniform160
   15186: Kafra_Uniform
+  15187: Diva_Robe
+  15188: Mirage_Robe
   15189: Einherial_Armor
   15191: Khalitzburg_Knight_Armor
   15195: Puente_Robe_IL
@@ -8774,7 +8839,7 @@ items:
   15246: True_Hunting_Mail
   15247: R_Hunting_Mail
   15249: Antonio_Coat
-  15250: s_Suit
+  15250: Beginner's_Suit
   15278: Overwhelm_Str_Armor
   15279: Overwhelm_Int_Armor
   15280: S_Cri_Hit_Armor
@@ -8810,11 +8875,13 @@ items:
   15401: CassockA_INT
   15402: CassockA_LUK
   15405: Fafnir_Scale_J
-  15409: s_Dress
+  15409: Bloody_Doll's_Dress
   15410: H_AD_Suits
   15417: Armor_of_Purple_Thread
   15419: Armor_of_White_Thread
   15420: Icefall_Dress
+  15858: C_Choco_Banana
+  15888: aegis_15888
   16000: Erde
   16001: Red_Square_Bag
   16002: Stunner_C
@@ -8848,7 +8915,7 @@ items:
   16030: Pilebuncker_S
   16031: Pilebuncker_P
   16032: Pilebuncker_T
-  16033: s_Arm
+  16033: Robot's_Arm
   16034: Half_Mjolnir
   16035: Half_BF_Morning_Star1
   16036: Ru_Blue_Mace
@@ -8859,14 +8926,19 @@ items:
   16041: Sinister_Mace
   16043: Meteor_Strike
   16048: Unity_Mace
+  16049: Mace_of_Trust
   16051: Valkyrie_Hammer_
+  16053: Lora_Iron_Ball
   16054: Toughen_Metal_Mace
+  16058: Diva_Mace
+  16059: Mirage_Mace
   16060: Bottle
   16063: Long_Mace_IL
   16064: Probation_Mace
   16065: Illusion_Iron_Driver
   16075: Rebeginer_NC_Mace
   16076: Rebeginer_N2_Mace
+  16087: Variant_Mace
   16088: Saphir_Hall_OS
   16089: Ultio_Spes_OS
   16092: Engine_Pilebuncker
@@ -8879,7 +8951,7 @@ items:
   16132: Lunatic_Hat_Box
   16133: G_Staff_Of_Light_Box
   16134: King_Frog_Hat_Box
-  16135: s_Bone_Hat_Box
+  16135: Evil's_Bone_Hat_Box
   16185: Raven_Cap_Box
   16186: B_Dragon_Hat_Box
   16192: Quati_Hat_Box
@@ -8904,7 +8976,7 @@ items:
   16247: Dragon_Arhat_Mask_Box
   16248: Tiger_Arhat_Mask_Box
   16249: Knight_Gift_Box
-  16250: s_Gift_Box
+  16250: Valkyrie's_Gift_Box
   16251: Gemini_Diadem_Box
   16252: Gemini_Crown_Box
   16253: Rabbit_Scroll
@@ -8966,8 +9038,8 @@ items:
   16346: F_Leo_Diadem_Box
   16360: Desert_Prince_Box
   16361: FDesert_Prince_Box
-  16362: s_Wing_Box
-  16363: s_Wing_Box
+  16362: Sigrun's_Wing_Box
+  16363: FSigrun's_Wing_Box
   16368: Virgo_Crown_Box
   16371: Tw_Aug_Scroll
   16372: F_Clover_Box_Mouth
@@ -9002,7 +9074,7 @@ items:
   16420: Adventurer_Pack
   16421: Written_Oath_Of_Marriage_Box
   16422: Magestic_Goat_Box_
-  16423: 1_Key_Package
+  16423: Episode_13.1_Key_Package
   16424: Executioner_Box_
   16425: Cutlus_Box
   16426: Moonlight_Dagger_Box
@@ -9033,7 +9105,7 @@ items:
   16505: Steamed_Tongue_Box_10
   16506: Steamed_Desert_Scorpions_Box_10
   16507: Dragon_Breath_Cocktail_Box_10
-  16508: s_Tonic_Box_10
+  16508: Hwergelmir's_Tonic_Box_10
   16509: Cooked_Nine_Tail_Box_10
   16510: Immortal_Stew_Box_10
   16514: Blessing_Scroll_Box_10
@@ -9537,6 +9609,7 @@ items:
   17567: Event_Almighty_Box__
   17568: Event_Almighty_Box_100_
   17569: Dun_Voucher_Box1
+  17570: Dun_Voucher_Box2
   17572: Erzulie_Lucky_Scroll
   17584: Venus_Lucky_Scroll
   17588: Amora_Lucky_Scroll
@@ -9589,12 +9662,15 @@ items:
   18129: Ixion_Wing_S
   18130: Scarlet_Bow
   18132: Unity_Bow
+  18133: Bow_of_Trust
   18137: Burning_Bow_
   18138: Frozen_Bow_
   18139: Earth_Bow_
   18140: Gust_Bow_
   18141: Toughen_Metal_Bow
   18145: Vigilante_Bow
+  18146: Diva_Wing
+  18147: Mirage_Wing
   18149: Balistar_IL
   18150: Probation_CrossBow
   18151: Probation_Bow
@@ -9603,6 +9679,7 @@ items:
   18166: Rebeginer_WM_Bow
   18170: Narcis_Bow
   18174: Illusion_Hunter_Bow
+  18177: Variant_Wing
   18178: Virtual_Bow_OS
   18179: MH_P89_OS
   18180: AC_B44_OS
@@ -9634,8 +9711,8 @@ items:
   18515: RTC_Winner_Headgear
   18516: RTC_2nd_Headgear
   18517: RTC_3rd_Headgear
-  18518: s_Wing_
-  18519: s_Wing_
+  18518: Ear_Of_Angel's_Wing_
+  18519: Ear_Of_Devil's_Wing_
   18520: Jaty_C
   18521: Lucky_Clover
   18522: Evil_Marcher_Hat
@@ -9835,6 +9912,7 @@ items:
   18718: Rose_Hairband
   18720: Magical_Booster
   18724: L_Magestic_Goat_
+  18726: Sky_Helm
   18727: Sedora_Hat
   18728: Egir_Helm
   18729: MVP_Basketball
@@ -9893,6 +9971,8 @@ items:
   18792: Idn_Sakkat
   18793: Sorc_Night_Cap
   18796: RWC_Champ_Crown_QF
+  18797: Deep_Angel_Hairband
+  18798: Pink_Angel_Hairband
   18803: Rose_Cascade
   18805: Eclipse_Hat
   18806: Black_Rabbit_Hat
@@ -9915,6 +9995,7 @@ items:
   18830: 2012RMSCNO3
   18831: 2012RMSCNO4
   18832: Rolf_Von_Gigue_666
+  18838: Angeling_Woolly_Hat
   18839: Poring_Sunglasses
   18841: Small_Poring_Band
   18842: Hat_Of_Girl
@@ -9968,11 +10049,14 @@ items:
   18900: Weisswurst
   18901: Seppl_Hat
   18902: Shovel_Hat
+  18906: Holy_Rosario
   18908: Isabella_Red_Ear
   18909: Isabella_Brown_Ear
   18910: Isabella_Blue_Ear
+  18912: Bell_Pigeon
   18917: LoveLove_Balloon
   18918: Long_Octopus_Balloon
+  18922: ILCHONGOM
   18925: GodOfWinds_Fan
   18929: Elephant_Model_Hat
   18930: Gorilla_Model_Hat
@@ -9987,8 +10071,11 @@ items:
   18947: Pipe_Of_Jiraiya
   18948: Mask_Of_Orochimaru
   18949: Scroll_Of_Tsunade
+  18950: Gerhard_Von_Devi
+  18956: Chocolate_Bomb
   18959: Old_Pink_Poo_Hat
   18960: Love_Daddy_2013
+  18968: Jinn_Marin_Balloon
   18970: Magical_Moon_Cat
   18971: Old_Rune_Circlet
   18972: Old_Mitra
@@ -10007,6 +10094,8 @@ items:
   18985: Falconer_Flute
   18987: RWC13_Jormungandr_Hat
   18997: Riot_Chip
+  19004: Happy_Balloon
+  19011: Little_Devil_S_Horn
   19019: Elemental_Crown
   19020: Survive_Circlet
   19021: Gigant_Helm
@@ -10018,6 +10107,7 @@ items:
   19033: Rift_Ancient_Decoration
   19038: 12_Anniversary_Crown_Of_Saint
   19039: 12th_ElvenEars
+  19046: DeadlyPoison_Manteau
   19047: Angeling_KnitCap
   19048: Elemental_Clothe
   19050: Loki_Nidhogg_Hat
@@ -10030,7 +10120,7 @@ items:
   19082: Bio_Protector
   19083: Mask_of_Hero
   19084: Parfait_V_Hat
-  19085: s_Wings_
+  19085: Sigrun's_Wings_
   19086: Robo_Eye_
   19087: Angel_Spirit_
   19088: Binoculars_
@@ -10049,6 +10139,7 @@ items:
   19109: Valhalla_Idol
   19111: Laser_Of_Eagle
   19112: Tengu_Scroll
+  19113: Gemini_Eyes
   19114: Sting_Silk_Ribbon
   19115: Republic_Hat
   19116: Red_Baby_Dragon
@@ -10058,7 +10149,7 @@ items:
   19125: Cylinder_Hairband
   19126: Shadow_Booster_
   19127: Zherlthsh_Mask_
-  19128: s_Ear_
+  19128: Ifrit's_Ear_
   19129: Chick_Hat_
   19130: Magic_Eyes_
   19131: Radio_Antenna_
@@ -10074,7 +10165,7 @@ items:
   19141: Dolor_Thanatos_Mask
   19142: Drooping_Rebellion
   19143: Poring_Balloon
-  19144: s_Hat
+  19144: Ferlock's_Hat
   19145: Whistle
   19146: Marin_Balloon
   19147: Drops_Balloon
@@ -10128,6 +10219,7 @@ items:
   19210: Apple_Of_Archer_IL
   19211: Magical_Feather_K
   19218: Time_Keeper_Glasses
+  19221: Golden_Angel_Band_TH
   19223: Cap_IL
   19238: PoringTownOnion
   19239: PoringTownCarrot
@@ -10143,6 +10235,7 @@ items:
   19256: Mobile_BeginnerMark
   19263: General_Helmet_
   19264: GoldFish_Hat
+  19265: Smoky_TransformHat
   19266: Survive_Circlet_
   19267: SurviveOrb_K
   19268: FaceWorm_Breath
@@ -10157,13 +10250,15 @@ items:
   19285: Helmet_Of_Siegfried_J
   19289: C_Moon_Eyepatch
   19291: C_Shiba_Inu
+  19292: C_Wildcat_Knit_Cap
   19294: C_CatEars_Cyber_HeadP_R
+  19295: Red_Baby_Dragon_TW
   19296: Classical_Fhat
   19299: Tree_Of_Sprout_JP
   19300: Dog_Officer
   19306: Heart_Card_In_Mouth
   19308: Amistr_Beret
-  19310: s_Cap
+  19310: Beginner's_Cap
   19326: Book_of_Soyga
   19327: Feather_Of_Seraphim
   19329: Hand_Of_Devil
@@ -10193,10 +10288,11 @@ items:
   19424: C_Master_Cat
   19425: Master_Cat
   19426: King_Of_Spirit_Circlet
-  19428: s_Hood
+  19428: Illusion_Morpheus's_Hood
   19433: C_Resonate_Taego
   19439: Subject_Aura
   19451: Heavenly_Order
+  19452: Heavenly_Order_
   19453: Jejecap_JP
   19459: C_Luna_On_Shoulder
   19460: Black_Veil_J
@@ -10487,10 +10583,10 @@ items:
   19778: C_King_Berry
   19779: C_Persika
   19780: C_Rabbit_Ear_Knit_Hat
-  19781: s_Wing_
+  19781: C_Ear_Of_Angel's_Wing_
   19782: C_Drooping_Kitty
   19783: C_Granpa_Beard
-  19784: s_Helm
+  19784: C_Morrigane's_Helm
   19785: C_Well_Baked_Toast
   19786: C_Mistress_Crown
   19787: C_Devoted_Eyes
@@ -10566,13 +10662,14 @@ items:
   19861: C_Heart_Hair_Pin
   19862: C_Horn_Of_Succubus
   19863: C_Inccubus_Horn
-  19864: s_Wig
+  19864: C_Dokebi's_Wig
   19865: C_Joker_Jester
   19866: C_Blue_Pajamas_Hat
   19871: C_Music_Decoration
   19874: C_Carnival_Circlet
   19875: C_Love_Rabbit_Hood
   19876: C_Rabbit_Ear_Hat
+  19877: C_Eyes_Of_Darkness
   19878: C_Drooping_Bunny
   19881: C_Pretty_Rabbit_Hood
   19882: C_Flowerpot_Mask
@@ -10638,7 +10735,7 @@ items:
   19978: C_Silver_Exclamation
   19979: C_Golden_Question
   19980: C_Silver_Question
-  19982: s_Hat
+  19982: C_Santa's_Hat
   19983: C_Flower_Hairpin
   19984: C_Winter_Hat
   19985: C_Aura_Quartz_Crown
@@ -10704,7 +10801,7 @@ items:
   20047: C_Pray_Cherry_Blossom
   20048: C_Wind_Of_The_Prairie
   20049: C_Plaster
-  20050: D_Hat
+  20050: C_Ph.D_Hat
   20051: C_Stop_Post
   20052: C_AFK_Hat
   20053: C_W_King_Tiger_Doll_Hat
@@ -10733,7 +10830,7 @@ items:
   20077: C_Wing_Form_Spectacle
   20078: C_White_Feather
   20079: C_Love_Daddy_2013
-  20080: s_Hair_Orna
+  20080: C_Shaman's_Hair_Orna
   20081: C_Metal_Dragon_Helm
   20082: C_Metal_Dragon_Hat
   20083: C_Mythlit_Hat
@@ -10840,9 +10937,9 @@ items:
   20184: C_Party_Hat
   20185: C_Fashionable_Glasses
   20186: C_Magni_Cap
-  20187: s_Circlet
-  20188: s_Hood
-  20189: s_Helm
+  20187: C_Fricca's_Circlet
+  20188: C_Morpheus's_Hood
+  20189: C_Goibne's_Helm
   20190: C_Chick_Hat_J
   20191: C_Black_Cat_Ears_Beret
   20192: C_Green_Foxtail
@@ -10929,7 +11026,7 @@ items:
   20277: C_Balloon_Hat
   20278: C_Man_Medal
   20279: C_Cheering_Whistle
-  20280: Chewed_Pencil
+  20280: C_Well-Chewed_Pencil
   20281: C_Kindergarten_Hat
   20282: C_White_Student_Cap
   20283: C_Over_Protector
@@ -11047,6 +11144,7 @@ items:
   20407: C_Subject_Aura_Red
   20408: C_Requiem_Crown_of_Light_and_Dark
   20409: C_There_is_Something_
+  20413: C_Isabella_Brown_Ear
   20416: C_1Grade_Balloon
   20417: C_2Grade_Balloon
   20418: C_3Grade_Balloon
@@ -11166,6 +11264,7 @@ items:
   20599: C_Sakura_Wing
   20600: Fantastic_Aura
   20603: C_P_Ulysses_Feather
+  20604: C_Blessed_Veil
   20605: C_Leaf_Umbrella
   20700: Egir_Manteau
   20701: Sol_Manteau
@@ -11177,13 +11276,14 @@ items:
   20707: Kirin_Wing
   20708: Poison_Manteau
   20709: Mana_Manteau
-  20710: s_Warmth
+  20710: Impr_Angel's_Warmth
   20711: Manteau_Of_Diego
   20712: Valkyrie_Cape
   20714: Assassin_Muffler
   20716: Spirit_Manteau
   20717: FaceWorm_Skin
   20718: FaceWorm_Skin_
+  20720: Manteau_Of_Storm
   20721: Cloak_Of_Gray
   20724: Love_Dad_Wings_2012
   20725: Ribbon_Piamat
@@ -11193,10 +11293,14 @@ items:
   20730: Loyalists_Hood
   20732: Supplement_Part_Con
   20733: Upgrade_Part_Engine
+  20734: Manteau_Of_Leafwind
+  20735: Manteau_Of_Flame_Heart
   20737: C_Kirin_Wing
   20743: Airship_Cape
   20744: Felock_Cape
+  20745: Manteau_Of_Mistic_Froz
   20746: C_Rudra_Wing
+  20747: Manteau_Great_Nature
   20748: Manteau_Of_Fallen
   20749: Manteau_Of_Fallen_
   20750: Rouban_Manteau
@@ -11244,6 +11348,8 @@ items:
   20824: Para_Team_Manteau130
   20825: Para_Team_Manteau160
   20826: Angel_Feather
+  20827: Diva_Manteau
+  20828: Mirage_Manteau
   20830: Wings_of_Seraph
   20831: Elder_Spirit
   20834: Manteau_Of_Vagabond
@@ -11252,6 +11358,7 @@ items:
   20837: Skin_Of_Gwiber
   20838: Muffler_IL
   20840: Cape_Of_Ancient_Lord_IL
+  20841: Golden_Angel_Wing_TH
   20842: Bag_Of_Antonio_P
   20843: Bag_Of_Antonio_S
   20844: Bag_Of_Antonio_
@@ -11263,9 +11370,10 @@ items:
   20859: Phreeoni_Wing
   20860: BattleSurcoat
   20863: MenblattWing
+  20866: Golden_Angel_Wing_TW
   20902: True_Hunting_Manteau
   20903: R_Hunting_Manteau
-  20906: s_Cloak
+  20906: Beginner's_Cloak
   20922: Leviathan_muffler
   20923: Illusion_Goibne_Spaulders
   20925: Commander_Manteau2
@@ -11285,7 +11393,7 @@ items:
   20945: Regia_Hunting_Manteau
   20946: Drag_Manteau
   20947: Cassock_Manteau
-  20948: s_Shawl
+  20948: Illusion_Morpheus's_Shawl
   20949: Skin_Of_Ladon_J
   20952: Anony_As_Muffler
   20953: H_AD_Hood
@@ -11298,6 +11406,9 @@ items:
   20967: Temporal_M_Dex
   20968: Temporal_M_Luk
   20969: Rainbow_Muffler_Jp
+  20985: aegis_20985
+  20988: C_Mechanical_Butterfly
+  20990: C_Rotating_Gears
   21000: Upg_Twohand_Sword
   21001: Velum_Claymore
   21002: Velum_Katzbalger
@@ -11312,16 +11423,19 @@ items:
   21011: Giant_Blade
   21012: Some_Wizard_MagicSword
   21013: Hetairoi_Sword
-  21014: Handed_Sword
+  21014: Infinity_Two-Handed_Sword
   21015: Scarlet_Twohand_Sword
   21016: Sinister_Twohand_Sword
   21018: Two_Hand_Spear_170
   21019: Onimaru
   21023: Toughen_Metal_TH_Sword
+  21026: Diva_Claymore
+  21027: Mirage_Claymore
   21030: Probation_TH_Sword
   21037: Rebeginer_RK_T_Sword
   21038: Oriental_Sword
-  21039: s_Broadsword
+  21039: Royal_Knight's_Broadsword
+  21046: Variant_Claymore
   21047: Beam_Claymore_OS
   21049: Evt_Oriental_Sword
   21050: Illusion_Tae_Goo_Lyeon
@@ -11331,8 +11445,9 @@ items:
   21055: G_Knight_Sword
   21058: Up_Dragonic_Slayer
   21202: C_Eat_Coin
-  21205: aegis_21205
-  21206: aegis_21206
+  21205: Nut_Cracker
+  21206: C_Nut_Cracker
+  21207: C_Bullhead
   21300: C_Guardian_Lion_Mask
   22000: Temporal_Str_Boots
   22001: Temporal_Int_Boots
@@ -11348,7 +11463,7 @@ items:
   22011: Temporal_Luk_Boots_
   22012: Mana_Boots
   22014: Enhanced_Variant_Shoes
-  22015: s_Arrival
+  22015: Impr_Angel's_Arrival
   22016: Assassin_Shoes
   22017: Fisherman_Shoes
   22018: Shoes_Of_Wise_Man
@@ -11405,6 +11520,7 @@ items:
   22102: Toughen_Time_Keepr_Bts
   22103: Excelion_Leg
   22104: Pororoca_Shoes
+  22105: Cuffs_
   22106: Giant_Boots
   22107: Modify_Str_Boots
   22108: Modify_Int_Boots
@@ -11424,6 +11540,8 @@ items:
   22124: Para_Team_Boots130
   22125: Para_Team_Boots145
   22126: Para_Team_Boots160
+  22127: Diva_Shoes
+  22128: Mirage_Shoes
   22131: Cowboy_Boots
   22133: Shoes_IL
   22134: Enforcer_Shoes
@@ -11435,10 +11553,10 @@ items:
   22170: Shoes_Of_Servival
   22171: Ancient_Hero_Boots
   22172: Gray_Wing_Boots
-  22173: s_Boots
+  22173: Beginner's_Boots
   22189: Shoes_Of_Pilgrim
   22190: Illusion_Boots
-  22192: s_Greaves
+  22192: Illusion_Goibne's_Greaves
   22195: Booster_Shoes
   22196: Illusion_Leg_A
   22197: Illusion_Leg_B
@@ -11581,7 +11699,7 @@ items:
   22718: Lude_Ball
   22719: Tatacho_Ball
   22720: Novus_Ball
-  22721: _Box
+  22721: ?_Box
   22734: Revolution_Quiz_Box
   22735: Sealed_Moonlight_Flower_Scroll
   22736: July_Gift_Box
@@ -11627,7 +11745,7 @@ items:
   22802: Safe_to_6_Equipment_Certificate
   22808: NoviceBox
   22812: Sealed_Dracula_Scroll
-  22813: s_Shadow_Box
+  22813: Bearer's_Shadow_Box
   22814: Cat_Hand_Ticket
   22822: Summer_Vacation_Costumes
   22823: Sealed_Sniper_Scroll
@@ -11670,9 +11788,9 @@ items:
   22884: October_Gift_Box_
   22885: November_Gift_Box_
   22886: December_Gift_Box_
-  22887: Room_Box
-  22888: s_Scroll
-  22893: s_Shadow_Cube
+  22887: PC-Room_Box
+  22888: New_Year's_Scroll
+  22893: New_Year's_Shadow_Cube
   22894: Limited_2015_Neuralizer
   22895: Limited_2015_Status_Initialization_Volume
   22896: Limited_Old_Status_Initialization_Volume
@@ -11687,6 +11805,7 @@ items:
   23001: Enchant_Stone_Box8
   23012: S_Small_Mana_Potion
   23016: Pieces_Of_Grudge
+  23033: Invisible_Box
   23038: S_Slim_White_Box
   23042: Seed_Of_Yggdrasil_
   23043: S_Seed_Of_Yggdrasil_Box
@@ -11710,10 +11829,13 @@ items:
   23152: Collectibles_Box
   23153: Pet_Egg_Box
   23154: Costume_Exchange_Box
+  23168: Mini_Fan_Box
+  23169: Alchemist_Box
   23170: Fan_Modification_Kit
   23174: Enchant_Stone_Box11
   23175: Uniform_Repair_Kit
   23177: Kafra_Card_
+  23178: Kafra_Box
   23187: Sap_Jelly
   23188: Airship_Part
   23189: Little_Dall_Needle
@@ -11743,6 +11865,9 @@ items:
   23277: Mado_Box
   23280: N_Fly_Wing_
   23281: RaceShadow_Mix
+  23285: Candy_Box_Melee
+  23286: Candy_Box_Range
+  23287: Candy_Box_Magic
   23288: Compressed_Wing_Of_Fly
   23289: Candy_Pouch_Blessing_Scroll_Melee
   23290: Candy_Pouch_Blessing_Scroll_Range
@@ -11754,10 +11879,12 @@ items:
   23311: Magic_Cat_hand_Scroll
   23324: StabilityShadow_Mix
   23340: Comp_Megaphone
+  23388: CookingBox10
   23436: Shadow_Refine_Hammer
   23474: InfinityShadow_Mix
   23475: Infinity_Drink
   23524: Enchant_Stone_Box13
+  23538: BloodyKnight_Shield_Box
   23545: Silver_Statue
   23546: Cursed_Blood
   23547: Gold_Statue
@@ -11776,7 +11903,7 @@ items:
   23706: Charleston_Parts_W
   23707: Charleston_Parts_R
   23720: Shadow_Random_Mix
-  23770: Costume_Enchant_Stone_Box16
+  23770: Enchant_Stone_Box16
   23776: EP17_1_SPC05
   23777: EP17_1_SPC06
   23778: EP17_1_SPC07
@@ -11861,7 +11988,9 @@ items:
   23893: Bs_Sha_M_S_25
   23894: Bs_Item_M_S_51
   23926: Shadow_9_Refine_Hammer
+  23952: Sillit_Pong_Box
   23967: EnchantStone_Recipe_9m
+  23981: Abyss_Ddbox
   24000: T1_Shadow_Armor
   24001: T1_Shadow_Weapon
   24002: T1_Shadow_Shield
@@ -11953,8 +12082,8 @@ items:
   24088: S_Gemstone_Earring
   24089: S_Gemstone_Pendent
   24090: S_Stability_Shield
-  24091: s_Armor
-  24092: s_Shoes
+  24091: S_Plasterer's_Armor
+  24092: S_Plasterer's_Shoes
   24093: S_Insomniac_Armor
   24094: S_Insomniac_Shoes
   24095: S_Peerless_Armor
@@ -12183,7 +12312,7 @@ items:
   24318: S_SuperNovice_Shield
   24319: S_Gunslinger_Shield
   24320: S_Hasty_Shoes_II
-  24321: s_Pendant_II
+  24321: S_Bearer's_Pendant_II
   24322: S_Gemstone_Earring_II
   24323: S_Spellflow_Shield_II
   24324: S_Spiritual_Weapon_II
@@ -12199,8 +12328,8 @@ items:
   24334: S_Magic_Compose_Armor
   24335: S_Gemstone_Weapon_II
   24336: S_Gemstone_Shield_II
-  24337: s_Armor_II
-  24338: s_Shoes_II
+  24337: S_Bearer's_Armor_II
+  24338: S_Bearer's_Shoes_II
   24339: S_Almighty_Earring
   24340: S_Almighty_Pendant
   24341: S_All_Race_Shoes
@@ -12214,7 +12343,7 @@ items:
   24349: S_Magic_Vibration_Dragon_Killer_Armor
   24350: S_Magic_Scissor_Hunting_Armor
   24351: S_Magic_Fishing_Insect_Net_Armor
-  24352: s_Armor_II
+  24352: S_Plasterer's_Armor_II
   24353: S_Insomniac_Shoes_II
   24354: S_Peerless_Armor_II
   24355: S_Adulate_Shoes_II
@@ -12249,12 +12378,12 @@ items:
   24384: Enchanting_Earring_S
   24385: Enchanting_Pendant_S
   24386: S_Infinity_Weapon
-  24387: s_Armor
-  24388: s_Shield
-  24389: s_Shoes
-  24390: s_Weapon
-  24391: s_Earring
-  24392: s_Pendant
+  24387: S_Beginner's_Armor
+  24388: S_Beginner's_Shield
+  24389: S_Beginner's_Shoes
+  24390: S_Beginner's_Weapon
+  24391: S_Beginner's_Earring
+  24392: S_Beginner's_Pendant
   24393: S_Physical_Shoes
   24394: S_Physical_Shield
   24395: S_Physical_Armor
@@ -12526,6 +12655,56 @@ items:
   24662: S_FullPene_Pendant
   24663: S_FullPene_Armor
   24664: S_FullPene_Shoes
+  24665: S_FullTemp_Earring
+  24666: S_FullTemp_Shoes
+  24667: S_FullTemp_Armor
+  24668: S_FullTemp_Pendant
+  24669: S_Mammoth_Armor
+  24670: S_Mammoth_Shoes
+  24671: S_Mammoth_Pendant
+  24672: S_Mammoth_Earring
+  24673: S_Mammoth_Weapon
+  24674: S_Mammoth_Shield
+  24675: S_TrueGem_Armor
+  24676: S_TrueGem_Shoes
+  24677: S_TrueGem_Earring
+  24678: S_TrueGem_Pendant
+  24679: S_M_Mammoth_Armor
+  24680: S_M_Mammoth_Shoes
+  24681: S_M_Mammoth_Earring
+  24682: S_M_Mammoth_Pendant
+  24683: S_EXP_Shield
+  24685: S_Absorb_Shield
+  24686: S_Absorb_Weapon
+  24687: S_1Para_Weapon
+  24688: S_1Para_Shield
+  24689: S_1Para_Armor
+  24690: S_1Para_Shoes
+  24691: S_1Para_Earing
+  24692: S_1Para_Pendant
+  24693: S_2Para_Shield
+  24694: S_2Para_Armor
+  24695: S_2Para_Shoes
+  24696: S_2Para_Earing
+  24697: S_2Para_Pendant
+  24698: S_2Para_RK_Weapon
+  24699: S_2Para_LG_Weapon
+  24700: S_2Para_NC_Weapon
+  24701: S_2Para_GN_Weapon
+  24702: S_2Para_GC_Weapon
+  24703: S_2Para_SC_Weapon
+  24704: S_2Para_WL_Weapon
+  24705: S_2Para_SO_Weapon
+  24706: S_2Para_AB_Weapon
+  24707: S_2Para_SR_Weapon
+  24708: S_2Para_RA_Weapon
+  24709: S_2Para_WM_Weapon
+  24710: S_2Para_KO_Weapon
+  24711: S_2Para_RL_Weapon
+  24712: S_2Para_SJ_Weapon
+  24713: S_2Para_SP_Weapon
+  24714: S_2Para_SU_Weapon
+  24715: S_2Para_NV_Weapon
   25000: SPdrainStone_Top
   25001: DEFStone_Middle
   25002: ChangeLUK_Middle
@@ -12544,6 +12723,10 @@ items:
   25015: EXPStone_Bottom
   25016: ATKStone_Bottom
   25017: MATKStone_Bottom
+  25038: Breaked_Trap
+  25039: Captured_Trap
+  25041: Pump_Of_Spirit
+  25042: Service_30_Egg_Shell
   25043: Thorny_Vine_Flute
   25044: Hard_Thorny_Vine
   25045: Luxurious_Cloth
@@ -12551,6 +12734,7 @@ items:
   25047: Kahlunac
   25048: Hearty_Lunchbox
   25049: Basilac_Clam
+  25051: Union_Token
   25058: TwinkleEffect_Top
   25059: GhostEffect_Middle
   25060: Critical_Stone
@@ -12566,6 +12750,47 @@ items:
   25070: ReloadStone_Middle
   25071: ReloadStone_Bottom
   25072: Kyrie_Stone
+  25073: Worn_Out_Papyrus
+  25074: Antique_Coin
+  25075: Sword_Of_Admiral
+  25076: QouSeraSera
+  25077: KnightsSupply
+  25078: Liqueur_Of_Lotus
+  25079: FaintBreathing
+  25080: FoxBeads
+  25083: MRabbit_SHair
+  25084: Captured_MRabbit
+  25085: MRabbit_Hair
+  25086: Gift_Wrapping_Ribbon
+  25087: Old_Doll
+  25088: Dream_Piece
+  25089: Gift_Wrapping_Wing
+  25098: Jobmap_1st
+  25099: Jobmap_su
+  25100: Jobmap_sword
+  25101: Jobmap_magic
+  25102: Jobmap_Merch
+  25103: Jobmap_acol
+  25104: Jobmap_thief
+  25105: Jobmap_archer
+  25106: Jobmap_taekwon
+  25107: Jobmap_rune
+  25108: Jobmap_royal
+  25109: Jobmap_war
+  25110: Jobmap_socer
+  25111: Jobmap_mecha
+  25112: Jobmap_gene
+  25113: Jobmap_bishop
+  25114: Jobmap_sura
+  25115: Jobmap_cross
+  25116: Jobmap_chaser
+  25117: Jobmap_ranger
+  25118: Jobmap_mins
+  25119: Jobmap_wander
+  25120: Jobmap_ninja
+  25121: Jobmap_gun
+  25122: Jobmap_super2
+  25123: Jobmap_karma2
   25127: Silent_Energy_Particle
   25128: Weak_Energy_Particle
   25129: Unstable_Energy_Particle
@@ -12573,10 +12798,12 @@ items:
   25131: Fallen_Energy_Particle
   25132: Pumpkin_Deco
   25133: Dried_White_Stem
+  25135: Comp_Auger_Of_Spirit
   25136: ElectricEffect_Middle
   25137: GreenFloor_Bottom
   25138: ShrinkEffect_Middle
   25139: Identify_Stone
+  25140: Resurrection_Stone
   25141: EXPStone_Middle
   25142: Doram_Token
   25143: Gift_Stuffed_Doll
@@ -12604,6 +12831,7 @@ items:
   25165: High_Class_Tea
   25166: Very_Shining_Ring
   25167: Old_Letter
+  25169: Sticky_Slime
   25170: MinorCastingStone_Robe
   25171: EXPStone_Top
   25172: CastingStone_Top
@@ -12621,12 +12849,20 @@ items:
   25184: Portable_Sewingbox
   25185: Locket_Pendant
   25187: Slug_Bullet
+  25188: Handkerchief_of_Girl
+  25200: Cloud_Fluff
+  25201: Arcane_Toenail
   25205: ShrinkEffect_Bottom
   25206: ElectricEffect_Top
   25207: SPAbsorb_Stone_Top
   25208: SPAbsorb_Stone_Robe
   25209: HPAbsorb_Stone_Robe
   25210: HPAbsorb_Stone_Top
+  25218: Tree_Branches
+  25219: WindowPaper
+  25220: Moonlight_KiteString
+  25221: MoonScent_Tree_Branches
+  25222: MoonPattern_WindowPaper
   25223: Para_Team_Coin
   25224: WhiteBodyEffect_Middle
   25225: ExplodingEffect_Middle
@@ -12637,27 +12873,39 @@ items:
   25231: Suspicious_Bottle
   25232: Cheap_Lubricant
   25233: Cotton_Tufts
+  25235: StoneForWork
   25238: New_Normal_Lubricant
   25239: New_Advanced_Lubricant
+  25240: Independence_Permit
+  25245: Little_Skel_Bone
   25246: Juice_Mix_Package
   25247: Purple_Ore
   25248: Purple_Ore_Crate
   25249: Buffalo_Bandit_Mane
   25250: Rock_Ridge_Coin
+  25251: Fermented_Grapes
+  25252: Sprig_Of_Holly
+  25253: Sugar_Box
+  25254: Firewood
   25256: Hazy_Dream_Fragment
   25257: Bloody_Love_Letter
   25258: Broken_Arrow
   25259: Recruitment_Leaflet
   25260: Fragment_of_Purple_Ore
   25261: Torn_Paper_
-  25262: dried_Clover
+  25262: Well-dried_Clover
   25263: Short_Bat_Hair
   25264: Cluster_of_Nightmares
   25265: Shining_Spore
   25266: Dried_Leaf_Of_Ygg
   25267: Suspicious_Pentacle
+  25268: Sticky_Blood
+  25269: Mushroom_Sap
+  25270: Swaying_Mane
   25271: Illusion_Stone
   25272: Illusion_Gemstone
+  25273: Mysterious_Medal
+  25274: Racing_Thx_Ticket
   25276: Clean_Bone
   25277: Deadly_Poison_Powder
   25278: Bandits_Scarf
@@ -12668,7 +12916,14 @@ items:
   25283: Brown_Muffler
   25284: Swamp_Bug_Shell
   25285: Brown_Rat_Tail
+  25286: Octo_Octo_Fluid
+  25287: Mysterious_Feather
   25290: Sweets_Festival_Coin
+  25291: Fac_Choco
+  25292: Stolen_Cacao
+  25294: Clover_Ticket
+  25295: Happiness_Clover
+  25296: Fatal_Thing
   25297: Frozen_Stone_Fragment
   25298: Spirit_Jewel
   25299: Snowball
@@ -12678,11 +12933,39 @@ items:
   25304: Critical_Stone_Top
   25305: Critical_Stone_Bottom
   25306: CastStone_Robe
+  25307: Private_M_Ticket
+  25309: Dry_Branch
+  25310: DF_Token_Of_Siegfried
   25311: Piece_of_Black_Horn
   25312: Fine_Old_Doll
   25313: Old_Shell
+  25314: ShipsLog
+  25315: Piece_Of_Shell
+  25316: Shabby_Metal_Chip
+  25318: Dalcom_Skin
+  25319: Ice_Box
+  25320: Suspicious_Melon
+  25340: Golden_Corn
+  25341: Red_Hot_Marble
+  25342: Healthful_Herb
+  25344: Flat_Round_Stone
+  25358: Retrieve_Datacard
+  25359: Slightly_Old_Bax
+  25360: Receipt
+  25365: Thin_Noodle
+  25366: Noodle_Festa_Coupon
+  25367: Promotion_Fan
   25375: Powerful_Soul_Essence
+  25376: Pet_Coin
   25377: Luxurious_Pet_Food
+  25390: Captured_Savage
+  25391: Goodly_Bough
+  25392: Free_Pass_Ticket
+  25393: Delicious_Corn
+  25394: Fruit_Lunch
+  25395: Small_Embers
+  25401: Black_Fur
+  25408: Memory_Of_Gyol
   25409: SuraStone_Top
   25410: SuraStone_Middle
   25411: SuraStone_Bottom
@@ -12695,6 +12978,12 @@ items:
   25418: SorcererStone_Middle
   25419: SorcererStone_Bottom
   25420: SorcererStone_Robe
+  25421: Pumpkin_Decor
+  25422: White_Thin_Stem
+  25425: SnowFlower_Of_Spell
+  25426: Warm_Cotton
+  25427: Rebeginer_W_Coupon
+  25428: Rebeginer_W_7Up
   25445: RuneknightStone_Top
   25446: RuneknightStone_Middle
   25447: RuneknightStone_Bottom
@@ -12708,6 +12997,7 @@ items:
   25455: WarlockStone_Bottom
   25456: WarlockStone_Robe
   25464: World_Moving_Rights
+  25479: Dogly_Bottle
   25490: ShadowchaserStone_Top
   25491: ShadowchaseStone_Middle
   25492: ShadowchaseStone_Bottom
@@ -12720,9 +13010,41 @@ items:
   25499: WanderMinstrelStone_Middle
   25500: WanderMinstrelStone_Bottom
   25501: WanderMinstrelStone_Robe
+  25502: EVT_JAN01KR
+  25503: Flower_V
+  25504: Visionary_Ticket
   25508: Token_of_OrcGeneral
+  25511: Evt_March04_KR
+  25512: Evt_March05_KR
+  25615: NasariansSoulstone
+  25616: Green_Bearopy
+  25617: Chonchon_Doll_HQ
+  25618: Gothic_China_Doll
+  25619: Clay_Doll
   25622: White_Snake_Tear
+  25627: Gold_Card
   25629: Konts_Letter
+  25633: Token_Of_Wootan
+  25634: Wootan_D_S_Piece
+  25635: Wootan_F_Fur
+  25636: Shooting_Stone
+  25637: Hair_Leaf
+  25638: Token_Of_Bigstone
+  25639: Fragment_Of_Rock
+  25640: Pot_Stone
+  25641: Hard_Mud
+  25642: Weak_Worm
+  25643: Autographed_Book
+  25655: Evt_May01_KR
+  25656: Evt_June01_KR
+  25657: Evt_July01_KR
+  25658: Evt_July02_KR
+  25659: Evt_May02_KR
+  25664: Evt_July03_KR
+  25665: Dienes_Envelope
+  25666: Id_Card
+  25668: EP17_1_EVT01
+  25669: EP17_1_EVT02
   25670: M_M_Defense
   25671: M_M_Magic_Defense
   25672: M_M_Vit
@@ -12771,8 +13093,17 @@ items:
   25715: AssacrossStone_Middle
   25716: AssacrossStone_Bottom
   25717: GuillcrossStone_Robe
+  25723: EP17_1_EVT39
+  25728: Shadowdecon_Ore
   25729: Shadowdecon
+  25730: Zelunium_Ore
   25731: Zelunium
+  25733: EP17_1_Open_Event
+  25734: Sealed_Weapon_Ticket
+  25735: Unsealing_Token
+  25736: J_Shop_Coupon2
+  25739: GH_Cursed_Crystal
+  25740: GH_Cursed_Gemstone
   25759: Dragenergy_Green
   25760: Dragenergy_Blue
   25761: Dragenergy_Red
@@ -12786,6 +13117,24 @@ items:
   25769: Shard_Gold
   25770: Valkyrie_Armor2
   25771: Valkyrie_Armor3
+  25772: Delicious_Juice
+  25773: Snake_Deadly_Poison
+  25774: Mantis_Flower
+  25775: Soft_Scarf
+  25776: Purple_Solid_Shell
+  25777: Suspicious_Sap
+  25778: Brilliant_Jelly
+  25779: Short_Rope
+  25780: Essence_Of_Demon
+  25781: Little_Lovely_Candle
+  25782: Medicinal_Stuff
+  25783: Cold_Holy_Water
+  25784: Small_Flashlight
+  25786: Bio_Reseearch_Docu
+  25787: Bio_Test_Fragment
+  25791: Inventory_Ex_Evt
+  25792: Inventory_Ex_Dis
+  25793: Inventory_Ex
   25797: SuraStone_Robe2
   25798: SuraStone_Bottom2
   25799: SuraStone_Middle2
@@ -12807,6 +13156,9 @@ items:
   25815: Ein_SOLIDDUST
   25816: Ein_RUSTHELM
   25817: Ein_EYEROCK
+  25820: Metal_W_Ticket
+  25840: PayPromotion_Coupon
+  25841: Smooth_Noodle
   25842: SoulReaperStone_Robe
   25843: SoulLinkerStone_Top
   25844: SoulLinkerStone_Middle
@@ -12828,10 +13180,12 @@ items:
   25860: DoramStone_Middle
   25861: DoramStone_Bottom
   25862: DoramStone_Robe
+  25863: 2019_SStarR_Ticket
   25864: S_Circlet_Of_Time
   25865: Jewel_Of_Time_Ore
   25866: Spell_Of_Time
   25867: Fragment_Of_Time
+  25876: Harvest_Lottery_Ticket
   25892: aegis_25892
   25893: aegis_25893
   25894: aegis_25894
@@ -12841,11 +13195,16 @@ items:
   25898: Siroods_Fish_Rod
   25899: E_Abyss1
   26001: Toughen_Metal_Lance
+  26004: Diva_Lance
+  26005: Mirage_Lance
   26007: Spectral_Spear_IL
   26015: Rebeginer_LG_Lance
-  26016: s_Lance
+  26016: Royal_Knight's_Lance
+  26021: Variant_Lance
   26100: P_Foxtail2
   26101: P_Foxtail3
+  26105: Diva_Wand
+  26106: Mirage_Wand
   26107: Staff_Of_Elder
   26109: Staff_Of_Bordeaux_IL
   26110: CandyCaneRod
@@ -12856,6 +13215,10 @@ items:
   26120: Rebeginer_DO_Rod
   26138: Hellfire_Staff
   26139: Icicle_Staff
+  26143: Diva_Foxtail
+  26144: Mirage_Foxtail
+  26149: Variant_Wand
+  26150: Variant_Foxtail
   26151: Rutilus_Stick_OS
   26154: SoulWeight
   26155: MeawFoxtail
@@ -12870,6 +13233,8 @@ items:
   26166: R_Magician_Wand
   26172: R_Foxtail_rod
   26200: Hippie_Rope
+  26201: Diva_Blade_Whip
+  26202: Mirage_Blade_Whip
   26212: Heart_Whip
   26213: Scarlet_Ribbon
   26215: Ein_1HWHIP
@@ -12889,6 +13254,8 @@ items:
   27028: Fire_Frilldora_Card
   27029: Fire_Golem_Card
   27030: Fulbuk_Card
+  27031: Labyrinth_Bapho_Card
+  27032: Labyrinth_Dra_Card
   27081: AngerMoonlight_Card
   27082: AngerNineTail_Card
   27083: BitterBonGun_Card
@@ -13029,11 +13396,11 @@ items:
   27319: R48_85_Bestia_Card
   27320: E_EA1L_Card
   27321: Despair_God_Morocc_Card
-  27322: s_Apostle_Ahat_Card
-  27323: s_Apostle_Shnaim_Card
+  27322: Demon_God's_Apostle_Ahat_Card
+  27323: Demon_God's_Apostle_Shnaim_Card
   27324: Brinaranea_Card
   27325: Muspellskoll_Card
-  27326: s_Minion_Card
+  27326: Morocc's_Minion_Card
   27327: Grim_Reaper_Ankou_Card
   27328: Corrupt_Life_Card
   27329: Schmidt_Card
@@ -13077,6 +13444,10 @@ items:
   27386: C_Raydric_Card
   27387: C_Raydric_Archer_Card
   27388: C_Cursed_Butler
+  27393: aegis_27393
+  27394: aegis_27394
+  27395: aegis_27395
+  27396: aegis_27396
   28000: Thanos_Katar
   28001: Katar_Of_Evil_Slayer
   28002: Half_BF_Katar2
@@ -13087,10 +13458,13 @@ items:
   28010: Katar_170
   28011: Unity_Katar
   28015: Toughen_Metal_Katar
+  28018: Diva_Katar
+  28019: Mirage_Katar
   28022: Infiltrator_IL
   28023: Ghoul_Leg_IL
   28024: Probation_Katar
   28027: Rebeginer_GC_Katar
+  28037: Variant_Katar
   28038: Meuchler_OS
   28039: Katar_of_Shiver
   28040: Evt_Shiver_Katar_K
@@ -13106,11 +13480,14 @@ items:
   28105: Infinity_Axe
   28106: Scarlet_Twohand_Axe
   28107: Sinister_Twohand_Axe
-  28110: Handed_Axe
+  28110: Unity_Two-Handed_Axe
   28113: Toughen_Metal_THand_Axe
   28116: Mine_Worker_Pickax
+  28117: Diva_Twohand_Axe
+  28118: Mirage_Twohand_Axe
   28120: Probation_TH_Axe
   28130: Avenger
+  28135: Variant_Twohand_Axe
   28136: Blasti_OS
   28137: Evt_Avenger
   28138: Maxi_Spanner
@@ -13129,11 +13506,23 @@ items:
   28224: Dust_Fire
   28225: Burning_Rose
   28226: Revenger
+  28227: Diva_Rifle
+  28228: Mirage_Rifle
+  28229: Diva_Gatling_Gun
+  28230: Mirage_Gatling_Gun
+  28231: Diva_Launcher
+  28232: Mirage_Launcher
+  28233: Diva_Shotgun
+  28234: Mirage_Shotgun
   28240: Calf_Kingcobra
   28241: Calf_Diamondback
   28242: Calf_Anaconda
   28243: Calf_Python
   28244: Illusion_Gate_Keeper_DD
+  28249: Variant_Rifle
+  28250: Variant_Gatling_Gun
+  28251: Variant_Shotgun
+  28252: Variant_Launcher
   28253: HR_S55_OS
   28254: Illusion_Butcher
   28255: Master_Soul_Rifle
@@ -13178,6 +13567,7 @@ items:
   28382: Charm_G_Necklace
   28386: Fallen_Monk_Rosary
   28387: Bishop_Necklace
+  28388: Bloody_Iron_Ball_
   28391: S_Thief_earring
   28392: S_Archer_earring
   28394: King_of_Spirit_Ring
@@ -13198,7 +13588,7 @@ items:
   28424: PlumpyWormCharm
   28425: Mercenary_Ring_A
   28426: Mercenary_Ring_B
-  28429: s_Necklace
+  28429: Arquien's_Necklace
   28430: Archpriest_Ring
   28433: Luminous_Blue_Stone
   28434: Boxer_Glove
@@ -13264,7 +13654,7 @@ items:
   28507: Glove_Of_Wizard
   28508: Skul_Ring_IL
   28509: Ring_IL
-  28510: s_Servant
+  28510: Vampire's_Servant
   28511: Time_Keeper_Ring
   28513: Celine_Brooch
   28514: Bless_Flower_Ring
@@ -13282,7 +13672,7 @@ items:
   28563: True_Hunting_Ring2
   28564: Valkyrie_Drop
   28565: Perverse_Demon_Mask
-  28566: s_Ring
+  28566: Beginner's_Ring
   28573: Emerald_Ring
   28575: Verus_Core
   28594: Temporal_Ring
@@ -13295,6 +13685,8 @@ items:
   28606: Unity_Bible
   28607: Toughen_Metal_Book
   28608: Origin_Of_Elemental
+  28609: Diva_Book
+  28610: Mirage_Book
   28612: Book_Of_The_Apo_IL
   28613: Probation_Magicbook
   28614: Probation_Bible
@@ -13302,6 +13694,7 @@ items:
   28618: Book_of_the_Sun_God
   28619: Prisoner_Diary
   28626: Illusion_Tablet
+  28627: Variant_Book
   28629: Circuit_Board_OS
   28630: Exoricists_Bible_
   28631: OneSkyOneSun
@@ -13315,15 +13708,19 @@ items:
   28703: Infinity_Dagger
   28705: Scarlet_Dagger
   28706: Sinister_Dagger
+  28708: Dagger_of_Trust
   28714: Toughen_Metal_Dagger
   28717: Valkyrie_Knife
   28719: Diffusion_Lacma
   28721: Monokage
+  28722: Diva_Dagger
+  28723: Mirage_Dagger
   28725: Moonlight_Sword_IL
   28726: Probation_Dagger
   28740: Rebeginer_SC_Dagger
   28744: Magic_Sword
   28745: Illusion_Counter_Dagger
+  28753: Variant_Dagger
   28755: Kuroiro_OS
   28759: Evt_Magic_Sword
   28762: Illusion_Bazerald
@@ -13362,6 +13759,7 @@ items:
   28942: Bloody_Knight_Shield
   28945: Bloody_Knight_Shield_
   28946: Bloody_Knight_Shield__
+  28950: Variant_Shield
   28951: Nero_Shield
   28953: Poring_B_Shield
   28955: Fotia_Shield
@@ -13499,16 +13897,16 @@ items:
   29160: BlueAura_Effect
   29161: Pink_Glow_Effect
   29162: Shadow_Effect
-  29166: Tolerance
-  29167: Hit
-  29168: Flee
-  29169: Mdef
-  29170: Atk
-  29171: Matk
-  29172: Avoid
-  29173: MaxHP
-  29174: Quick
-  29175: Cri
+  29166: A-Tolerance
+  29167: A-Hit
+  29168: A-Flee
+  29169: A-Mdef
+  29170: S-Atk
+  29171: S-Matk
+  29172: S-Avoid
+  29173: S-MaxHP
+  29174: S-Quick
+  29175: S-Cri
   29176: Tenji
   29208: SPdrain2_Top
   29209: SPdrain2
@@ -13599,13 +13997,13 @@ items:
   29433: SorcererStone_Middle_
   29434: SorcererStone_Bottom_
   29435: SorcererStone_Robe_
-  29438: Knockback
-  29439: Immortal
-  29440: Killgain
-  29441: Reincarnation
-  29442: NoDispell
-  29443: Clairvoyance
-  29444: Cast_Fixed
+  29438: Z-Knockback
+  29439: Z-Immortal
+  29440: Z-Killgain
+  29441: Z-Reincarnation
+  29442: Z-NoDispell
+  29443: Z-Clairvoyance
+  29444: Z-Cast_Fixed
   29460: RuneknightStone_Top_
   29461: RuneknightStone_Middle_
   29462: RuneknightStone_Bottom_
@@ -14065,7 +14463,7 @@ items:
   31376: C_Ancient_Dragon_Coronet_Purple
   31377: C_Glastheim_Obeserver
   31378: C_Catharina_Von_Brad_60th
-  31379: Up_Key
+  31379: C_Wind-Up_Key
   31380: C_Crow
   31381: C_Diabolic_Lapel
   31382: C_Cat_Ears_Punkish
@@ -14105,7 +14503,9 @@ items:
   31416: C_SeraphimCoronet
   31417: C_Rice_Ball_Hat
   31418: C_Leek_In_Mouth
+  31419: C_Angel_Of_Happiness
   31420: C_SantaPoring_Promo
+  31428: C_Panda_Balloon
   31430: C_Seppl_Hat_TW
   31431: C_Curupira_Hat_TW
   31432: C_Luwmin_Ice
@@ -14219,7 +14619,7 @@ items:
   31559: C_Royalguard_Necklace
   31560: C_Clergy_Nurse_Cap
   31561: C_Heavenly_Dark_Flame
-  31562: Doll
+  31562: C_Zealotus Doll
   31563: C_Blue_Eye_Shadow
   31564: C_Variant_Veil
   31565: C_Princess_Ribbon_Crown
@@ -14265,6 +14665,7 @@ items:
   31614: C_Fox
   31615: Costume_Geisha_Make_Up
   31616: C_Sleep_Sheep_TW
+  31617: C_Lady_Tanee_TW
   31618: C_DancingButterfly_TW
   31620: C_Snow_Fox_TW
   31624: C_HeartOfCat_TW
@@ -14347,7 +14748,7 @@ items:
   31718: Costume_Sky_Lantern_Mid
   31719: Costume_Master_Of_Flames
   31720: Costume_Vesper_Hat
-  31721: Costume_Resonating_Drums
+  31721: C_ResonateTaego
   31723: Costume_TW_Rice_Ball
   31724: Costume_TW_Bulgogi
   31728: C_Nobility_Hat
@@ -14388,6 +14789,7 @@ items:
   31801: Costume_Karada_Meguri_Tea_Hat
   31802: Costume_Royal_Milk_Tea_Hat
   31803: Costume_Master_Of_Wind
+  31805: C_Sunglasses_Bball_Hat
   31813: Costume_Lunatic_On_Shoulder
   31814: Costume_Lunatic_Family_Balloon
   31815: Costume_Angola_Intention
@@ -14408,6 +14810,7 @@ items:
   31844: C_Mob_Scarf
   31845: C_Palace_Guard_Cap
   31846: C_Lovely_Ribbon_Hair
+  31847: c_Blinking_Eyes_Cocktai_BU
   31848: C_Rose_Gothic_Bonnet
   31849: C_Runaway_Accelerator
   31850: C_Gift_of_Panagia
@@ -14439,6 +14842,7 @@ items:
   31907: C_PGstone_Knit_Hat_BW
   31911: C_LittleGarden
   31916: C_Frill_Collar
+  31921: C_Fairy_Long_CB
   31922: C_Fluffy_Semi_Long_SV
   31923: C_Baby_Polar_Bear
   31927: C_Blue_Pencil_In_Mouth
@@ -14449,13 +14853,25 @@ items:
   31934: C_Blink_Eyes_Sakura
   31936: C_Nut_Donut_In_Mouth
   31937: C_Unicorn_Ornament
-  31938: aegis_31938
+  31938: C_L_Knitting_Low_Twin
   31943: C_Frog_Hood
-  31944: aegis_31944
+  31944: C_Elegant_Wave
+  31959: C_RK_Hair_BL
+  31960: C_RK_Hair_BU
+  31961: C_RK_Hair_GN
+  31962: C_RK_Hair_OM
+  31963: C_RK_Hair_PK
+  31964: C_RK_Hair_PP
+  31965: C_RK_Hair_RD
+  31966: C_RK_Hair_WH
+  31967: C_RK_Hair_YL
+  32001: Diva_Spear
+  32002: Mirage_Spear
   32004: Probation_Lance
   32005: Illusion_Pole_Axe
   32013: Metal_Stick
   32014: Brute_Spear
+  32017: Variant_Spear
   32018: Undine_Spear_K
   32019: Boost_Lance_OS
   32021: Evt_Undine_Spear_K
@@ -14464,6 +14880,8 @@ items:
   32025: Fortridge
   32026: Ein_1HSPEAR
   32027: G_Knight_Spear
+  32105: Variant_Viollin
+  32106: Variant_Blade_Whip
   32107: Black_Circle
   32108: Antique_Cello
   32110: Ein_1HLUTE
@@ -14487,8 +14905,8 @@ items:
   32233: Schmidt_Insignia_Celestial
   32234: UnrivaledRing
   32237: Celine_Brooch_K
-  32238: s_Ring
-  32239: s_Bracelet
+  32238: Illusion_Morpheus's_Ring
+  32239: Illusion_Morpheus's_Bracelet
   32242: Old_DetachmentsRing_J
   32248: Ein_SAFETY_PENDR
   32249: Ein_SAFETY_PENDL
@@ -14498,6 +14916,7 @@ items:
   32258: RingofJupiter
   32262: Ball_Of_RasenHuuma
   32263: Shield_Ring
+  32300: Variant_Handgun
   32301: Illusion_Gold_Lux
   32302: Crimson_Rose
   32303: Ein_1HGUN
@@ -14512,9 +14931,10 @@ items:
   100000: IDTest_Special
   100003: ILL_Piece_A
   100004: ILL_Piece_B
+  100009: Joy_Of_Victory
   100010: PerfectSize_Mix
   100011: MagicPiercing_Mix
-  100019: Costume_Enchant_Stone_Box18
+  100019: Enchant_Stone_Box18
   100023: Ancient_Hero_Bravery
   100025: Ancient_Hero_Wisdom
   100043: Boost_Up_1
@@ -14533,6 +14953,8 @@ items:
   100072: WL_MB_CL
   100073: WL_MB_CM
   100074: WL_MB_TV
+  100083: BackSignon_Box_TW
+  100125: Metal_7_Ticket
   100128: Noblesses_Refine_Ticket
   100129: Imperial_Refine_Ticket
   100130: Grace_Refine_Ticket
@@ -14544,12 +14966,89 @@ items:
   100136: Imperial_M_Mo_Armor
   100137: Grace_P_Mo_Armor
   100138: Grace_M_Mo_Armor
+  100142: Abyss_Ddbox2
+  100144: Abyss_Ddbox3
+  100145: Abyss_Ddbox4
+  100151: Skill_Sha_M_S_Weapon
   100158: Mado_Box02
+  100164: Auto_Imp_Melee_1
+  100165: Auto_Imp_Melee_2
+  100166: Auto_Imp_Melee_3
+  100167: Auto_Imp_Magic_1
+  100168: Auto_Imp_Magic_2
+  100169: Auto_Imp_Magic_3
   100202: Enchant_Stone_Box20
+  100205: Class_Sha_R_M_Melee
+  100206: Class_Sha_R_M_Magic
+  100207: Skill_Sha_R_M_Melee
+  100208: Skill_Sha_R_M_Magic
+  100209: Skill_Sha_M_S_Shield
+  100210: Skill_Sha_M_S_Pendant
+  100211: Skill_Sha_M_S_Earing
+  100212: Skill_Sha_M_S_Shoes
+  100213: Skill_Sha_M_S_Armor
   100231: Ref_T_Potion
   100232: Add_Atk_Potion
   100233: Add_Matk_Potion
+  100251: Illu_Enhance_Cube
+  100252: Auto_Enhance_Cube
+  100268: Temporal_Refine_Cube
+  100269: Geffen_Refine_Cube
+  100270: Old_Refine_Cube
+  100271: Refine_Hero_Weapon
+  100272: Refine_Hero_Boots
+  100273: Remodel_Hero_Boots
+  100274: Oriental_Sword_Cube
+  100275: Dragonic_Slayer_Cube
+  100276: Shiver_Katar_K_Cube
+  100277: Blade_Katar_Cube
   100314: Enchant_Stone_Box21
+  100321: OS_Weapon_Refine_Cube
+  100322: Racecap_Refine_Cube
+  100327: Sword_Of_Bluefire_Cube
+  100328: Slate_Sword_Cube
+  100329: Narcis_Bow_Cube
+  100330: Trumpet_Shell_K_Cube
+  100331: Barb_Wire_K_Cube
+  100338: Booster_W_Up_1
+  100339: Booster_W_Up_2
+  100340: Booster_W_Up_3
+  100341: E_ILL_Up
+  100354: Auto_Armor_Refine_Cube
+  100355: Bio_Weapon_Refine_Cube
+  100360: Avenger_Cube
+  100361: Meteor_Striker_Cube
+  100362: Magic_Sword_Cube
+  100363: Fatalist_Cube
+  100365: MD_Geffen_Rarmor
+  100366: MD_Geffen_Rhood
+  100367: MD_Geffen_Racc
+  100368: MD_Geffen_Rsheild
+  100371: aegis_100371
+  100376: Royal_Bow_K_Cube
+  100377: Scalet_Dragon_L_Cube
+  100378: Shadow_Staff_K_Cube
+  100379: Freezing_Rod_Cube
+  100381: 3Lv_9Refine_Weapon_7Gu
+  100382: 3Lv_10Refine_Weapon_8Gu
+  100383: 3Lv_11Refine_Weapon_9Gu
+  100384: 3Lv_12Refine_Weapon_10G
+  100385: 4Lv_9Refine_Weapon_8Gu
+  100386: 4Lv_10Refine_Weapon_9Gu
+  100387: 4Lv_11Refine_Weapon_10G
+  100388: Iron_Nail_K_Cube
+  100390: Ray_Knuckle_Cube
+  100391: Moonlight_Box_IL
+  100392: S_Moonlight_Box_IL
+  100393: Undine_Spear_K_Cube
+  100394: Light_Blade_Cube
+  100395: Iron_Staff_Cube
+  100396: Blue_Crystal_Staff_Cube
+  100397: Demon_Hunt_Bible_Cube
+  100398: Saint_Hall_Cube
+  100399: MeawFoxtail_Cube
+  100400: Fog_Dew_Sword_Cube
+  100401: Humma_Clear_Cube
   100402: Thousand_Sun_Cube
   100403: Spirit_Pendulum_Cube
   100404: Crimson_Rose_Cube
@@ -14557,6 +15056,61 @@ items:
   100406: Golden_Lord_Launcher_Cube
   100407: The_Black_Cube
   100408: Demon_Slayer_Shot_Cube
+  100412: Great_Hero_Bravery
+  100413: Great_Hero_Wisdom
+  100414: Vampire_Box_IL
+  100415: S_Vampire_Box_IL
+  100416: S_Frozen_Box_IL
+  100417: Turtle_Is_Box_IL
+  100418: S_Turtle_Is_Box_IL
+  100419: Teddy_Bear_Box_IL
+  100420: S_Teddy_Bear_Box_IL
+  100421: Luanda_Box_IL
+  100422: S_Luanda_Box_IL
+  100423: Labyrinth_Box_IL
+  100424: S_Labyrinth_Box_IL
+  100425: Underwater_Box_IL
+  100426: S_Underwater_Box_IL
+  100433: EnchantStone_Recipe_3m
+  100436: Circlet_Refine_Cube
+  100466: Egir_Power_Box
+  100467: Egir_Magic_Box
+  100468: Egirnion_Box
+  100476: MD_Airboat_Random
+  100479: Sakray_Fury
+  100480: Sakray_Fury2
+  100481: Overclocker
+  100485: Sakray_Regret
+  100486: Sakray_Regret2
+  100502: Enchant_Stone_Box22
+  100572: FullPeneShadow_Mix
+  100579: PendantStoneForWork
+  100580: Dark_Stone
+  100596: FullTempShadow_Mix
+  100600: Shadow_Mix_Recipe2
+  100601: Illusion_Module_Mix
+  100602: Automatic_Module_Mix
+  100620: True_GemShadow_Mix
+  100621: Mammoth_Mix
+  100623: Shadow_Mix_Recipe_TH
+  100626: GrayWolf_7_Ticket
+  100627: GrayWolf_9_Ticket
+  100650: Pontifex_Courage
+  100651: Pontifex_Wisdom
+  100652: Pontifex_Tenacity
+  100653: Pontifex_Belief
+  100661: EXPShadow_Mix
+  100684: Bio_Helm_Refine_Cube
+  100691: AbsorbShadow_Mix
+  100699: Twins_Box_IL
+  100700: S_Twins_Box_IL
+  100710: EXP_Overclocker
+  100722: Booster_RandomOpt_P
+  100723: Booster_RandomOpt_M
+  100744: Costama_Egg69
+  100745: Hero_LT_Refine_Magic
+  100880: aegis_100880
+  100908: aegis_100908
   300000: IDTest_Card
   300001: Poisonous_Card
   300002: Toxious_Card
@@ -14645,6 +15199,13 @@ items:
   300149: ILL_Phen_Card
   300150: ILL_King_Dramoh_Card
   300151: ILL_Kraken_Card
+  300170: MD_Airboat_Tree_Card
+  300171: MD_Airboat_Worm_Card
+  300172: MD_Airboat_Leech_Card
+  300173: MD_Airboat_Mos_Card
+  300174: MD_Airboat_Poring_Card
+  300175: Unknown_Creature_Card
+  300176: Unidentified_Creature_Card
   300177: MD_Geffen_Archi_Card
   300178: MD_Geffen_Dio_Card
   300179: MD_Geffen_Thief_Card
@@ -14660,6 +15221,74 @@ items:
   300189: MD_Geffen_Jew_Card
   300190: MD_Geffen_Fei_Card
   300191: MD_Geffen_Dy_Card
+  300209: aegis_300209
+  300211: EP18_Ash_Toad_Card
+  300212: EP18_Rakehand_Card
+  300213: EP18_Spark_Card
+  300214: EP18_Hot_Molar_Card
+  300215: EP18_Volcaring_Card
+  300216: EP18_Lava_Toad_Card
+  300217: EP18_Burning_Fang_Card
+  300218: EP18_Ashhopper_Card
+  300219: EP18_Ashring_Card
+  300220: EP18_Grey_Wolf_Card
+  300221: EP18_Tumble_Ring_Card
+  300222: EP18_Firewind_Kite_Card
+  300223: EP18_Phantom_Wolf_Card
+  300227: EP18_Schulang_Card
+  300228: EP18_Demi_Freyja_Card
+  300230: aegis_300230
+  300231: aegis_300231
+  300232: aegis_300232
+  300233: aegis_300233
+  300234: aegis_300234
+  300235: aegis_300235
+  300236: aegis_300236
+  300237: aegis_300237
+  300238: aegis_300238
+  300239: aegis_300239
+  300240: aegis_300240
+  300241: aegis_300241
+  300242: aegis_300242
+  300243: aegis_300243
+  300244: aegis_300244
+  300245: aegis_300245
+  300246: aegis_300246
+  300247: aegis_300247
+  300248: aegis_300248
+  300249: aegis_300249
+  300250: aegis_300250
+  300251: aegis_300251
+  300252: aegis_300252
+  300253: aegis_300253
+  300254: aegis_300254
+  300255: aegis_300255
+  300256: aegis_300256
+  300257: aegis_300257
+  300258: aegis_300258
+  300259: aegis_300259
+  300260: aegis_300260
+  300261: aegis_300261
+  300262: aegis_300262
+  300263: aegis_300263
+  300264: aegis_300264
+  300265: aegis_300265
+  300266: aegis_300266
+  300267: aegis_300267
+  300268: aegis_300268
+  300269: aegis_300269
+  300270: aegis_300270
+  300271: aegis_300271
+  300272: aegis_300272
+  300273: aegis_300273
+  300274: aegis_300274
+  300275: aegis_300275
+  300276: aegis_300276
+  300277: aegis_300277
+  300278: aegis_300278
+  300279: aegis_300279
+  300280: aegis_300280
+  300281: aegis_300281
   310000: Ranger_Top2
   310001: Ranger_Middle2
   310002: Ranger_Bottom2
@@ -14866,26 +15495,199 @@ items:
   310328: aegis_310328
   310329: aegis_310329
   310330: aegis_310330
+  310478: Wolf_Orb_Str_1
+  310479: Wolf_Orb_Dex_1
+  310480: Wolf_Orb_Agi_1
+  310481: Wolf_Orb_Int_1
+  310482: Wolf_Orb_Vit_1
+  310483: Wolf_Orb_luk_1
+  310484: Wolf_Orb_Str_2
+  310485: Wolf_Orb_Dex_2
+  310486: Wolf_Orb_Agi_2
+  310487: Wolf_Orb_Int_2
+  310488: Wolf_Orb_Vit_2
+  310489: Wolf_Orb_luk_2
+  310490: Wolf_Orb_Str_3
+  310491: Wolf_Orb_Dex_3
+  310492: Wolf_Orb_Agi_3
+  310493: Wolf_Orb_Int_3
+  310494: Wolf_Orb_Vit_3
+  310495: Wolf_Orb_luk_3
+  310496: Wolf_Orb_Def_1
+  310497: Wolf_Orb_Mdef_1
+  310498: Wolf_Orb_Def_2
+  310499: Wolf_Orb_Mdef_2
+  310500: Wolf_Orb_Def_3
+  310501: Wolf_Orb_Mdef_3
+  310502: Wolf_Orb_Ran_1
+  310503: Wolf_Orb_War_1
+  310504: Wolf_Orb_Mag_1
+  310505: Wolf_Orb_Ran_2
+  310506: Wolf_Orb_War_2
+  310507: Wolf_Orb_Mag_2
+  310508: Wolf_Orb_Ran_3
+  310509: Wolf_Orb_War_3
+  310510: Wolf_Orb_Mag_3
+  310511: Wolf_Orb_R_Reject_1
+  310512: Wolf_Orb_R_Reject_2
+  310513: Wolf_Orb_R_Reject_3
+  310514: Wolf_Orb_Force
+  310515: Wolf_Orb_S_Delay
+  310516: Wolf_Orb_Skill_1
+  310517: Wolf_Orb_Skill_2
+  310518: Wolf_Orb_Skill_3
+  310519: Wolf_Orb_Skill_4
+  310520: Wolf_Orb_Skill_5
+  310521: Wolf_Orb_Skill_6
+  310522: Wolf_Orb_Skill_7
+  310523: Wolf_Orb_Skill_8
+  310524: Wolf_Orb_Skill_9
+  310525: Wolf_Orb_Skill_10
+  310526: Wolf_Orb_Skill_11
+  310527: Wolf_Orb_Skill_12
+  310528: Wolf_Orb_Skill_13
+  310529: Wolf_Orb_Skill_14
+  310530: Wolf_Orb_Skill_15
+  310531: Wolf_Orb_Skill_16
+  310532: Wolf_Orb_Skill_17
+  310533: Wolf_Orb_Skill_18
+  310534: Wolf_Orb_Skill_19
+  310535: Wolf_Orb_Skill_20
+  310536: Wolf_Orb_Skill_21
+  310537: Wolf_Orb_Skill_22
+  310538: Wolf_Orb_Skill_23
+  310539: Wolf_Orb_Skill_24
+  310540: Wolf_Orb_Skill_25
+  310541: Wolf_Orb_Skill_26
+  310542: Wolf_Orb_Skill_27
+  310543: Wolf_Orb_Skill_28
+  310544: Wolf_Orb_Skill_29
+  310545: Wolf_Orb_Skill_30
+  310546: Wolf_Orb_Skill_31
+  310547: Wolf_Orb_Skill_32
+  310548: Wolf_Orb_Skill_33
+  310549: Wolf_Orb_Skill_34
+  310550: Wolf_Orb_Skill_35
+  310551: Wolf_Orb_Skill_36
+  310552: Wolf_Orb_Skill_37
+  310553: Wolf_Orb_Skill_38
+  310554: Wolf_Orb_Skill_39
+  310555: Wolf_Orb_Skill_40
+  310556: Wolf_Orb_Skill_41
+  310557: Wolf_Orb_Skill_42
+  310558: Wolf_Orb_Skill_43
+  310559: Wolf_Orb_Skill_44
+  310560: Wolf_Orb_Skill_45
+  310561: Wolf_Orb_Skill_46
+  310562: Wolf_Orb_Skill_47
+  310563: Wolf_Orb_Skill_48
+  310564: Wolf_Orb_Skill_49
+  310565: Wolf_Orb_Skill_50
+  310566: Wolf_Orb_Skill_51
+  310567: Wolf_Orb_Speed_1
+  310568: Wolf_Orb_Caster_1
+  310569: Wolf_Orb_Critical_1
+  310570: Wolf_Orb_Guide_1
+  310571: Wolf_Orb_Speed_2
+  310572: Wolf_Orb_Caster_2
+  310573: Wolf_Orb_Critical_2
+  310574: Wolf_Orb_Guide_2
+  310575: Wolf_Orb_Speed_3
+  310576: Wolf_Orb_Caster_3
+  310577: Wolf_Orb_Critical_3
+  310578: Wolf_Orb_Guide_3
+  310579: Wolf_Orb_Above_1
+  310580: Wolf_Orb_Above_2
+  310581: Wolf_Orb_Above_3
+  310582: Wolf_Orb_P_Full_1
+  310583: Wolf_Orb_P_Full_2
+  310584: Wolf_Orb_P_Full_3
+  310585: Wolf_Orb_M_Counter_1
+  310586: Wolf_Orb_M_Counter_2
+  310587: Wolf_Orb_M_Counter_3
+  310588: Wolf_Orb_Hp_1
+  310589: Wolf_Orb_Sp_1
+  310590: Wolf_Orb_Heal_1
+  310591: Wolf_Orb_Hp_2
+  310592: Wolf_Orb_Sp_2
+  310593: Wolf_Orb_Heal_2
+  310594: Wolf_Orb_Hp_3
+  310595: Wolf_Orb_Sp_3
+  310596: Wolf_Orb_Heal_3
+  310597: Wolf_Orb_Robust_1
+  310598: Wolf_Orb_Robust_2
+  310599: Wolf_Orb_Robust_3
+  310600: Wolf_Orb_F_Cast_1
+  310601: Wolf_Orb_F_Cast_2
+  310602: Wolf_Orb_F_Cast_3
+  310603: Wolf_Orb_M_F_1
+  310604: Wolf_Orb_P_F_1
+  310605: Wolf_Orb_M_F_2
+  310606: Wolf_Orb_P_F_2
+  310607: Wolf_Orb_M_F_3
+  310608: Wolf_Orb_P_F_3
+  310609: Wolf_Orb_Un_Vit
+  310610: Wolf_Orb_Sp_Int
+  310611: Wolf_Orb_Fi_Dex
+  310612: Wolf_Orb_Ov_Str
+  310613: Wolf_Orb_Fa_Agi
+  310614: Wolf_Orb_Lu_Luk
+  310615: Wolf_Orb_A_Delay_1
+  310616: Wolf_Orb_E_Archer_1
+  310617: Wolf_Orb_Fatal_1
+  310618: Wolf_Orb_F_Spirit_1
+  310619: Wolf_Orb_Spell_1
+  310620: Wolf_Orb_A_Delay_2
+  310621: Wolf_Orb_E_Archer_2
+  310622: Wolf_Orb_Fatal_2
+  310623: Wolf_Orb_F_Spirit_2
+  310624: Wolf_Orb_Spell_2
+  310625: Wolf_Orb_A_Delay_3
+  310626: Wolf_Orb_E_Archer_3
+  310627: Wolf_Orb_Fatal_3
+  310628: Wolf_Orb_F_Spirit_3
+  310629: Wolf_Orb_Spell_3
+  310630: Wolf_Orb_A_Delay_4
+  310631: Wolf_Orb_E_Archer_4
+  310632: Wolf_Orb_Fatal_4
+  310633: Wolf_Orb_F_Spirit_4
+  310634: Wolf_Orb_Spell_4
+  310635: Wolf_Orb_HealHP_1
+  310636: Wolf_Orb_HealSP_1
+  310637: Wolf_Orb_HealHP_2
+  310638: Wolf_Orb_HealSP_2
+  310639: Wolf_Orb_HealHP_3
+  310640: Wolf_Orb_HealSP_3
+  310641: Wolf_Orb_HealHP_4
+  310642: Wolf_Orb_HealSP_4
+  310643: Wolf_Orb_Life
+  310644: Wolf_Orb_Soul
+  310645: Wolf_Orb_M_Heal
+  310646: Wolf_Orb_M_Soul
+  310647: Wolf_Orb_A_Force
   400000: WhistleK
   400001: Victory_Wing_Ear
   400002: Victory_Wing_Ear_
   400003: TimeExtensionArmor
   400011: Officer_Cap
+  400016: Turkey_Hat
   400020: C_BeachBall
   400021: aegis_400021
   400022: aegis_400022
   400023: aegis_400023
+  400043: aegis_400043
   400044: aegis_400044
   400045: aegis_400045
   400046: aegis_400046
   400049: aegis_400049
-  400053: s_Helm_IL
+  400053: Morrigane's_Helm_IL
   400054: Large_Sorcerer_Crown
   400055: C_ShineSantaPoringE
   400056: VIP_Hair_Female
   400057: VIP_Hair_Male
   400059: aegis_400059
   400061: aegis_400061
+  400073: C_Romance_Rose_TW
   400074: C_Disapear_Time_TW
   400076: C_20th_Anniversary
   400078: aegis_400078
@@ -14903,23 +15705,33 @@ items:
   400120: aegis_400120
   400121: aegis_400121
   400124: C_Magestic_Goat2
+  400127: Ep18_Mini_Elly
+  400128: aegis_400128
+  400134: Thanos_Helm_1
   410005: C_Magic_Heir_TW
+  410013: EXP_Processor_
   410016: aegis_410016
   410017: Battle_Processor_
   410018: Booster_Mask_A
   410019: Booster_Mask_B
   410020: Booster_Mask_C
-  420003: aegis_420003
+  410029: C_Wonder_Egg_Basket
+  410061: C_Deviruchi_Apron
+  420003: CD_In_MouthK
   420010: C_Cons_Of_Darkness
+  420014: aegis_420014
+  420016: C_Katashiro_Flying
   420017: aegis_420017
   420018: aegis_420018
   420019: aegis_420019
   420020: aegis_420020
   420021: aegis_420021
   420022: aegis_420022
-  420025: aegis_420025
+  420025: C_OneEyedJack
+  420029: C_Imperial_Glory
   420030: aegis_420030
   420031: aegis_420031
+  420053: C_Shadow_Devil
   436000: aegis_436000
   436001: aegis_436001
   436002: aegis_436002
@@ -15045,12 +15857,21 @@ items:
   450126: Grace_Super_Novice_Robe
   450127: Auto_Armor_A
   450128: Auto_Armor_B
+  450131: aegis_450131
   450144: Saint_Robe_IL
   450145: Water_Sprits_Armor_IL
   450146: Chain_Mail_IL
   450147: E_Illusion_Armor_A
   450148: E_Illusion_Armor_B
+  450151: aegis_450151
   450164: Egirnion_Armor
+  450177: Gray_W_Suits
+  450178: Gray_W_Robe
+  450179: Bloody_Dress
+  450182: Sprint_Mail_IL
+  460012: aegis_460012
+  460017: Guard_IL
+  460018: Siver_Guard_IL
   470000: Attacker_Booster_Greaves_
   470001: Elemental_Booster_Shoes_
   470002: Defender_Booster_Shoes_
@@ -15066,7 +15887,10 @@ items:
   470033: Elemental_BootsK
   470054: E_Illusion_Leg_A
   470055: E_Illusion_Leg_B
+  470066: Sprint_Shoes_IL
   470070: Egirnion_Shoes
+  470087: Gray_W_Boots
+  470088: Gray_W_Shoes
   480000: Attacker_Booster_Manteau_
   480001: Elemental_Booster_Muffler_
   480002: Defender_Booster_Muffler_
@@ -15079,11 +15903,20 @@ items:
   480019: Grace_Magic_Manteau
   480020: Auto_Engine_A
   480021: Auto_Engine_B
-  480054: s_Manteau_IL
+  480054: Morrigane's_Manteau_IL
   480056: aegis_480056
+  480058: aegis_480058
   480062: E_Illusion_Engine_A
   480063: E_Illusion_Engine_B
+  480069: C_Wing_Of_Angel_Move
+  480071: Calabash
   480083: Egirnion_Manteau
+  480090: Gray_W_Muffler
+  480091: Gray_W_Manteau
+  480095: C_Giant_White_Rabbit
+  480097: C_Snow_Powder
+  480107: C_Kings_Twin_Sword
+  480120: aegis_480120
   490004: Attacker_Booster_Ring
   490005: Elemental_Booster_Earring
   490006: Defender_Booster_Earring
@@ -15094,10 +15927,12 @@ items:
   490018: Imperial_Magic_Ring
   490019: Grace_Attack_Ring
   490020: Grace_Magic_Ring
+  490022: TrustRing
   490024: Auto_B_R
   490025: Auto_B_L
   490026: Auto_BC_R
   490027: Auto_BC_L
+  490033: aegis_490033
   490044: Sin_Ring_R
   490045: Sin_Necklace_R
   490046: Sin_Ring_E
@@ -15122,8 +15957,8 @@ items:
   490065: Shine_Necklace_S
   490066: Shine_Ring_AQ
   490067: Shine_Necklace_AQ
-  490069: s_Belt_IL
-  490070: s_Pendant_IL
+  490069: Morrigane's_Belt_IL
+  490070: Morrigane's_Pendant_IL
   490072: E_Illusion_B_R
   490073: E_Illusion_B_L
   490074: E_Illusion_BC_R
@@ -15136,6 +15971,12 @@ items:
   490099: Thanatos_Pendant
   490100: Blue_Mental_Pendant
   490101: Red_Force_Pendant
+  490106: Gray_W_Pendant
+  490107: Gray_W_Ring
+  490108: Gray_W_Earing
+  490109: Gray_W_Necklace
+  490120: Sprint_Ring_IL
+  490121: Sprint_Glove_IL
   500000: IDTest_weapon
   500001: Boost_Sword
   500003: Light_Blade
@@ -15147,6 +15988,9 @@ items:
   500015: PG_B_Sword
   500016: HS_T_Sword
   500017: Up_Light_Blade
+  500025: Adulter_F_G_Sword
+  500026: Adulter_F_Lapier
+  500030: Excalibur_IL
   510001: Boost_Dagger
   510002: Boost_Nindo
   510006: Fatalist
@@ -15157,12 +16001,17 @@ items:
   510019: Up_Magic_Sword
   510020: Up_Fatalist
   510022: Up_Fog_Dew_Sword
+  510032: Adulter_F_Dagger
+  510034: Ancient_Dagger_IL
   520000: Boost_Axe
   520002: Ep172_1h_Axe
+  520008: Adulter_F_Axe
   530000: Boost_Spear
   530002: Ep172_1h_Spear
   530005: BC_B_Spear
   530006: Up_Undine_Spear_K
+  530013: Adulter_F_G_Spear
+  530015: Gelerdria_IL
   540000: Boost_Spellbook
   540001: Boost_Book
   540004: Ep172_1h_Book
@@ -15170,6 +16019,11 @@ items:
   540009: SB_B_Book
   540010: Up_Thousand_Sun
   540011: Up_Demon_Hunting_Bible
+  540019: Adulter_F_M_Book
+  540020: Adulter_F_P_Book
+  540021: Adulter_F_Bible
+  540022: Adulter_F_Moon_B
+  540023: Adulter_F_Star_B
   550001: Boost_Rod
   550002: Boost_Foxtail
   550006: Ein_1H_Foxtail
@@ -15182,6 +16036,13 @@ items:
   550013: Up_Freezing_Rod
   550014: Up_MeawFoxtail
   550015: Up_Spirit_Pendulum_
+  550024: Adulter_F_Wand
+  550025: Adulter_F_S_Stick
+  550026: Adulter_F_D_Wand
+  550027: Adulter_F_F_Wand
+  550028: Adulter_F_F_model
+  550030: Thorn_Staff_IL
+  550031: Dea_Staff_IL
   560000: Boost_Knuckles
   560002: Ray_Knuckle
   560004: Ep172_Bh_Knuck
@@ -15189,18 +16050,26 @@ items:
   560007: CP_B_Knuckle
   560008: Up_Iron_Nail_K
   560009: Up_Ray_Knuckle
+  560018: Adulter_F_Knuckle
+  560019: Adulter_F_Claw
   570000: Boost_Guitar
   570002: Trumpet_Shell_K
   570005: Ep172_1h_Inst
   570008: Electronic_Guitar_IL
   570009: Up_Trumpet_Shell_K
   570010: MV_B_Violin
+  570017: Adulter_F_Violin
+  570018: Adulter_F_Harp
+  570024: RS_B_Violin
   580000: Boost_Whip
   580002: Barb_Wire_K
   580005: Ep172_1h_Whip
   580008: Electric_Eel_IL
   580009: Up_Barb_Wire_K
   580010: MV_B_Whip
+  580017: Adulter_F_C_Rope
+  580018: Adulter_F_Ribbon
+  580024: RS_B_Whip
   590000: Boost_Mace
   590002: Meteor_Striker
   590003: Saint_Hall
@@ -15210,6 +16079,8 @@ items:
   590010: DD_B_Mace
   590011: Up_Meteor_Striker
   590012: Up_Saint_Hall
+  590021: Adulter_F_Mace
+  590022: Adulter_F_Hall
   600000: IDTest_bothhand
   600001: Boost_TH_Sword
   600004: Dragonic_Slayer
@@ -15217,6 +16088,7 @@ items:
   600009: Up_Oriental_Sword
   600011: Death_Guidance_IL
   600012: IW_B_T_Sword
+  600017: Adulter_F_T_Sword
   610000: Boost_Katar
   610003: Blade_Katar
   610006: Ep172_Bh_Katar
@@ -15224,12 +16096,17 @@ items:
   610009: Up_Blade_Katar
   610012: KatarOfCold_Icicle_IL
   610013: RC_B_Katar
+  610020: Adulter_F_Cakram
+  610021: Adulter_F_Katar
+  610028: CA_B_Katar
   620003: PT_B_Axe
   620004: Up_Avenger
+  620010: Doom_Slayer_IL
   630003: Ep172_Bh_Spear
   630006: Brionac_IL
   630007: Zephyrus_IL
   630008: HB_B_T_Spear
+  630012: Adulter_F_Lance
   640000: Boost_Staff
   640004: Blue_Crystal_Staff
   640005: Ep172_Bh_Staff
@@ -15237,8 +16114,12 @@ items:
   640010: CJ_B_Staff
   640011: Up_Iron_Staff
   640012: Up_Blue_Crystal_Staff
+  640019: Adulter_F_T_Staff
+  640020: Adulter_F_Rod
   650003: Ep172_Bh_Huuma
   650004: Up_Humma_Clear
+  650008: Adulter_F_Humma
+  650009: Adulter_F_C_Humma
   700000: IDTest_bow
   700001: Boost_Bow
   700003: Scalet_Dragon_L_Bow
@@ -15252,17 +16133,33 @@ items:
   700017: RS_B_Bow
   700018: Up_Royal_Bow_K
   700019: Up_Scalet_Dragon_L_Bow
+  700030: Adulter_F_C_Bow
+  700031: Adulter_F_Ballista
+  700032: Adulter_F_A_Bow
   800000: IDTest_gun
   800002: Up_Crimson_Rose
+  800003: Adulter_F_Revolver
   810000: Ep172_1h_Rifle
   810001: Up_Master_Soul_Rifle
+  810002: Adulter_F_Rifle
   820000: Ep172_1h_Shotgun
   820001: Up_Demon_Slayer_Shot
+  820002: Adulter_F_Shotgun
   830000: Boost_Gatling
   830001: Ep172_1h_Gatling
   830002: Up_The_Black
+  830003: Adulter_F_Gatling
   840000: Ep172_1h_Grenade
   840001: Up_Golden_Lord_Launcher
+  840002: Adulter_F_Launcher
+  1000000: IDTest_event
+  1000001: Job_Pass_Ticket1
+  1000002: Job_Pass_Ticket2
+  1000003: Job_Pass_Ticket3
+  1000004: Job_Pass_Ticket4
+  1000005: Boost_W_Ticket
+  1000006: Boost_A_Ticket
+  1000007: Kr_B_Event01
   1000008: RangerStone_II_Top
   1000009: RangerStone_II_Middle
   1000010: RangerStone_II_Bottom
@@ -15404,6 +16301,168 @@ items:
   1000231: Broken_AutoDoll_Parts
   1000232: Autodoll_Communicator
   1000235: aegis_1000235
+  1000243: Sin_Shard_A
+  1000244: Sin_Shard_B
+  1000245: Sin_Shard_C
+  1000253: Booster_W_Ticket
+  1000254: Booster_Coin
+  1000255: Sin_Shard_D
+  1000256: Sin_Shard_E
+  1000257: Sin_Fragment
+  1000258: Fate_Shard_A
+  1000259: Fate_Shard_B
+  1000260: Fate_Shard_C
+  1000261: Fate_Shard_D
+  1000262: Fate_Shard_E
+  1000263: Fate_Fragment
+  1000268: J4_Gas_Mask
+  1000269: J4_Sealing_Box
+  1000270: J4_Mandra_Incubator
+  1000271: J4_Impression_Piece
+  1000272: J4_Inspiration_Piece
+  1000274: Cachua_Coupon
+  1000275: Beaker
+  1000276: Flame_Acid_Bottle
+  1000277: Earth_Acid_Bottle
+  1000278: Gale_Acid_Bottle
+  1000279: Icicle_Acid_Bottle
+  1000280: High_Coating_Bottle
+  1000281: High_Plant_Bottle
+  1000282: EpisodClear16
+  1000283: EpisodClear16_
+  1000287: EpisodClear17
+  1000289: Device_Capsule
+  1000290: Auto_Battle_Capsule
+  1000291: Wind_Stone_4th
+  1000292: Earth_Stone_4th
+  1000293: Flame_Stone_4th
+  1000294: Poison_Stone_4th
+  1000295: Ice_Stone_4th
+  1000296: RuneknightStone_Robe2
+  1000297: RuneknightStone_Top2
+  1000298: RuneknightStone_Middle2
+  1000299: RuneknightStone_Bottom2
+  1000300: GeneticStone_Robe2
+  1000301: GeneticStone_Top2
+  1000302: GeneticStone_Middle2
+  1000303: GeneticStone_Bottom2
+  1000304: WanderMinsStone_Robe2
+  1000305: WanderMinsStone_Top2
+  1000306: WanderMinsStone_Middle2
+  1000307: WanderMinsStone_Bottom2
+  1000311: Hawk_Flute
+  1000316: MD_Geffen_Coin
+  1000317: MD_Geffen_Cert
+  1000320: Kafra_Coin_Kr
+  1000321: Amber
+  1000322: Etel_Dust
+  1000323: Etel_Stone
+  1000325: Etel_Skyblue_Jewel
+  1000326: Etel_Topaz
+  1000327: Etel_Violet_Jewel
+  1000328: Etel_Amber
+  1000331: Ethernium
+  1000332: Etherdeocon
+  1000333: Enriched_Ethernium
+  1000334: Enriched_Etherdeocon
+  1000335: HD_Ethernium
+  1000336: HD_Etherdeocon
+  1000337: Blessed_Etel_Dust
+  1000346: aegis_1000346
+  1000352: aegis_1000352
+  1000363: MD_Airboat_Tokken
+  1000364: MD_Airboat_Ore
+  1000366: MD_Geffen_Win
+  1000367: Mine_As
+  1000368: Etel_Bradium
+  1000369: HD_Etel_Bradium
+  1000370: Etel_Carnium
+  1000371: HD_Etel_Carnium
+  1000372: Meteorite_Dust
+  1000373: Meteorite_Fragment
+  1000374: Brilliant_Soda
+  1000375: Range_Stone_Top
+  1000376: Range_Stone_Bottom
+  1000377: Melee_Stone_Top
+  1000378: Melee_Stone_Middle
+  1000379: Melee_Stone_Bottom
+  1000396: Naght_Sieger_Soul
+  1000397: Betelgeuse_Soul
+  1000398: Pow_Meteorite_Dust
+  1000399: Sta_Meteorite_Dust
+  1000400: Con_Meteorite_Dust
+  1000401: Crt_Meteorite_Dust
+  1000402: Spl_Meteorite_Dust
+  1000403: Wis_Meteorite_Dust
+  1000405: Ep18_Amethyst_Fragment
+  1000406: Ep18_Very_Ddan_Crystal
+  1000407: Ep18_Half_Flower
+  1000408: Ep18_Recording_Note
+  1000409: Ep18_Docu_File
+  1000410: Ep18_Water_Filter
+  1000411: Ep18_Purified_Bucket
+  1000412: Ep18_Trapped01
+  1000413: Ep18_Trapped02
+  1000414: Ep18_Trapped03
+  1000419: Weapon_Ore_1
+  1000420: Weapon_Ore_2
+  1000421: Weapon_Ore_3
+  1000422: Weapon_Ore_4
+  1000423: Armor_Ore_1
+  1000424: Armor_Ore_2
+  1000425: Armor_Ore_4
+  1000426: Acc_Ore_1
+  1000427: Acc_Ore_2
+  1000428: Acc_Ore_3
+  1000429: Acc_Ore_4
+  1000430: Weapon_Stone_1
+  1000431: Weapon_Stone_2
+  1000432: Weapon_Stone_3
+  1000433: Weapon_Stone_4
+  1000434: Armor_Stone_1
+  1000435: Armor_Stone_2
+  1000436: Armor_Stone_3
+  1000437: Armor_Stone_4
+  1000438: Acc_Stone_1
+  1000439: Acc_Stone_2
+  1000440: Acc_Stone_3
+  1000441: Acc_Stone_4
+  1000442: Pow_Meteorite_Fragment
+  1000443: Sta_Meteorite_Fragment
+  1000444: Con_Meteorite_Fragment
+  1000445: Crt_Meteorite_Fragment
+  1000446: Spl_Meteorite_Fragment
+  1000447: Wis_Meteorite_Fragment
+  1000471: aegis_1000471
+  1000475: Conse_F_T_Sword
+  1000476: Conse_F_Lance
+  1000477: Conse_F_G_Sword
+  1000478: Conse_F_G_Spear
+  1000479: Conse_F_Axe
+  1000480: Conse_F_Mace
+  1000481: Conse_F_Lapier
+  1000482: Conse_F_Hall
+  1000483: Conse_F_Cakram
+  1000484: Conse_F_Katar
+  1000485: Conse_F_Dagger
+  1000486: Conse_F_C_Bow
+  1000487: Conse_F_T_Staff
+  1000488: Conse_F_Rod
+  1000489: Conse_F_M_Book
+  1000490: Conse_F_P_Book
+  1000491: Conse_F_Bible
+  1000492: Conse_F_Wand
+  1000493: Conse_F_Knuckle
+  1000494: Conse_F_Claw
+  1000495: Conse_F_Ballista
+  1000496: Conse_F_A_Bow
+  1000497: Conse_F_Violin
+  1000498: Conse_F_C_Rope
+  1000499: Conse_F_Harp
+  1000500: Conse_F_Ribbon
+  1000501: Purificatory_Holy_O
+  1000502: Purificatory_Holy_W
+  1000503: Sanctuary_Sudarium
   1100003: Concentrated_R_P
   1100004: Concentrated_B_P
   1100005: Concentrated_G_P
