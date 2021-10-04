@@ -112,7 +112,7 @@ def test_item_flaky():
 @pytest.mark.api
 def test_item_valid(fixture):
     runner = CliRunner()
-    with open(fixture('item_501.yml')) as f:
+    with open(fixture('item_501.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '501'])
         assert result.exit_code == 0
@@ -120,7 +120,7 @@ def test_item_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '-f', '-'], input='501')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('item_501_1101.yml')) as f:
+    with open(fixture('item_501_1101.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '501', '1101'])
         assert result.exit_code == 0
@@ -134,12 +134,12 @@ def test_item_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['item', '-f', '-', '--sort'], input='1101\n501')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('item_1101_501.yml')) as f:
+    with open(fixture('item_1101_501.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '-f', fixture('1101_501.txt')])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('item_900_1101.yml')) as f:
+    with open(fixture('item_900_1101.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['item', '900', '1101', '--sort'])
         assert result.exit_code == 0
@@ -179,7 +179,7 @@ def test_mob_skill_flaky():
 @pytest.mark.api
 def test_mob_skill_valid(fixture):
     runner = CliRunner()
-    with open(fixture('mob_skill_1002.txt')) as f:
+    with open(fixture('mob_skill_1002.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '1002'])
         assert result.exit_code == 0
@@ -187,12 +187,12 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1002')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_3212.txt')) as f:
+    with open(fixture('mob_skill_3212.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '--comment', '3212'])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_1002_1049.txt')) as f:
+    with open(fixture('mob_skill_1002_1049.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '1002', '1049'])
         assert result.exit_code == 0
@@ -200,7 +200,7 @@ def test_mob_skill_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', fixture('1002_1049.txt')])
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_skill_1049_1002.txt')) as f:
+    with open(fixture('mob_skill_1049_1002.txt'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mobskill', '-f', '-'], input='1049\n1002')
         assert result.exit_code == 0
@@ -256,7 +256,7 @@ def test_mob_flaky():
 @pytest.mark.api
 def test_mob_valid(fixture):
     runner = CliRunner()
-    with open(fixture('mob_1002.yml')) as f:
+    with open(fixture('mob_1002.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mob', '1002'])
         assert result.exit_code == 0
@@ -264,7 +264,7 @@ def test_mob_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mob', '-f', '-'], input='1002')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_1002_1049.yml')) as f:
+    with open(fixture('mob_1002_1049.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mob', '1002', '1049'])
         assert result.exit_code == 0
@@ -278,7 +278,7 @@ def test_mob_valid(fixture):
         result = runner.invoke(cli.dp2rathena, ['mob', '-f', '-', '--sort'], input='1049\n1002')
         assert result.exit_code == 0
         assert result.output == expected
-    with open(fixture('mob_1049_1002.yml')) as f:
+    with open(fixture('mob_1049_1002.yml'), encoding='utf-8') as f:
         expected = f.read()
         result = runner.invoke(cli.dp2rathena, ['mob', '-f', fixture('1049_1002.txt')])
         assert result.exit_code == 0

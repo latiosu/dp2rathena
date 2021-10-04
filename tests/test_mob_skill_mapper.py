@@ -10,14 +10,14 @@ from dp2rathena import mob_skill_mapper
 mapper = mob_skill_mapper.Mapper()
 current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
 fixtures_path = os.path.join(os.path.realpath(current_path), 'fixtures')
-poring = json.loads(open(os.path.join(fixtures_path, 'mob_1002.json')).read())
+poring = json.loads(open(os.path.join(fixtures_path, 'mob_1002.json'), encoding='utf-8').read())
 poring_emote = poring['skill'][1]
 poring_water = poring['skill'][2]
-poring_schema = json.loads(open(os.path.join(fixtures_path, 'mob_skill_schema_1002.json')).read())
-picky = json.loads(open(os.path.join(fixtures_path, 'mob_1049.json')).read())
+poring_schema = json.loads(open(os.path.join(fixtures_path, 'mob_skill_schema_1002.json'), encoding='utf-8').read())
+picky = json.loads(open(os.path.join(fixtures_path, 'mob_1049.json'), encoding='utf-8').read())
 picky_emote = picky['skill'][0]
 picky_fire = picky['skill'][1]
-picky_schema = json.loads(open(os.path.join(fixtures_path, 'mob_skill_schema_1049.json')).read())
+picky_schema = json.loads(open(os.path.join(fixtures_path, 'mob_skill_schema_1049.json'), encoding='utf-8').read())
 
 
 def test_id():

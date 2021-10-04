@@ -70,97 +70,57 @@
       "itemId": 909,
       "chance": 7000,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 909,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     },
     {
       "itemId": 1202,
       "chance": 100,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 1202,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "30L"
     },
     {
       "itemId": 938,
       "chance": 400,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 938,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     },
     {
       "itemId": 512,
       "chance": 1000,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 512,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     },
     {
       "itemId": 601,
       "chance": 500,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 713,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     },
     {
       "itemId": 512,
       "chance": 150,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 512,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     },
     {
       "itemId": 619,
       "chance": 20,
       "stealProtected": false,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 619,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     },
     {
       "itemId": 4001,
       "chance": 20,
       "stealProtected": true,
-      "serverTypeName": "Renewal"
-    },
-    {
-      "itemId": 4001,
-      "chance": 0,
-      "stealProtected": false,
-      "serverTypeName": "RE:Start"
+      "serverTypeName": null,
+      "optionGroup": "G0"
     }
   ],
   "mvpdrops": [],

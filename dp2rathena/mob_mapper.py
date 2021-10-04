@@ -105,7 +105,7 @@ class Mapper:
         if self.item_db is None:
             current_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
             item_db_path = os.path.join(os.path.realpath(current_path), 'db', 'item_db.yml')
-            self.item_db = yaml.load(open(item_db_path), Loader=yaml.FullLoader)['items']
+            self.item_db = yaml.load(open(item_db_path, encoding='utf-8'), Loader=yaml.FullLoader)['items']
 
     def _validate(self, data, *argv):
         for arg in argv:
