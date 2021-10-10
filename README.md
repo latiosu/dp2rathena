@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <img alt="dp2rathena terminal animation" src="https://user-images.githubusercontent.com/7020503/136682386-f920f53e-cadc-4feb-891b-95a86fcbf95c.gif">
+  <img alt="dp2rathena terminal animation" src="https://user-images.githubusercontent.com/7020503/136683307-c76924b5-d685-4dd9-8bb7-9d2ad698208e.gif">
 </p>
 
 
