@@ -1,28 +1,58 @@
-# dp2rathena: Divine-Pride API to rAthena
+<h1 align="center">
+  dp2rathena
+</h1>
 
-[![PyPI - Version](https://img.shields.io/pypi/v/dp2rathena)](https://pypi.org/project/dp2rathena/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dp2rathena)](https://pypi.org/project/dp2rathena/)
-[![TravisCI Status](https://img.shields.io/travis/com/latiosu/dp2rathena)](https://travis-ci.com/github/latiosu/dp2rathena)
-[![codecov](https://codecov.io/gh/latiosu/dp2rathena/branch/master/graph/badge.svg?token=B7G9O57UR8)](https://codecov.io/gh/latiosu/dp2rathena)
+<p align="center">
+  <a href="https://pypi.org/project/dp2rathena/">
+    <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/dp2rathena">
+  </a>
+  <a href="https://pypi.org/project/dp2rathena/">
+    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/dp2rathena">
+  </a>
+  <a href="https://travis-ci.com/github/latiosu/dp2rathena">
+    <img alt="TravisCI Status" src="https://img.shields.io/travis/com/latiosu/dp2rathena">
+  </a>
+  <a href="https://codecov.io/gh/latiosu/dp2rathena">
+    <img alt="codecov" src="https://codecov.io/gh/latiosu/dp2rathena/branch/master/graph/badge.svg?token=B7G9O57UR8"/>
+  </a>
+</p>
 
-Convert Divine-Pride API data to rAthena DB formats.
+<h3 align="center">
+  Convert Divine-Pride API data to rAthena text database formats
+</h3>
 
-Currently supported formats are:
+<p align="center">
+  dp2rathena is an open-source command-line tool, helping developers save time updating their rAthena database data.
+</p>
+
+<p align="center">
+  <img alt="dp2rathena terminal animation" src="https://user-images.githubusercontent.com/7020503/136682386-f920f53e-cadc-4feb-891b-95a86fcbf95c.gif">
+</p>
+
+
+<br />
+
+## ✨ Features
+
 - `item_db.yml`
 - `mob_db.yml`
 - `mob_skill_db.txt`
+- `mob_db.txt` (planned)
+- `skill_db.yml` (planned)
 
-## Requirements
+## 🏁 Getting Started
 
-* Python 3.6+
+**Requirements**
 
-## Installation
+* [Python 3.6+](https://www.python.org/downloads/)
+
+**Installation**
 
 ```
 pip install dp2rathena
 ```
 
-## Usage
+## 💻 Usage
 
 A [divine-pride.net](https://www.divine-pride.net/) API key is required, create an account and generate a key if you don't have one yet.
 
@@ -43,7 +73,7 @@ dp2rathena mobskill -f my_mobs.txt
 dp2rathena -h
 ```
 
-## Limitations
+## 🛠️ Limitations
 
 All fields are mapped except the ones listed below:
 
@@ -76,7 +106,7 @@ All fields are mapped except the ones listed below:
 - `Ai` - not always defined on DP and needs manual input (refer to [rathena docs](https://github.com/rathena/rathena/blob/master/doc/mob_db_mode_list.txt))
 - `Drops > Item` - relies on an internal db yaml file (updated every dp2rathena release) to determine output aegis name
 
-## Contributing
+## 🙌 Contributing
 
 This project uses [poetry](https://python-poetry.org/) to manage the development environment.
 
@@ -86,10 +116,10 @@ This project uses [poetry](https://python-poetry.org/) to manage the development
 * Update internal db yamls with `poetry run python tools/generate_item_db.py` (or `tools/generate_skill_db.py`)
 * Execute script with `poetry run dp2rathena`
 
-## Changelog
+## 📰 Changelog
 
 See [CHANGELOG.md](https://github.com/latiosu/dp2rathena/blob/master/CHANGELOG.md)
 
-## License
+## 📝 License
 
 See [LICENSE](https://github.com/latiosu/dp2rathena/blob/master/LICENSE)
