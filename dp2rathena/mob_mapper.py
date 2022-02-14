@@ -115,7 +115,7 @@ class Mapper:
             if arg == 'scale':
                 assert v in [None, 0, 1, 2], msg
             elif arg == 'element':
-                assert v is None or (v >= 20 and v <= 89), msg
+                assert v is None or v == 0 or (v >= 20 and v <= 89), msg
             elif arg == 'mvp':
                 assert v in [0, 1], msg
             elif arg == 'ai':
