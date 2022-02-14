@@ -152,7 +152,7 @@
   "itemSummonInfoContains": [],
   "attack": 25,
   "defense": 0,
-  "weight": 50.0,
+  "weight": 50,
   "requiredLevel": 2,
   "limitLevel": 0,
   "itemLevel": 1,
