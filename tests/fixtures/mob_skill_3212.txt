@@ -1,5 +1,5 @@
 //3212,Harword Alt-Eisen@Unknown Skill,idle,748,5,10000,250,5000,no,target,rudeattacked,,,,,,,,
-//3212,Harword Alt-Eisen@Unknown Skill,idle,713,1,10000,200,7000,no,target,always,0,,,,,,,
+3212,Harword Alt-Eisen@NPC_DANCINGBLADE,idle,713,1,10000,200,7000,no,target,always,0,,,,,,,
 //3212,Harword Alt-Eisen@Unknown Skill,chase,750,6,5000,500,30000,no,target,always,0,,,,,,,
 3212,Harword Alt-Eisen@BS_HAMMERFALL,chase,110,5,3000,0,5000,yes,target,always,0,,,,,,,
 3212,Harword Alt-Eisen@BS_ADRENALINE,attack,111,10,1500,0,150000,yes,self,always,0,,,,,,,
@@ -10,4 +10,4 @@
 3212,Harword Alt-Eisen@NPC_SPLASHATTACK,attack,174,1,5000,500,10000,no,target,attackpcge,2,,,,,,,
 3212,Harword Alt-Eisen@NPC_ARMORBRAKE,attack,344,10,800,500,20000,no,target,always,0,,,,,,19,
 //3212,Harword Alt-Eisen@Unknown Skill,attack,758,2,800,1500,10000,no,target,always,0,,,,,,,
-//3212,Harword Alt-Eisen@Unknown Skill,attack,733,5,5000,750,10000,no,target,always,0,,,,,,,
+3212,Harword Alt-Eisen@NPC_MAGMA_ERUPTION,attack,733,5,5000,750,10000,no,target,always,0,,,,,,,
