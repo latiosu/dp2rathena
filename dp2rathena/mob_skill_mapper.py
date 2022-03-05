@@ -180,7 +180,7 @@ class Mapper:
             return 'hiding'
         elif data['conditionValue'] == 'BODY_ALL':
             return 'anybad'
-        elif data['condition'] == 'IF_SKILLUSE':
+        elif data['condition'] == 'IF_SKILLUSE' and data['conditionValue'] != None:
             return self.skill_name_db[data['conditionValue']]
         elif data['condition'] not in self.condition_map:
             return 0
