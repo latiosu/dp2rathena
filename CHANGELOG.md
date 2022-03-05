@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4.1 - 2022-03-06
+------------------
+* Fixed handling of conditionValue causing errors in certain scenarios (issue #11)
+* Updated item and skill databases (fewer "Unknown Item" and "Unknown Skill" outputs)
+
 0.4.0 - 2021-10-05
 ------------------
 * Added mob_db.yml mapping feature
